@@ -1,0 +1,67 @@
+@import '../../umumi.scss';
+.first_carusel_bigdiv1{
+    // height: 550px;
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    // border: 1px solid black;
+}.first_carusel_bigdiv{
+    // height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    // border: 1px solid black;
+    .first_carusel{
+        color: black;
+        // border: 1px solid black;
+        h1{
+            font-size: 45px;
+            // font-weight: 600;
+            // line-height: 70px;
+            p{
+                color: $btn1;
+            }
+        }
+        button{
+            padding: 6px 40px;
+            background-color: $btn2;
+            border: 1px solid $btn2;
+            border-radius: 5px;
+            margin: 20px;
+            a{
+            color: white;
+             text-decoration: none;
+            }
+        }
+       
+       
+    }
+    
+}
+
+.carousel-indicators [data-bs-target]{
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 100% !important;
+    background-color: $btn1 !important;
+}
+
+ 
+@media only screen and (max-width: 600px) {
+
+}
+@media only screen and (min-width: 600px) {
+
+}
+@media only screen and (max-width: 768px) {
+   .first_carusel_bigdiv{
+    display: none;
+   }
+
+}
+@media only screen and (min-width: 992px) {
+
+}
+@media only screen and (min-width: 1200px) {
+
+}

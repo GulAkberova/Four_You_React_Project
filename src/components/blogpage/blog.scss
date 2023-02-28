@@ -1,0 +1,45 @@
+@import '../../umumi.scss';
+.carusel{
+    width: 100%;
+    height: 240px;
+    background-image:url('../../img/Rectangle\ 56.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: $anafont;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.blog_bigdiv{
+    width: 100%;
+    padding: 30px 60px;
+}
+
+.blog_card_div{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 31%;
+    .blog_card_div_img{
+        width: 100%;
+        height: 170px;
+        border-radius: 10px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+    }
+    h4 a{
+        padding: 10px 5px 0px 5px;
+        text-decoration: none;
+        color: $btn1;
+    }
+    .blog_card_date{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+    }
+}

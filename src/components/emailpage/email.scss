@@ -1,0 +1,51 @@
+@import '../../umumi.scss';
+.email_bigdiv{
+    width: 100%;
+    height: calc(100vh - 300px);
+    background-image:url('../../img/Rectangle\ 56.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .email_minidiv{
+        width: 500px;
+        max-width: 100%;
+        background-color: white;
+        border: 1px solid gray;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px 10px 10px;
+        input{
+            width: 100%;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid gray;
+            padding: 7px 15px;
+
+        }
+        .email_btndiv{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding: 20px 0px;
+            button{
+                padding: 7px 25px;
+                border: 1px solid gray;
+                border-radius: 5px;
+                background-color: $btn1;
+                color: white;
+                transition: 0.5s;
+                &:hover{
+                    color: $btn1;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+}

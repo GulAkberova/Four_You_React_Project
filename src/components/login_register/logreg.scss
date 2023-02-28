@@ -1,0 +1,192 @@
+@import "../../umumi.scss";
+.logreg_bigdiv {
+  width: 100%;
+  background-color: #edf8fa;
+  padding: 50px 70px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/logreg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .logreg_minidiv {
+    width: 70%;
+    height: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding:0px 5px;
+    .logreg_img {
+      width:550px;
+      max-width: 100%;
+      height: 550px;
+      max-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+    .logreg_text{
+        width: 500px;
+        max-width: 100%;
+        margin-left: 20px;
+        .logreg_text_div{
+            h1{
+                font-family: $elavefont;
+                padding-bottom: 10px;
+            }
+            form{
+                label{
+                    padding-right: 10px;
+                    color: $btn2;
+                }
+          input{
+            width: 90%;
+            padding: 10px 10px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid rgb(226, 226, 226);
+            border-radius: 3px;
+            margin: 5px 0px;
+          }
+          span{
+            color: red;
+            text-decoration: none;
+          }
+          p{
+            font-size: 13px;
+            text-decoration: underline;
+          }
+          .add{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            button{
+                width: 47%;
+                padding: 10px 0px;
+                border: 1px solid $btn2;
+                background-color: $btn2;
+                color: white;
+                border-radius: 4px;
+                transition: 0.6s;
+               
+            }
+            .btn2{
+                background-color: white;
+                color: $btn2;
+                &:hover{
+                    background-color: $btn2;
+                    color: white;
+                }
+
+            }
+            .btn1:hover{
+                color: $btn2;
+                background-color: white;
+            }
+          }
+          .or{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            // padding: 20px 0px;
+            p{
+                
+                text-decoration: none;
+                padding-top: 13px;
+               
+            }
+            &::after{
+                content: "";
+                width: 45%;
+                height: 1px;
+                border: 1px solid rgb(235, 230, 230);
+                position: absolute;
+                left: 0px;
+                top: 50%;
+            }
+            &::before{
+                content: "";
+                width: 45%;
+                height: 2px;
+                border: 1px solid rgb(235, 230, 230);
+                position: absolute;
+                right: 0px;
+                top: 50%;
+            }
+          }
+          .icon{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            p{
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $btn2;
+                margin-right: 10px;
+                border-radius: 100%;
+                background-color: $btn2;
+                color: white;
+                cursor: pointer;
+                text-decoration: none;
+                transition: 0.6s;
+                &:hover{
+                    background-color: white;
+                }
+                &:hover i{
+                    color: $btn2;
+                }
+            }
+          }
+        
+
+            }
+        }
+        
+    }
+   
+  }
+}
+ 
+@media only screen and (max-width: 600px) {
+ 
+  .logreg_img {
+    display: none !important;
+    
+  }
+
+}
+@media only screen and (min-width: 600px) {
+
+}
+@media only screen and (max-width: 768px) {
+  
+
+}
+@media only screen and (max-width: 992px) {
+  .logreg_bigdiv{
+    padding: 30px 10px;
+  }
+  .logreg_minidiv{
+    width: 600px !important;
+    max-width: 100%;
+  }
+
+}
+@media only screen and (min-width: 1200px) {
+
+}

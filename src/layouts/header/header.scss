@@ -1,0 +1,14 @@
+@import '../../umumi.scss';
+// .text_decoration{
+//     color:$btn1;
+//     // text-decoration:none;
+// }
+.logo{
+    width:80px;
+    height: 40px;
+}
+.app{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
