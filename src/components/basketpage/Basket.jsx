@@ -6,8 +6,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrease, increase, remove } from "../../store/cartSlice";
 import Swal from "sweetalert2";
 
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 
 
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 function Basket() {
   let {cart}=useSelector(state=>state.CartReducer)
 
@@ -47,7 +69,7 @@ function Basket() {
         <h2>Mehsul</h2>
       </div>
       <section className="mehsul_bigdiv">
-        <table >
+        {/* <table >
          <thead>
          <tr>
             <th>Mehsul</th>
@@ -78,7 +100,52 @@ function Basket() {
             ))
           }
         </tbody>
-        </table>
+        </table> */}
+     
+
+
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Mehsul</TableCell>
+              <TableCell align="center">Mehsulun adi</TableCell>
+              <TableCell align="center">Qiymet</TableCell>
+              <TableCell align="center">Say</TableCell>
+              <TableCell align="center">Umumi</TableCell>
+              <TableCell align="center">Sil</TableCell>
+              
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            { cart && cart.map((item,key)=>(
+              <TableRow
+              key={key}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell align="center" component="th" scope="row">
+                {item.title}
+                </TableCell>
+                <TableCell align="center">{item.title}</TableCell>
+                <TableCell align="center">{item.price}m</TableCell>
+              
+                <TableCell align="center">
+                <button onClick={()=>dispatch(decrease(item.id))}>-</button>
+             <span> {item.quantity}</span>
+             <button onClick={()=>dispatch(increase(item.id))}>+</button>
+                </TableCell>
+                <TableCell align="center">
+                {(item.price * item.quantity).toFixed(2)}m
+                </TableCell>
+                <TableCell align="center">
+                <button onClick={()=>handleRemove(item)}><i className="fa-solid fa-x"></i></button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
       </section>
       {/* <div className="mehsul_div">
         <h2>Seans</h2>
@@ -113,6 +180,7 @@ function Basket() {
         
         </table>
       </section> */}
+
 
       <section className="all_sum">
         <h1>Cem:{totalPrice.toFixed(2)}</h1>

@@ -9,13 +9,13 @@
     // height: 400px;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    // align-items: center;
     // border: 1px solid black;
     .first_carusel{
         color: black;
         // border: 1px solid black;
         h1{
-            font-size: 45px;
+            font-size: 75px;
             // font-weight: 600;
             // line-height: 70px;
             p{
@@ -47,21 +47,36 @@
 }
 
  
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 550px) {
+    .first_carusel{
+        margin-top: 80px !important;
+        h1{
+               font-size: 7px !important;
+               p{
+                font-size: 20px !important;
+               }
+   
+        }
+        button{
+           margin: 0px !important;
+           font-size: 10px;
+           padding: 3px 10px;
+        }
+      }
 
 }
 @media only screen and (min-width: 600px) {
 
 }
 @media only screen and (max-width: 768px) {
-   .first_carusel_bigdiv{
-    display: none;
+   .first_carusel{
+     h1{
+            font-size: 25px !important;
+
+     }
+     button{
+        margin: 5px !important;
+     }
    }
-
-}
-@media only screen and (min-width: 992px) {
-
-}
-@media only screen and (min-width: 1200px) {
 
 }

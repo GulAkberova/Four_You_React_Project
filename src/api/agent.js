@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://65.108.159.186",
+  baseURL: "http://admin.foryoukid.com",
   withCredentials: false,
   headers: {
     'accept': 'application/json',
