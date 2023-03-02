@@ -49,6 +49,7 @@
                 width: 30%;
                 position: relative;
                 overflow: hidden;
+                // border: 2px solid black;
 
                 .pscology_mini_div_img{
                     width: 100%;
@@ -70,7 +71,7 @@
                     color: black;
                     text-align: center;
                     width: 100%;
-                    padding: 10px 0px;
+                    padding: 20px 0px;
                     position: absolute;
                     bottom: 0;
                     left: 0;
@@ -285,6 +286,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .video_text{
+        padding: 10px 5px !important;
+    }
 }
 @media only screen and (min-width: 600px) {
 

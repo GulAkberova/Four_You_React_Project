@@ -144,7 +144,7 @@ console.log('auth',auth)
                     </label>
                     <input
                       type="text"
-                      placeholder="Ad"
+                      placeholder="Soyad"
                       {...register("surname", {
                         required: "*Zehmet olmasa xanani doldurun.",
                       })}

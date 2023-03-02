@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../detailpage/detail.scss";
-// import oyuncaq1 from '../../img/Rectangle\ 6.png'
+import oyuncaq1 from '../../img/Rectangle\ 6.png'
 import { useEffect } from "react";
 // import { useSelector,useDispatch } from 'react-redux'
 import { data } from "../../api/data";
@@ -22,6 +22,7 @@ function Detail() {
   useEffect(() => {
     setLoading(true);
     data.getById("product", param.id).then((res) => {
+      console.log(res);
       setProductData(res);
       setLoading(false);
     });
@@ -56,28 +57,27 @@ function Detail() {
             <section className="detail_minidiv">
             <div className="detail_img">
               <div className="detail_imgs">
-                <div className="detail_small_imgs">
-                  {/* {
-                    productData.images && productData.images.map((i,key)=>(
-                      <div key={key} className='detail_small_img'>
-                            <img src={i.image}/>
-                            <p>{i.image}</p>
-                            <p>{i.id}</p>
-                      </div>
-
-                    ))
-                  } */}
               
-                </div>
-                <div className="detail_big_img">
-                  <img src={productData?.image}/>
-                </div>
+                  {
+                        productData.images && productData.images.map((i,key)=>(
+                          <div className="detail_imgs">
+                          {/* <div key={key} className='detail_small_img'>
+                          <img src={i.image}/>
+                    </div> */}
+                          <div key={key} className='detail_big_img'>
+                                <img src={i.image}/>
+                          </div>
+                        </div>
+    
+                        ))
+                  }
+               
               </div>
             </div>
             <div className="detail_text">
               <div className="detail_mini_text">
                 <h1>{productData?.title}</h1>
-                <h3>{productData?.price}</h3>
+                <h3>{productData?.price}m</h3>
                 <p>{productData?.content}  </p>
                 <button
                   className={check ? "detail_btn_success" : "detail_btn_error"}

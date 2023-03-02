@@ -14,15 +14,18 @@
 .blog_bigdiv{
     width: 100%;
     padding: 30px 60px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .blog_card_div{
     border: 1px solid gray;
     border-radius: 10px;
-    width: 31%;
+    width: 33%;
     .blog_card_div_img{
         width: 100%;
         height: 170px;
+        max-height: 100%;
         border-radius: 10px;
         img{
             width: 100%;
@@ -42,4 +45,21 @@
         justify-content: space-between;
         padding: 5px;
     }
+}
+@media only screen and (max-width: 600px) {
+
+    .blog_card_div{
+        width: 100% !important;
+    
+    }
+    }
+@media only screen and (max-width: 950px) {
+    .blog_bigdiv{
+        padding: 30px 20px;
+    
+    }
+.blog_card_div{
+    width: 49%;
+
+}
 }

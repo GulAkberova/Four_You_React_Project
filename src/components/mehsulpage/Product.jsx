@@ -16,6 +16,7 @@ function Product() {
    useEffect(() => {
     setLoading(true)
     data.getAll("product").then((res) => {
+      console.log(res);
       setProducts(res)
       setLoading(false)
     });
