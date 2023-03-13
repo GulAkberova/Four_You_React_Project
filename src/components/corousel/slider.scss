@@ -1,58 +1,154 @@
 @import '../../umumi.scss';
 .first_carusel_bigdiv1{
-    height: 450px;
-    // display: flex;
-    // justify-content: flex-end;
-    // align-items: flex-end;
-    // border: 1px solid black;
+    height: 558px;
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+    .first_carusel_bigdiv{
+        width: 100%;
+        height: 450px;
+        display: flex;
+        justify-content: space-between;
+       .first_carusel_img{
+        width: 50%;
+       }
+        .first_carusel{
+            width: 40%;
+            color: black;
+            text-align: left;
+            padding-left: 60px;
+            h1{
+                font-size: 50px;
+                font-weight: 600;
+                a{
+                    color: $btn1;
     
-}.first_carusel_bigdiv{
-    height: 380px;
-    display: flex;
-    justify-content: flex-end;
-    // border: 1px solid black;
-    // align-items: center;
-    // border: 1px solid black;
-    .first_carusel{
-        color: black;
-        // border: 1px solid black;
-        h1{
-            font-size: 75px;
-            // font-weight: 600;
-            // line-height: 70px;
-            p{
-                color: $btn1;
+                }
             }
+            p{
+                font-size: 24px;
+                font-weight: 500;
+            }
+            button{
+                padding: 10px 30px;
+                background-color: $btn2;
+                border: 1px solid $btn2;
+                border-radius: 5px;
+                margin: 20px 0px;
+                a{
+                color: white;
+                 text-decoration: none;
+                 font-size: 16px;
+                }
+            }
+           
+           
         }
-        button{
-            padding: 6px 40px;
-            background-color: $btn2;
-            border: 1px solid $btn2;
+      
+        
+       
+    }
+    .first_carusel_bigdiv_toys{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+         padding: 0px 50px;
+        
+         .first_carusel1{
+             width: 40%;
+         border-radius: 32px;
+         background-color: white;
+         text-align: center;
+         padding: 30px 50px;
+         color: black;
+         position: relative;
+         span{
+            color: $btn1;
+            font-size: 25px;
+            font-weight: 500;
+         }
+         h3{
+              padding: 15px 0px;
+         }
+         p{
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 34px;
+         }
+         } 
+         button{
+            padding: 10px 30px;
+            background-color: $btn1;
+            border: 1px solid $btn1;
             border-radius: 5px;
-            margin: 20px;
             a{
             color: white;
              text-decoration: none;
+             font-size: 16px;
             }
-        }
-       
-       
-    }
+         }
+         .first_carusel_simg1{
+            width: 78px;
+            height: 146px;
+            position: absolute;
+            right: 10px;
+            top: -50px;
+         }
+         .first_carusel_simg2{
+            width: 50px;
+            height: 110px;
+            position: absolute;
+            left: 3px;
+            bottom: 3px;
+         }
+     
+     }
     
 }
+
+
+
 
 .carousel-indicators [data-bs-target]{
     width: 20px !important;
     height: 20px !important;
     border-radius: 100% !important;
-    background-color: $btn1 !important;
+    background-color: white !important;
+    border: 1px solid $btn1 !important;
+}
+.carousel-indicators{
+    justify-content: flex-start !important;
+  bottom: 10% !important;
+  left: -5%;
+}
+.carousel-control-next-icon{
+    display: none !important;
+}
+.carousel-control-prev-icon{
+    display: none !important;
+}
+.carousel-control-next{
+    background-color: red !important;
+    width: 0% !important;
+    display: none !important;
+}
+.carousel-control-prev{
+    background-color: red !important;
+    width: 0% !important;
+    display: none !important;
+}
+.carousel-caption{
+    left: 0% !important;
 }
 
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: $btn1 !important;
+}
  
 @media only screen and (max-width: 650px) {
     .first_carusel{
@@ -75,7 +171,13 @@
 @media only screen and (max-width: 600px) {
 .first_carusel_bigdiv1{
     height: calc(100vh - 140px);
+    img{
+        width: 100% !important;
+        height: 100%;
+        object-fit: contain !important;
+    }
 }
+
 
 }
 @media only screen and (max-width: 768px) {

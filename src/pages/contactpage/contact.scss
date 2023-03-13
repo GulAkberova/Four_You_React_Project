@@ -1,0 +1,96 @@
+@import '../../umumi.scss';
+.carusel{
+    width: 100%;
+    height: 160px;
+    background-image:url('../../img/Rectangle\ 56.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: $anafont;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.contact_bigdiv{
+    padding: 60px;
+    display: flex;
+    justify-content: space-around;
+    font-family: $anafont;
+}
+.contact_info_div{
+    width: 45%;
+    padding: 40px;
+    p{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 30px 0px;
+    }
+    h2{
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+        padding: 20px 0px;
+    }
+    .contact_info_div_icon{
+        display: flex;
+        flex-wrap: wrap;
+        div{
+            width: 50%;
+            padding: 10px 0px;
+            display: flex;
+            align-items: center;
+            span{
+                font-size: 17px;
+                font-weight: 400;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+.contact_letter_div{
+    width: 40%;
+    h2{
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .contact_letter_form{
+        input{
+            margin: 10px 0px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid gray;
+            padding: 10px 5px;
+            &::placeholder{
+                color: black;
+            }
+        }
+        textarea{
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid gray;
+            padding: 50px 5px 5px 5px;
+            &::placeholder{
+                color: black;
+            }
+            
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            padding: 40px 0px;
+            button{
+                padding: 8px 60px;
+                color: white;
+                background-color: $btn2;
+                border: 1px solid $btn2;
+                margin: 0 auto;
+                border-radius: 3px;
+            }
+        }
+       
+    }
+}

@@ -14,7 +14,8 @@ import logo from '../../img/4you.png'
 import { useSelector } from "react-redux";
 import '../header/header.scss'
 import useAuth from "../../hooks/useAuth";
-
+import user from '../../assets/icons/user.png'
+import basket from '../../assets/icons/basket.png'
 // ________________________menu_List__________________
 
 import Avatar from '@mui/material/Avatar';
@@ -93,11 +94,29 @@ const Head = () => {
           </Typography>
     </Box>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters >
+          <div className="header_navbar">
+          <ul className="header_navbar_ul">
+            <li><NavLink to='/'>Ana səhifə</NavLink></li>
+            <li><NavLink to='/about'>Haqqımızda</NavLink></li>
+            <li><NavLink to='/quiz'>Gəl danışaq</NavLink></li>
+            <li><NavLink to='/psx'>Psixoloqlarımız</NavLink></li>
+            <li><NavLink to='/product'>Məhsullar</NavLink></li>
+            <li><NavLink to='/blog'>Bloq</NavLink></li>
+            <li><NavLink to='/contact'>Əlaqə</NavLink></li>
+          
+          </ul>
+          <ul className="header_navbar_ul_user">
+         <li><NavLink to='/logreg'><img src={user}/></NavLink></li>
+         <li>|</li>
+         <li><NavLink to='/basket'><img src={basket}/></NavLink></li>
+         </ul >
+          </div>
          
+       
          
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -353,7 +372,7 @@ const Head = () => {
             </Button>
 
 
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

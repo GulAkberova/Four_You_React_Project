@@ -7,11 +7,14 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.8",
+    "@mui/x-date-pickers": "^6.0.1",
     "@reduxjs/toolkit": "^1.9.3",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
     "cra-template": "1.2.0",
+    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.7",
     "json-server": "^0.17.1",
     "moment": "^2.29.4",
     "node-sass": "^7.0.3",
@@ -25,7 +28,8 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
-    "sweetalert2": "^11.7.2"
+    "sweetalert2": "^11.7.2",
+    "swiper": "^9.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

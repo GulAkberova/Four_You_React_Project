@@ -1,16 +1,13 @@
 @import "../../umumi.scss";
 .logreg_bigdiv {
   width: 100%;
-  background-color: #edf8fa;
+  background-color: #DCEFF3;
   padding: 50px 70px;
   height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../../img/logreg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+
   .logreg_minidiv {
     width: 70%;
     height: 570px;
@@ -36,26 +33,23 @@
       }
     }
     .logreg_text{
-        width: 500px;
+        width: 600px;
         max-width: 100%;
-        margin-left: 20px;
+        padding: 0px 0px 0px 40px;
         .logreg_text_div{
             h1{
-                font-family: $elavefont;
                 padding-bottom: 10px;
+                text-align: center;
             }
             form{
-                label{
-                    padding-right: 10px;
-                    color: $btn2;
-                }
+                
           input{
             width: 90%;
             padding: 10px 10px;
             outline: none;
-            border: none;
-            border-bottom: 1px solid rgb(226, 226, 226);
-            border-radius: 3px;
+            border: 1px solid rgba(192, 187, 187, 0.347);
+
+            border-radius: 9px;
             margin: 5px 0px;
           }
           span{
@@ -70,6 +64,7 @@
             width: 90%;
             display: flex;
             justify-content: space-between;
+           padding-top: 20px;
             button{
                 width: 47%;
                 padding: 10px 0px;
@@ -130,16 +125,14 @@
             width: 90%;
             display: flex;
             justify-content: center;
-            p{
-                width: 40px;
-                height: 40px;
+            a{
+              padding: 5px 24px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 1px solid $btn2;
+                border: 1px solid rgba(212, 207, 207, 0.363);
                 margin-right: 10px;
-                border-radius: 100%;
-                background-color: $btn2;
+                border-radius: 4px;
                 color: white;
                 cursor: pointer;
                 text-decoration: none;

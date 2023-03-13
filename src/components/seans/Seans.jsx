@@ -24,7 +24,7 @@ function Seans() {
           <p> {errors.number && <span>{errors.number.message}</span>}</p>
           <input type="tel" name="phone" placeholder="+994(50) xxx xx xx"  {...register("number", { required:'*Zehmet olmasa xanani doldurun.' })} />
           <p> {errors.number && <span>{errors.number.message}</span>}</p>
-          <input placeholder=" Hekimin ad,soyadi" type="text"   {...register("number", { required:'*Zehmet olmasa xanani doldurun.' })} />
+          <input placeholder=" Hekimin ad,soyadı" type="text"   {...register("number", { required:'*Zehmet olmasa xanani doldurun.' })} />
           <p> {errors.text && <span>{errors.text.message}</span>}</p>
 
           <input type="date" className="inp_date"  {...register("date", { required:'*Zehmet olmasa xanani doldurun.' })}/>

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "../login_register/logreg.scss";
-import lr_img from "../../img/logreg.jpg";
+import lr_img from "../../assets/image/login.png";
+import google from '../../assets/icons/google.png'
+import facebook from '../../assets/icons/facebook.png'
+import instagram from '../../assets/icons/instagram.png'
 import { useForm } from "react-hook-form";
 import { data } from '../../api/data'
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 function LogReg() {
@@ -66,28 +69,28 @@ console.log('auth',auth)
             {panel ? (
               // ____________________Panel Login________________________________}
               <div className="logreg_text_div">
-                <h1>Giris</h1>
+                <h1>Giriş</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <label>
-                    <i className="fa-solid fa-envelope"></i>
-                  </label>
+                  Əlaqə nömrəsi
+                  </label><br/>
                   <input
                     type="email"
-                    placeholder="username0@gmail.com"
+                    placeholder="+994 (50)- 323-23-23"
                     {...register("email", {
-                      required: "*Zehmet olmasa xanani doldurun.",
+                      required: "*Zəhmət olmasa xananı doldurun.",
                     })}
                   />
                   <p> {errors.email && <span>{errors.email.message}</span>}</p>
 
                   <label>
-                    <i className="fa-solid fa-lock"></i>
-                  </label>
+                  Şifrə
+                  </label><br/>
                   <input
                     type="password"
-                    placeholder="Sifre"
+                    placeholder="Şifrə"
                     {...register("password", {
-                      required: "*Zehmet olmasa xanani doldurun.",
+                      required: "*Zəhmət olmasa xananı doldurun.",
                     })}
                   />
                   <p>
@@ -98,24 +101,24 @@ console.log('auth',auth)
                 
 
                   <div className="add">
-                    <button className="btn1">Giris et</button>
+                    <button className="btn1">Giriş Et</button>
                     <button className="btn2" onClick={(e) => SetPanel(false)}>
-                     Register
+                    Qeydiyyat
                     </button>
                   </div>
                   <div className="or">
-                    <p>Or</p>
+                    <p>və ya</p>
                   </div>
                   <div className="icon">
-                    <p>
-                      <i className="fa-brands fa-google"></i>
-                    </p>
-                    <p>
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </p>
-                    <p>
-                      <i className="fa-brands fa-instagram"></i>
-                    </p>
+                    <NavLink>
+                     <img src={google}/>
+                    </NavLink>
+                    <NavLink>
+                    <img src={facebook}/>
+                    </NavLink>
+                    <NavLink>
+                    <img src={instagram}/>
+                    </NavLink>
                   </div>
                 </form>
               </div>
@@ -123,59 +126,45 @@ console.log('auth',auth)
               // _________________Panel Register_____________________________
               <div>
                 <div className="logreg_text_div">
-                  <h1>Qeydiyyat</h1>
+                  <h1>Qeydiyyatdan Keç</h1>
                   <form onSubmit={handleSubmit(onSubmitR)}>
                     {/* ___________________Name_____________________ */}
                     <label>
-                      <i className="fa-solid fa-user"></i>
-                    </label>
+                    Ad
+                    </label><br/>
                     <input
                       type="text"
                       placeholder="Ad"
                       {...register("name", {
-                        required: "*Zehmet olmasa xanani doldurun.",
+                        required: "*Zəhmət olmasa xananı doldurun.",
                       })}
                     />
                     <p> {errors.name && <span>{errors.name.message}</span>}</p>
 
                     {/* __________________Surname________________________ */}
                     <label>
-                      <i className="fa-solid fa-user"></i>
-                    </label>
+                    Soyad
+                    </label><br/>
                     <input
                       type="text"
                       placeholder="Soyad"
                       {...register("surname", {
-                        required: "*Zehmet olmasa xanani doldurun.",
+                        required: "*Zəhmət olmasa xananı doldurun.",
                       })}
                     />
                     <p> {errors.surname && <span>{errors.surname.message}</span>}</p>
 
-                    {/* __________________Email______________________ */}
-
-                    <label>
-                      <i className="fa-solid fa-envelope"></i>
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="username0@gmail.com"
-                      {...register("email", {
-                        required: "*Zehmet olmasa xanani doldurun.",
-                      })}
-                    />
-                    <p>
-                      {errors.email && <span>{errors.email.message}</span>}
-                    </p>
+                
 
                     {/* ___________________Phone___________________ */}
                     <label>
-                      <i className="fa-solid fa-envelope"></i>
-                    </label>
+                    Əlaqə nömrəsi
+                    </label><br/>
                     <input
                       type="phone"
                       placeholder="+994 00 000 00 00"
                       {...register("phone_number", {
-                        required: "*Zehmet olmasa xanani doldurun.",
+                        required: "*Zəhmət olmasa xananı doldurun.",
                       })}
                     />
                     <p>
@@ -185,13 +174,13 @@ console.log('auth',auth)
                     </p>
 
                     <label>
-                      <i className="fa-solid fa-unlock"></i>
-                    </label>
+                    Şifrə
+                    </label><br/>
                     <input
                       type="password"
-                      placeholder="Sifre"
+                      placeholder="Şifrə"
                       {...register("password", {
-                        required: "*Zehmet olmasa xanani doldurun.",
+                        required: "*Zəhmət olmasa xananı doldurun.",
                       })}
                     />
                     <p>
@@ -208,7 +197,7 @@ console.log('auth',auth)
                       type="password"
                       placeholder="Sifre tekrari"
                       {...register("password", {
-                        required: "*Zehmet olmasa xanani doldurun.",
+                        required: "*Zəhmət olmasa xananı doldurun.",
                       })}
                     />
                     <p>
@@ -218,9 +207,9 @@ console.log('auth',auth)
                     </p> */}
 
                     <div className="add">
-                      <button className="btn1">Giris et</button>
+                      <button className="btn1">Giriş Et</button>
                       <button className="btn2" onClick={(e) => SetPanel(true)}>
-                        Login
+                      Qeydiyyat
                       </button>
                     </div>
                   </form>

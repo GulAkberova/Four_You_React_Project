@@ -63,10 +63,10 @@ function Basket() {
   return (
     <>
       <section className="carusel">
-        <h1>Sebetim</h1>
+        <h1>Səbətim</h1>
       </section>
       <div className="mehsul_div">
-        <h2>Mehsul</h2>
+        <h2>Məhsul</h2>
       </div>
       <section className="mehsul_bigdiv">
         {/* <table >
@@ -108,11 +108,11 @@ function Basket() {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="center">Mehsul</TableCell>
-              <TableCell align="center">Mehsulun adi</TableCell>
-              <TableCell align="center">Qiymet</TableCell>
+              <TableCell align="center">Məhsul</TableCell>
+              <TableCell align="center">Məhsulun adı</TableCell>
+              <TableCell align="center">Qiymət</TableCell>
               <TableCell align="center">Say</TableCell>
-              <TableCell align="center">Umumi</TableCell>
+              <TableCell align="center">Ümumi</TableCell>
               <TableCell align="center">Sil</TableCell>
               
             </TableRow>
@@ -183,8 +183,8 @@ function Basket() {
 
 
       <section className="all_sum">
-        <h1>Cem:{totalPrice.toFixed(2)}</h1>
-        <button>Tesdiqle</button>
+        <h1>Cəm:{totalPrice.toFixed(2)}</h1>
+        <button>Təsdiqlə</button>
 
       </section>
     </>
