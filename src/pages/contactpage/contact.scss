@@ -12,31 +12,31 @@
     align-items: center ;
 }
 .contact_bigdiv{
-    padding: 60px;
+    padding: 60px 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: $anafont;
 }
 .contact_info_div{
     width: 45%;
-    padding: 40px;
+    // padding: 0px 40px;
     p{
-        text-align: center;
+        // text-align: center;
         font-size: 16px;
         font-weight: 400;
-        padding: 30px 0px;
+        // padding: 30px 0px;
     }
     h2{
         font-weight: 600;
         font-size: 32px;
-        text-align: center;
+        // text-align: center;
         padding: 20px 0px;
     }
     .contact_info_div_icon{
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
         div{
-            width: 50%;
+            // width: 50%;
             padding: 10px 0px;
             display: flex;
             align-items: center;
@@ -53,7 +53,7 @@
     h2{
         font-weight: 600;
         font-size: 32px;
-        text-align: center;
+        // text-align: center;
         padding-bottom: 30px;
     }
     .contact_letter_form{
@@ -93,4 +93,16 @@
         }
        
     }
+}
+.contact_map{
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    
+    .contact_map_div{
+        // border: 1px solid black;
+        width: 1065px;
+        height: 526px;
+    }
+
 }

@@ -150,13 +150,14 @@
     }
 }
 .psxdetail_skills{
-    padding: 76px 89px;
+    padding: 76px 60px 76px 80px;
     .psxdetail_skills_divs{
         display: flex;
         flex-wrap: wrap;
-        padding: 15px 0px;
+        // padding: 15px 0px;
+        gap: 15px;
         div{
-            width: 25%;
+            width: 24%;
         display: flex;
         align-items: center;
         padding: 10px 0px;

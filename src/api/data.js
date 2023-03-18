@@ -18,7 +18,7 @@ export const data={
         })
         .catch(err=>{
             console.log('err',err)
-            if (err.response.status == 401) window.location.href = "/";
+            // if (err.response.status == 401) window.location.href = "/";
 
         })
 

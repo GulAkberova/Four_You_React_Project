@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import './psxdetail.scss'
 import hekim1 from "../../assets/image/Rectangle 55.jpg";
 import path from "../../assets/icons/Path.png";
@@ -8,10 +8,33 @@ import ellipseedu from "../../assets/icons/ellipseedu.png";
 import ellipseexp from "../../assets/icons/ellipseexp.png";
 import ellipsecert from "../../assets/icons/ellipsecert.png";
 import certificate from "../../assets/image/certificate.png"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import SwiperPsx from '../../components/corousel/SwiperPsx';
+import PsxModal from '../../components/psxmodal/PsxModal';
+import { data } from '../../api/data'
 
 function PsxDetail() {
+  const param=useParams()
+  console.log(param)
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => {
+      setOpen(true);
+    };
+
+  const [psxData, setPsxData]=useState([])
+  const [loading, setLoading]=useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+    data.getById("doctor",param.id).then((res)=>{
+      setPsxData(res)
+      setLoading(false)
+    })
+
+  },[])
+  console.log(psxData)
+
   return (
     <>
     <section className='psxdetail_bigdiv'>
@@ -19,28 +42,28 @@ function PsxDetail() {
             <img src={hekim1}/>
         </div>
         <div className='psxdetail_bigdiv_text'>
-            <h4>Gülnarə Mehdiyeva</h4>
+            <h4>{psxData?.name}</h4>
             <div className='psxdetail_bigdiv_text_path'>
             <img src={path}/><img src={path}/><img src={path}/><img src={path}/><img src={path}/><b>4.95</b>
             </div>
             
             <div className='psxdetail_bigdiv_text_status'>
             <span>Psixoloq</span>
-            <p>Avrasiya Klinika</p>
+            <p>{psxData?.present_work_space}</p>
             </div>
          <div className='psxdetail_bigdiv_text_about'>
          <b>Haqqında</b>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+            <p>{psxData?.about}</p>
          </div>
-         <div className='psxdetail_bigdiv_text_info'>
+         {/* <div className='psxdetail_bigdiv_text_info'>
 
          <b>Şəxsi Məlumatlar</b><br/>
             <span>Əlaqə nömrəsi: +994(70)-777-77-77</span><br/>
             <span>E-mail: gulnaremehdi@gmail.com</span>
-         </div>
+         </div> */}
            
-            <button><NavLink>Gorus</NavLink></button>
-
+            <button onClick={handleOpen}><NavLink>Görüş</NavLink></button>
+            <PsxModal open={open} setOpen={setOpen}/>
 </div>
 
     </section>
@@ -50,33 +73,21 @@ function PsxDetail() {
                 <li>
                     <img src={ellipseedu}/><h4>Təhsil</h4>
                 </li>
-                <li className='psxdetail_infodiv_education_li'>
-                    <img src={ellipse}/><div>
-                  <h5>  American Dental Medical University</h5>
-                  <span>BDS</span><br/>
-                  <span>1998 - 2003</span>
+                {
+                    psxData.education && psxData.education.map((i,key)=>(
+                        <li className='psxdetail_infodiv_education_li'>
+                        <img src={ellipse}/><div>
+                      <h5>{i.university}</h5>
+                      <span>{i.program}</span><br/>
+                      <span>{i.date}</span>
+    
+    
+                        </div>
+                    </li>
 
-
-                    </div>
-                </li>
-                <li className='psxdetail_infodiv_education_li'>
-                <img src={ellipse}/><div>
-                  <h5>  American Dental Medical University</h5>
-                  <span>BDS</span><br/>
-                  <span>1998 - 2003</span>
-
-
-                    </div>
-                </li>
-                <li className='psxdetail_infodiv_education_li'>
-                <img src={ellipse}/><div>
-                  <h5>  American Dental Medical University</h5>
-                  <span>BDS</span><br/>
-                  <span>1998 - 2003</span>
-
-
-                    </div>
-                </li>
+                    ))
+                }
+          
             </ul>
 
         </div>
@@ -85,30 +96,21 @@ function PsxDetail() {
                 <li>
                     <img src={ellipseexp}/><h4>Təcrübə</h4>
                 </li>
-                <li className='psxdetail_infodiv_education_li'>
-                    <img src={ellipse}/><div>
-                  <h5> Avrasiya Klinikası</h5>
-                  <span>2020 - indi (3 il)</span>
+                {
+                    psxData.experience && psxData.experience.map((i,key)=>(
+                        <li className='psxdetail_infodiv_education_li'>
+                        <img src={ellipse}/><div>
+                      <h5>{i.company}</h5>
+                      <span>{i.date}</span>
+    
+    
+                        </div>
+                    </li>
 
-
-                    </div>
-                </li>
-                <li className='psxdetail_infodiv_education_li'>
-                <img src={ellipse}/><div>
-                  <h5> Medical Plaza</h5>
-                  <span>2019 -2020 (1 il)</span>
-
-
-                    </div>
-                </li>
-                <li className='psxdetail_infodiv_education_li'>
-                <img src={ellipse}/><div>
-                  <h5>Dövlət Klinikası</h5>
-                  <span>2000 - 2019 (19 il)</span>
-
-
-                    </div>
-                </li>
+                    ))
+                }
+            
+              
             </ul>
 
         </div>
@@ -123,10 +125,14 @@ function PsxDetail() {
                     <div className='psxdetail_infodiv_education_li_img'>
                         <img src={certificate}/>
                        <div>
+                       {
+                    psxData.certificate && psxData.certificate.map((i,key)=>(
+                        <img src={i.image}/>
+                       
+
+                    ))
+                }
                   
-                        <img src={certificate}/>
-                        <img src={certificate}/>
-                        <img src={certificate}/>
                        
                        </div>
 
@@ -156,7 +162,7 @@ function PsxDetail() {
             </div>
             <div>
                 <img src={right}/>
-                <span>Oral and Maxillofacial Surgery</span>
+                <span>Orthodontist</span>
 
 
             </div>
@@ -167,7 +173,7 @@ function PsxDetail() {
             </div>
             <div>
                 <img src={right}/>
-                <span>Oral and Maxillofacial Surgery</span>
+                <span>Orthodontist</span>
 
             </div>
             <div>

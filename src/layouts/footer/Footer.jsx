@@ -63,7 +63,7 @@ function Footer() {
             </div>
 
         </div>
-        <p>Copyright © 2010-2021 logo.az. "Logo" LLC Bütün hüquqlar qorunur
+        <p>For you | © 2019 All rights reserved!
         </p>
 
     </section>

@@ -71,11 +71,11 @@ function AllRouter() {
             </Suspense>
           }
         ></Route>
-         <Route
-          path="/psxdetail"
+        <Route
+          path="/psx/:id"
           element={
             <Suspense>
-              <PsxDetail/>
+              <PsxDetail />
             </Suspense>
           }
         ></Route>
@@ -132,11 +132,10 @@ function AllRouter() {
           path="/contact"
           element={
             <Suspense>
-              <Contact/>
+              <Contact />
             </Suspense>
           }
         />
-      
 
         {/* </Route> */}
         {/* <Route
