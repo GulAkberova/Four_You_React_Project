@@ -1,31 +1,38 @@
-.css-d9vha1{
-    width: 80%;
-    // height: 600px;
-    border-radius: 10px;
+@import "../../umumi.scss";
+.css-d9vha1 {
+  width: 70%;
+  // height: 600px;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
-.psx_modal_select1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0px;
+.css-1aj9me-MuiPickersLayout-root .MuiPickersLayout-actionBar {
+  display: none !important;
 }
-.psx_modal_select_name{
-    border: 1px solid rgba(205, 199, 199, 0.596);
-    padding: 4px 150px;
-    border-radius: 3px;
-    
+
+.psx_modal_select1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
 }
-.css-ece9u5{
-    min-width: 600px;
+.psx_modal_select_name {
+  border: 1px solid rgba(205, 199, 199, 0.596);
+  padding: 4px 150px;
+  border-radius: 3px;
 }
-.psx_modal_calendar{
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
+.css-ece9u5 {
+  min-width: 600px;
 }
-.psx_modal_calendar_date{
-    width: 60%;
-    border: 2px solid red;
+.psx_modal_calendar {
+  width: 100%;
+  // border: 1px solid black;
+  display: flex;
+}
+.psx_modal_calendar_date {
+  width: 60%;
+  // border: 2px solid red;
 }
 
 .available-date {
@@ -36,4 +43,12 @@
 .unavailable-date {
   color: gray;
   text-decoration: line-through;
+}
+.psxmodal_bigdiv {
+  border-radius: 15px;
+  font-family: $anafont;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

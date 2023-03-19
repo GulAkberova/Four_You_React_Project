@@ -43,19 +43,16 @@ function ChildModal() {
 
   return (
     <React.Fragment>
-      <Button onClick={handleOpen}>Open Child Modal</Button>
+      <Button onClick={handleOpen}>Ok</Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="child-modal-title"
         aria-describedby="child-modal-description"
       >
-        <Box sx={{ ...style, width: 200 }} className="psxmodal_bigdiv">
-          <h2 id="child-modal-title">Text in a child modal</h2>
-          <p id="child-modal-description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </p>
-          <Button onClick={handleClose}>Close Child Modal</Button>
+        <Box sx={{ ...style, width: 500 }} className="psxmodal_bigdiv">
+          <h3 id="child-modal-title">Melumat qeyde alindi</h3>
+          <Button onClick={handleClose}>Ok</Button>
         </Box>
       </Modal>
     </React.Fragment>
@@ -162,7 +159,7 @@ function PsxModal(props) {
             </div>
           </div>
           <div className="psx_modal_select1">
-            <p>Vaxt Təyin edin</p>
+            <p className="psx_modal_select_p">Vaxt Təyin edin</p>
             <div className="psx_modal_calendar">
               <div className="psx_modal_calendar_date">
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
