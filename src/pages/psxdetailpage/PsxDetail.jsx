@@ -1,5 +1,5 @@
-import React,{ useEffect, useState } from 'react'
-import './psxdetail.scss'
+import React, { useEffect, useState } from "react";
+import "./psxdetail.scss";
 import hekim1 from "../../assets/image/Rectangle 55.jpg";
 import path from "../../assets/icons/Path.png";
 import ellipse from "../../assets/icons/ellipse.png";
@@ -7,207 +7,154 @@ import right from "../../assets/icons/right.png";
 import ellipseedu from "../../assets/icons/ellipseedu.png";
 import ellipseexp from "../../assets/icons/ellipseexp.png";
 import ellipsecert from "../../assets/icons/ellipsecert.png";
-import certificate from "../../assets/image/certificate.png"
-import { NavLink, useParams } from 'react-router-dom';
-import SwiperPsx from '../../components/corousel/SwiperPsx';
-import PsxModal from '../../components/psxmodal/PsxModal';
-import { data } from '../../api/data'
+import certificate from "../../assets/image/certificate.png";
+import { NavLink, useParams } from "react-router-dom";
+import SwiperPsx from "../../components/corousel/SwiperPsx";
+import PsxModal from "../../components/psxmodal/PsxModal";
+import { data } from "../../api/data";
 
 function PsxDetail() {
-  const param=useParams()
-  console.log(param)
+  const param = useParams();
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => {
-      setOpen(true);
-    };
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
-  const [psxData, setPsxData]=useState([])
-  const [loading, setLoading]=useState(false)
+  const [psxData, setPsxData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
-    setLoading(true)
-    data.getById("doctor",param.id).then((res)=>{
-      setPsxData(res)
-      setLoading(false)
-    })
-
-  },[])
-  console.log(psxData)
+  useEffect(() => {
+    setLoading(true);
+    data.getById("doctor", param.id).then((res) => {
+      setPsxData(res);
+      setLoading(false);
+    });
+  }, []);
+  console.log(psxData, "psx");
 
   return (
     <>
-    <section className='psxdetail_bigdiv'>
-        <div className='psxdetail_bigdiv_img'>
-            <img src={hekim1}/>
+      <section className="psxdetail_bigdiv">
+        <div className="psxdetail_bigdiv_img">
+          <img src={psxData?.profil_image} />
         </div>
-        <div className='psxdetail_bigdiv_text'>
-            <h4>{psxData?.name}</h4>
-            <div className='psxdetail_bigdiv_text_path'>
-            <img src={path}/><img src={path}/><img src={path}/><img src={path}/><img src={path}/><b>4.95</b>
-            </div>
-            
-            <div className='psxdetail_bigdiv_text_status'>
+        <div className="psxdetail_bigdiv_text">
+          <h4>{psxData?.name}</h4>
+          <div className="psxdetail_bigdiv_text_path">
+            <img src={path} />
+            <img src={path} />
+            <img src={path} />
+            <img src={path} />
+            <img src={path} />
+            <b>4.95</b>
+          </div>
+
+          <div className="psxdetail_bigdiv_text_status">
             <span>Psixoloq</span>
             <p>{psxData?.present_work_space}</p>
-            </div>
-         <div className='psxdetail_bigdiv_text_about'>
-         <b>Haqqında</b>
+          </div>
+          <div className="psxdetail_bigdiv_text_about">
+            <b>Haqqında</b>
             <p>{psxData?.about}</p>
-         </div>
-         {/* <div className='psxdetail_bigdiv_text_info'>
+          </div>
+          {/* <div className='psxdetail_bigdiv_text_info'>
 
          <b>Şəxsi Məlumatlar</b><br/>
             <span>Əlaqə nömrəsi: +994(70)-777-77-77</span><br/>
             <span>E-mail: gulnaremehdi@gmail.com</span>
          </div> */}
-           
-            <button onClick={handleOpen}><NavLink>Görüş</NavLink></button>
-            <PsxModal open={open} setOpen={setOpen}/>
-</div>
 
-    </section>
-    <section className='psxdetail_infodiv'>
-        <div  className='psxdetail_infodiv_education'>
-            <ul>
-                <li>
-                    <img src={ellipseedu}/><h4>Təhsil</h4>
-                </li>
-                {
-                    psxData.education && psxData.education.map((i,key)=>(
-                        <li className='psxdetail_infodiv_education_li'>
-                        <img src={ellipse}/><div>
-                      <h5>{i.university}</h5>
-                      <span>{i.program}</span><br/>
-                      <span>{i.date}</span>
-    
-    
-                        </div>
-                    </li>
-
-                    ))
-                }
-          
-            </ul>
-
+          <button onClick={handleOpen}>
+            <NavLink>Görüş</NavLink>
+          </button>
+          {/* <PsxModal open={open} setOpen={setOpen}/> */}
         </div>
-        <div  className='psxdetail_infodiv_experience'>
-        <ul>
-                <li>
-                    <img src={ellipseexp}/><h4>Təcrübə</h4>
+      </section>
+      <section className="psxdetail_infodiv">
+        <div className="psxdetail_infodiv_education">
+          <ul>
+            <li>
+              <img src={ellipseedu} />
+              <h4>Təhsil</h4>
+            </li>
+            {psxData.education &&
+              psxData.education.map((i, key) => (
+                <li className="psxdetail_infodiv_education_li">
+                  <img src={ellipse} />
+                  <div>
+                    <h5>{i.university}</h5>
+                    <span>{i.program}</span>
+                    <br />
+                    <span>{i.date}</span>
+                  </div>
                 </li>
-                {
-                    psxData.experience && psxData.experience.map((i,key)=>(
-                        <li className='psxdetail_infodiv_education_li'>
-                        <img src={ellipse}/><div>
-                      <h5>{i.company}</h5>
-                      <span>{i.date}</span>
-    
-    
-                        </div>
-                    </li>
-
-                    ))
-                }
-            
-              
-            </ul>
-
+              ))}
+          </ul>
         </div>
-        <div  className='psxdetail_infodiv_certificate'>
-        <ul>
-                <li>
-                    <img src={ellipsecert}/><h4>Sertifikatlar</h4>
+        <div className="psxdetail_infodiv_experience">
+          <ul>
+            <li>
+              <img src={ellipseexp} />
+              <h4>Təcrübə</h4>
+            </li>
+            {psxData.experience &&
+              psxData.experience.map((i, key) => (
+                <li className="psxdetail_infodiv_education_li">
+                  <img src={ellipse} />
+                  <div>
+                    <h5>{i.company}</h5>
+                    <span>{i.date}</span>
+                  </div>
                 </li>
-                <li className='psxdetail_infodiv_education_li'>
-                    <img src={ellipse}/>
-                    
-                    <div className='psxdetail_infodiv_education_li_img'>
-                        <img src={certificate}/>
-                       <div>
-                       {
-                    psxData.certificate && psxData.certificate.map((i,key)=>(
-                        <img src={i.image}/>
-                       
-
-                    ))
-                }
-                  
-                       
-                       </div>
-
-
-                    </div>
-                </li>
-              
-            </ul>
-
+              ))}
+          </ul>
         </div>
-        
+        <div className="psxdetail_infodiv_certificate">
+          <ul>
+            <li>
+              <img src={ellipsecert} />
+              <h4>Sertifikatlar</h4>
+            </li>
+            <li className="psxdetail_infodiv_education_li">
+              <img src={ellipse} />
 
-    </section>
-    <section className='psxdetail_skills'>
+              <div className="psxdetail_infodiv_education_li_img">
+                <img src={certificate} />
+                <div>
+                  {psxData.certificate &&
+                    psxData.certificate.map((i, key) => <img src={i.image} />)}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className="psxdetail_skills">
         <h3>Bacarıqlar</h3>
 
-        <div className='psxdetail_skills_divs'>
-            <div>
-                <img src={right}/>
-                <span>Children Care</span>
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Orthodontist</span>
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Orthodontist</span>
-
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Orthodontist</span>
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Orthodontist</span>
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Children Care</span>
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Children Care</span>
-
-            </div>
-            <div>
-                <img src={right}/>
-                <span>Prosthodontics</span>
-
-            </div>
+        <div className="psxdetail_skills_divs">
+          {psxData.skills &&
+            psxData.skills.map((i, key) => (
+              <div key={key}>
+                <img src={right} />
+                <span>{i.skill} </span>
+              </div>
+            ))}
         </div>
-
-    </section>
-    <section className="big_pscology">
-    <div className="pscology_text1">
+      </section>
+      <section className="big_pscology">
+        <div className="pscology_text1">
           <h1>Psixoloqlar</h1>
         </div>
-    <div className="pscology_cards">
+        <div className="pscology_cards">
           <div className="pscology_cards_mini">
-         <SwiperPsx/>
+            <SwiperPsx />
           </div>
         </div>
-    </section>
-    
-    
+      </section>
     </>
-  )
+  );
 }
 
-export default PsxDetail
+export default PsxDetail;

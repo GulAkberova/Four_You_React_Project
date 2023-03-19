@@ -179,18 +179,50 @@ function PsxModal(props) {
                     renderDay={renderDay}
                     minDate={new Date().getDate() - 1}
                     shouldDisableDate={(e) => {
-                      for (let i = 0; i < props.index.busy_dates.length; i++) {
-                        if (
-                          props.index.busy_dates[i].date ==
-                          `${e.getFullYear()}-${
-                            e.getMonth() > 8
-                              ? `${e.getMonth() + 1}`
-                              : `0${e.getMonth() + 1}`
-                          }-${e.getDate()}`
-                        ) {
-                          return true;
-                        }
-                      }
+                      props.index.busy_dates.map((a) => {
+                        // console.log(a.date);
+                        // return (
+                        //   a.date ==
+                        //   `${e.getFullYear()}-0${e.getMonth()}-${e.getDate()}`
+                        // );
+                        // let aa = [];
+                        // aa.push(a.date);
+                        // aa.includes(
+                        //   `${e.getFullYear()}-0${e.getMonth()}-${e.getDate()}`
+                        // );
+                        // console.log(
+                        //   aa,
+                        //   `${e.getFullYear()}-0${e.getMonth()}-${e.getDate()}`
+                        // );
+                        // console.log(AddAPhotoOutlined);
+                      });
+                      // console.log(ravan);
+                      // return ravan;
+                      // );
+                      // console.log(`${e.getFullYear()}-0${e.getMonth()}-${e.getDate()}`,
+                      // props.index.busy_dates.map((a)=>a.date));
+                      // '2023-3-24'
+                      //  console.log(
+                      // props.index.busy_dates.map((a) => console.log(a.date));
+                      // props.index.busy_dates.includes(`${e.getFullYear()}-${e.getMonth()}-${e.getDate()}`)
+                      // props.index.busy_dates.filter(
+                      //   (a) =>
+                      //     a.date ==
+                      //     `${e.getFullYear()}-0${e.getMonth()}-${e.getDate()}`
+                      // ),
+                      // `${e.getFullYear()}-0${e.getMonth()}-${e.getDate()}`
+                      //  );
+                      // }
+                      // {
+                      //   props.index.busy_dates &&  props.index.busy_dates.map((i,key)=>{
+                      //     if(i.date!==`${e.getFullYear()}-${e.getMonth()}-${e.getDate()}`){
+                      //       console.log('tru')
+                      //     }
+                      //   })
+                      // }
+                      // fullTime.includes(
+                      //   `${e.getFullYear()}-${e.getMonth()}-${e.getDate()}`
+                      // )
                     }}
                   />
                 </LocalizationProvider>

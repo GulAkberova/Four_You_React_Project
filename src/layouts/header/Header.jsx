@@ -1,122 +1,232 @@
-import React from "react";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
+import React, { useContext } from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from '../../img/4you.png'
+import logo from "../../img/4you.png";
 import { useSelector } from "react-redux";
-import '../header/header.scss'
+import "../header/header.scss";
 import useAuth from "../../hooks/useAuth";
-import user from '../../assets/icons/user.png'
-import basket from '../../assets/icons/basket.png'
+import user from "../../assets/icons/user.png";
+import basket from "../../assets/icons/basket.png";
 // ________________________menu_List__________________
 
-import Avatar from '@mui/material/Avatar';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import Avatar from "@mui/material/Avatar";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Divider from "@mui/material/Divider";
+import Tooltip from "@mui/material/Tooltip";
+import PersonAdd from "@mui/icons-material/PersonAdd";
+import Settings from "@mui/icons-material/Settings";
+import Logout from "@mui/icons-material/Logout";
+import AuthContext from "../../context/AuthProvider";
 const Head = () => {
-  const {auth, setAuth}=useAuth()
-  const navigate=useNavigate()
-  console.log('auth',auth, auth.index)
-  let {cart}=useSelector(state=>state.CartReducer)
- 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-  
-    const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-      
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-     
-      
-    };
+  const { auth, setAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
+  console.log("auth", auth, auth.index);
+  let { cart } = useSelector((state) => state.CartReducer);
 
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-    // __________________________After_Login_____________________
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    
-    };
-    const handleCloseLogout = () => {
-      setAnchorEl(null);
-      setAuth({})
-      navigate('/logreg')
-    
-    };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-  
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  // __________________________After_Login_____________________
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleCloseLogout = () => {
+    setAnchorEl(null);
+    setAuth({});
+    navigate("/logreg");
+  };
+
   return (
     <>
- 
-
-<AppBar position="static" sx={{px:{md:4},pt:1}} style={{backgroundColor:'white'}} className='app'>
-<Box style={{display:'flex', justifyContent:"center"}}>
-       <Typography
+      <AppBar
+        position="static"
+        sx={{ px: { md: 4 }, pt: 1 }}
+        style={{ backgroundColor: "white" }}
+        className="app"
+      >
+        <Box style={{ display: "flex", justifyContent: "center" }}>
+          <Typography
             variant="h6"
             noWrap
             component="a"
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-             
-            
+              display: { xs: "none", md: "flex" },
             }}
           >
-            <img src={logo} className='logo'/>
+            <img src={logo} className="logo" />
           </Typography>
-    </Box>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters >
-          <div className="header_navbar">
-          <ul className="header_navbar_ul">
-            <li><NavLink to='/'>Ana səhifə</NavLink></li>
-            <li><NavLink to='/about'>Haqqımızda</NavLink></li>
-            <li><NavLink to='/quiz'>Gəl danışaq</NavLink></li>
-            <li><NavLink to='/psx'>Psixoloqlarımız</NavLink></li>
-            <li><NavLink to='/product'>Məhsullar</NavLink></li>
-            <li><NavLink to='/blog'>Bloq</NavLink></li>
-            <li><NavLink to='/contact'>Əlaqə</NavLink></li>
-          
-          </ul>
-          <ul className="header_navbar_ul_user">
-         <li><NavLink to='/logreg'><img src={user}/></NavLink></li>
-         <li>|</li>
-         <li><NavLink to='/basket'><img src={basket}/></NavLink></li>
-         </ul >
-          </div>
-         
-       
-         
+        </Box>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <div className="header_navbar">
+              <ul className="header_navbar_ul">
+                <li>
+                  <NavLink to="/">Ana səhifə</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/about">Haqqımızda</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/quiz">Gəl danışaq</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/psx">Psixoloqlarımız</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/product">Məhsullar</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/blog">Bloq</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact">Əlaqə</NavLink>
+                </li>
+              </ul>
+              <ul className="header_navbar_ul_user">
+                {auth.index ? (
+                  <>
+                    <li>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
+                        }}
+                      >
+                        {/* <Typography sx={{ minWidth: 100 }}>Contact</Typography>
+                        <Typography sx={{ minWidth: 100 }}>Profile</Typography> */}
+                        <Tooltip title="Account settings">
+                          <IconButton
+                            onClick={handleClick}
+                            size="small"
+                            sx={{ ml: 2 }}
+                            aria-controls={open ? "account-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                          >
+                            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                          </IconButton>
+                        </Tooltip>
+                      </Box>
+                      <Menu
+                        anchorEl={anchorEl}
+                        id="account-menu"
+                        open={open}
+                        onClose={handleClose}
+                        onClick={handleClose}
+                        PaperProps={{
+                          elevation: 0,
+                          sx: {
+                            overflow: "visible",
+                            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                            mt: 1.5,
+                            "& .MuiAvatar-root": {
+                              width: 32,
+                              height: 32,
+                              ml: -0.5,
+                              mr: 1,
+                            },
+                            "&:before": {
+                              content: '""',
+                              display: "block",
+                              position: "absolute",
+                              top: 0,
+                              right: 14,
+                              width: 10,
+                              height: 10,
+                              bgcolor: "background.paper",
+                              transform: "translateY(-50%) rotate(45deg)",
+                              zIndex: 0,
+                            },
+                          },
+                        }}
+                        transformOrigin={{
+                          horizontal: "right",
+                          vertical: "top",
+                        }}
+                        anchorOrigin={{
+                          horizontal: "right",
+                          vertical: "bottom",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose}>
+                          <Avatar /> Profile
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                          <Avatar /> My account
+                        </MenuItem>
+                        <Divider />
+                        <MenuItem onClick={handleClose}>
+                          <ListItemIcon>
+                            <PersonAdd fontSize="small" />
+                          </ListItemIcon>
+                          Add another account
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                          <ListItemIcon>
+                            <Settings fontSize="small" />
+                          </ListItemIcon>
+                          Settings
+                        </MenuItem>
+                        <MenuItem onClick={handleCloseLogout}>
+                          <ListItemIcon>
+                            <Logout fontSize="small" />
+                          </ListItemIcon>
+                          Logout
+                        </MenuItem>
+                      </Menu>
+                    </li>
+                  </>
+                ) : (
+                  <li>
+                    <NavLink to="/logreg">
+                      <img src={user} />
+                    </NavLink>
+                  </li>
+                )}
 
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                <li>|</li>
+                <li>
+                  <NavLink to="/basket">
+                    <img src={basket} />
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+
+            {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -373,10 +483,9 @@ const Head = () => {
 
 
           </Box> */}
-        </Toolbar>
-      </Container>
-    </AppBar>
-     
+          </Toolbar>
+        </Container>
+      </AppBar>
     </>
   );
 };

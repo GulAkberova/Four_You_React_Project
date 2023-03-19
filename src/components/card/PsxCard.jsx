@@ -1,47 +1,55 @@
-import React from 'react'
-import '../../pages/homepage/home.scss'
+import React, { useContext } from "react";
+import "../../pages/homepage/home.scss";
 import hekim1 from "../../assets/image/Rectangle 55.jpg";
 import path from "../../assets/icons/Path.png";
-import { Link, NavLink } from 'react-router-dom';
-import PsxModal from '../psxmodal/PsxModal';
-  function PsxCard({ index }) {
+import { Link, Navigate, NavLink, useLocation } from "react-router-dom";
+import PsxModal from "../psxmodal/PsxModal";
+import AuthContext from "../../context/AuthProvider";
+function PsxCard({ index }) {
+  const { auth } = useContext(AuthContext);
+  const location = useLocation();
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
   // console.log(index.name,'index')
   return (
-    
     <>
-    <>
-      <div className='pscology_card_div_img'>
-        <img src={hekim1}/>
-
-      </div>
-      <div className='pscology_card_div_text'>
-        <div className='pscology_card_div_text_name'>
-           <span><b>4.95</b> <img src={path}/></span>
-          
-          <h5>{index?.name}</h5>
-          <p>{index?.present_work_space}</p>
-         
+      <>
+        <div className="pscology_card_div_img">
+          <img src={hekim1} />
         </div>
-   
-    <div className='pscology_card_div_text_btn'>
-      <button className='pscology_card_div_text_btn1'>
-        <Link to={`/psx/${index?.id}`}>Ətraflı</Link>
-      </button>
-      <button className='pscology_card_div_text_btn2' onClick={handleOpen}>
-        <NavLink>Görüş</NavLink>
-      </button>
-    </div>
-     </div>
+        <div className="pscology_card_div_text">
+          <div className="pscology_card_div_text_name">
+            <span>
+              <b>4.95</b> <img src={path} />
+            </span>
 
-     </>
-    
-    <PsxModal open={open} setOpen={setOpen} index={index}/>
+            <h5>{index?.name}</h5>
+            <p>{index?.present_work_space}</p>
+          </div>
+
+          <div className="pscology_card_div_text_btn">
+            <button className="pscology_card_div_text_btn1">
+              <Link to={`/psx/${index?.id}`}>Ətraflı</Link>
+            </button>
+            <button
+              className="pscology_card_div_text_btn2"
+              onClick={handleOpen}
+            >
+              <NavLink>Görüş</NavLink>
+            </button>
+          </div>
+        </div>
+      </>
+      {/* {auth?.access ? ( */}
+      <PsxModal open={open} setOpen={setOpen} index={index} />
+      {/* // ) : (
+      //   <Navigate to="/logreg" state={{ form: location }} replace />
+      // )} */}
     </>
-  )
+  );
 }
 
-export default PsxCard
+export default PsxCard;

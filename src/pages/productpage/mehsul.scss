@@ -11,53 +11,49 @@
   justify-content: center;
   align-items: center;
 }
-.mehsul_alldiv{
+.mehsul_alldiv {
   display: flex;
-
 }
 // ________________________________________________
 
-.product_filterdiv{
+.product_filterdiv {
   width: 30%;
-  padding: 40px 60px;
-
+  padding: 40px 10px 40px 60px;
 }
-.product_filterdiv_search{
+.product_filterdiv_search {
   font-family: $anafont;
 
   border: 1px solid rgba(208, 204, 204, 0.372);
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  input{
-      outline: none;
-      border: none;
-
+  input {
+    outline: none;
+    border: none;
   }
-
 }
-.product_filterdiv_category{
+.product_filterdiv_category {
   font-family: $anafont;
-  h4{
+  h4 {
     font-weight: 700;
     font-size: 22;
   }
   padding: 20px 0px;
-  ul{
-      padding: 0 !important;
-      li{
-          margin: 10px 0px;
-          a{
-              color: gray;
-              text-decoration: none;
-              font-size: 17px;
-              font-weight: 500;
-          }
+  ul {
+    padding: 0 !important;
+    li {
+      margin: 10px 0px;
+      button {
+        border: none;
+        background-color: transparent;
+        color: gray;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
       }
+    }
   }
 }
-
-
 
 .mehsul_bigdiv {
   width: 70%;
@@ -65,131 +61,122 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 40px 40px 20px 0px;
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   gap: 5px;
- 
 }
-.mehsul_div{
+.mehsul_div {
   width: 100%;
   // border: 1px solid black;
-
 }
-.mehsul_div_product{
+.mehsul_div_product {
   width: 24%;
+
   // border: 1px solid black;
 }
 .mehsul_div,
-.mehsul_div_product{
+.mehsul_div_product {
   margin-bottom: 20px;
-border-radius: 10px;
+  border-radius: 10px;
 
-.mehsul_img{
-  width: 100%;
-  // height: 300px;
-  // border: 1px solid red;
-  img{
+  .mehsul_img {
+    width: 100%;
+    // height: 300px;
+    // border: 1px solid red;
+    img {
       width: 100%;
       height: 100%;
-      object-fit:contain;
+      object-fit: contain;
+    }
   }
-}
-.mehsul_text{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // padding: 10px 5px;
-  font-family: $anafont;
-  // border: 2px solid red;
-  h5{
+  .mehsul_text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 10px 5px;
+    font-family: $anafont;
+    // border: 2px solid red;
+    h5 {
       font-size: 15px;
       font-weight: 500;
-  }
-  p{
+    }
+    p {
       color: $btn1;
       font-weight: 700;
       font-size: 14px;
-
+    }
   }
 }
-}
-.product_filterdiv_category_color{
-  button{
+.product_filterdiv_category_color {
+  button {
     width: 25px;
     height: 25px;
     border-radius: 100%;
     margin-right: 10px;
     border: 1px solid gray;
-    
   }
-  .color1{
+  .color1 {
     background-color: red;
   }
-  .color2{
-    background-color:green;
+  .color2 {
+    background-color: green;
   }
-  .color3{
+  .color3 {
     background-color: olive;
   }
-  .color4{
+  .color4 {
     background-color: gray;
   }
-  .color5{
+  .color5 {
     background-color: blue;
   }
-  .color6{
+  .color6 {
     background-color: orange;
   }
-  .color7{
+  .color7 {
     background-color: aqua;
   }
-  .color8{
-    background-color:thistle;
+  .color8 {
+    background-color: thistle;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .mehsul_bigdiv{
+  .mehsul_bigdiv {
     padding: 30px 10px;
-  
-    }
-  .mehsul_div{
+  }
+  .mehsul_div {
     width: 100% !important;
   }
-
 }
 
-@media (min-width: 600px)  and (max-width: 992px) {
-  .mehsul_bigdiv{
-  padding: 30px 30px;
-
+@media (min-width: 600px) and (max-width: 992px) {
+  .mehsul_bigdiv {
+    padding: 30px 30px;
   }
-  .mehsul_div{
+  .mehsul_div {
     width: 47% !important;
   }
-
-
 }
 @media only screen and (min-width: 1200px) {
-
 }
-
 
 // __________________________________________________
-.swiper-slide .swiper-slide-active{
+.swiper-slide .swiper-slide-active {
   transform: scale(1.3);
 }
-.swiper-button-next, .swiper-button-prev{
+.swiper-button-next,
+.swiper-button-prev {
   color: rgba(163, 161, 161, 0.454) !important;
 }
 .swiper {
- padding: 40px 40px 40px 70px !important;
+  padding: 40px 40px 40px 70px !important;
 }
-.myswiper{
+.myswiper {
   border: 2px solid green !important;
 }
-.swiper-wrapper [class*="-active"].mehsul_div{
+.swiper-wrapper [class*="-active"].mehsul_div {
   transform: scale(1.3) !important;
 }

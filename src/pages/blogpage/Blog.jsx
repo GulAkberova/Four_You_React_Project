@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./blog.scss";
 import { data } from "../../api/data";
 import BlogCard from "../../components/card/BlogCard";
-
 import BlogFilter from "../../components/blogFilter/BlogFilter";
+import AuthContext from "../../context/AuthProvider";
 
 function Blog() {
+  let { filter, search } = useContext(AuthContext);
+
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +25,7 @@ function Blog() {
         <h1>Blog</h1>
       </section>
       <section className="blog_alldiv">
-       <BlogFilter/>
+        <BlogFilter />
 
         <div className="blog_bigdiv">
           {loading ? (
@@ -32,11 +34,16 @@ function Blog() {
             </div>
           ) : (
             blog &&
-            blog.map((index, key) => (
-              <div className="blog_card_div_blog">
-                <BlogCard index={index} key={key} />
-              </div>
-            ))
+            blog
+              ?.filter((m) => m.title.toLowerCase().includes(search))
+              .map(
+                (index, key) =>
+                  (filter === "" || index.category.title === filter) && (
+                    <div className="blog_card_div_blog">
+                      <BlogCard index={index} key={key} />
+                    </div>
+                  )
+              )
           )}
         </div>
       </section>

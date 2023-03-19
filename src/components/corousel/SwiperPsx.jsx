@@ -16,19 +16,17 @@ import {
 import { data } from "../../api/data";
 
 function SwiperPsx() {
-
-  const[psx,setPsx]=useState([])
+  const [psx, setPsx] = useState([]);
   const [loading, setLoading] = useState(false);
 
- useEffect(()=>{
-  setLoading(true);
+  useEffect(() => {
+    setLoading(true);
 
-    data.getAll("doctor").then((res)=>{
-      setPsx(res)
+    data.getAll("doctor").then((res) => {
+      setPsx(res);
       setLoading(false);
-
-    })
- },[])
+    });
+  }, []);
 
   return (
     <>
@@ -75,29 +73,25 @@ function SwiperPsx() {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 30,
           },
         }}
       >
-           {
-              loading ? (
-                <div className="loader_div">
-                <span className="loader"></span>
+        {loading ? (
+          <div className="loader_div">
+            <span className="loader"></span>
+          </div>
+        ) : (
+          psx &&
+          psx.map((index, key) => (
+            <SwiperSlide>
+              <div className="pscology_card_div">
+                <PsxCard index={index} key={key} />
               </div>
-              ):(
-                psx && psx.map((index,key)=>(
-                
-                         
-        <SwiperSlide>
-        <div className="pscology_card_div">
-          <PsxCard index={index} key={key} />
-        </div>
-      </SwiperSlide>
-                ))
-              )
-            }
-
+            </SwiperSlide>
+          ))
+        )}
 
         <div className="slider-controller">
           <div className="swiper-button-prev slider-arrow">

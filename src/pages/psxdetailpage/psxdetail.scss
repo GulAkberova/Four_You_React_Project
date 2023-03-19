@@ -1,192 +1,180 @@
-@import '../../umumi.scss';
+@import "../../umumi.scss";
 
-.psxdetail_bigdiv{
-    padding: 76px 89px;
-    display: flex;
-    justify-content: space-between;
-  
+.psxdetail_bigdiv {
+  padding: 76px 89px;
+  display: flex;
+  justify-content: space-between;
 }
-.psxdetail_bigdiv_img{
-    width: 40%;
-    max-height: 474px;
-    border-bottom: 15px solid #40a6c06e;
-    border-bottom-left-radius: 200px;
-
+.psxdetail_bigdiv_img {
+  width: 40%;
+  max-height: 474px;
+  border-bottom: 15px solid #40a6c06e;
+  border-bottom-left-radius: 200px;
 }
-.psxdetail_bigdiv_img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-bottom-left-radius: 195px;
+.psxdetail_bigdiv_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 195px;
 }
-.psxdetail_bigdiv_text{
-    width: 57%;
-    padding: 15px 0px;
-    h4{
-        font-weight: 600;
-        font-size: 28px;
+.psxdetail_bigdiv_text {
+  width: 57%;
+  padding: 15px 0px;
+  h4 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+  button {
+    padding: 7px 50px;
+    border-radius: 4px;
+    border: 1px solid $btn1;
+    background-color: $btn1;
+    margin-top: 15px;
+    a {
+      color: white;
+      text-decoration: none;
     }
-    button{
-        padding: 7px 50px;
-        border-radius: 4px;
-        border: 1px solid $btn1;
-        background-color: $btn1;
-        margin-top: 15px;
-        a{
-            color: white;
-            text-decoration: none;
-
-        }
-    }
+  }
 }
-.psxdetail_bigdiv_text_path{
-    display: flex;
-    align-items: center;
-    b{
-        padding: 0px 10px;
-    }
+.psxdetail_bigdiv_text_path {
+  display: flex;
+  align-items: center;
+  b {
+    padding: 0px 10px;
+  }
 }
-.psxdetail_bigdiv_text_status{
-    font-size: 22px;
-    span{
-        color: $btn1;
-        font-weight: 500;
-    }
-    p{
-        font-weight: 400;
-    }
+.psxdetail_bigdiv_text_status {
+  font-size: 22px;
+  span {
+    color: $btn1;
+    font-weight: 500;
+  }
+  p {
+    font-weight: 400;
+  }
 }
-.psxdetail_bigdiv_text_about{
-    b{
-        font-size: 26px;
-        font-weight: 600;
-    }
-    p{
-        font-size: 20px;
-        font-weight: 400;
-    }
+.psxdetail_bigdiv_text_about {
+  b {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
 }
-.psxdetail_bigdiv_text_info{
-    b{
-        font-size: 26px;
-        font-weight: 600;
-    }
-    span{
-        font-size: 20px;
-        color: #757575;
-    }
+.psxdetail_bigdiv_text_info {
+  b {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  span {
+    font-size: 20px;
+    color: #757575;
+  }
 }
-.psxdetail_infodiv{
-    padding: 76px 89px;
-    display: flex;
-    justify-content: space-between;
+.psxdetail_infodiv {
+  padding: 76px 89px;
+  display: flex;
+  justify-content: space-between;
 }
-.psxdetail_infodiv_education{
-    width: 35%;
+.psxdetail_infodiv_education {
+  width: 35%;
 }
-.psxdetail_infodiv_experience{
-    width: 20%;
-
+.psxdetail_infodiv_experience {
+  width: 20%;
 }
-.psxdetail_infodiv_certificate{
-    width: 37%;
-
+.psxdetail_infodiv_certificate {
+  width: 37%;
 }
 
 .psxdetail_infodiv_education,
 .psxdetail_infodiv_experience,
-.psxdetail_infodiv_certificate{
-    ul{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        
-        &::after{
-            content: "";
-            position: absolute;
-            left: 47px;
-            top: 30px;
-            width: 2px;
-            height: 100%;
-            background-color:#DCEFF3;
-            z-index: -1;
-    
-        }
-    
-        li{
-        width: 100%;
-    
-            display: flex;
-            align-items: flex-start;
-            h4{
-                padding-left: 15px;
-            }
-        }
-        .psxdetail_infodiv_education_li{
-            padding:30px 8px 15px 8px;
-             div:nth-of-type(1){
-                padding-left: 25px;
-                span{
-                    color: #757575;
-                }
-              
-            }
-        }
-    }
-}
-.psxdetail_infodiv_education_li_img{
-    div{
-        display: flex;
-        justify-content: space-between;
-        margin-right: 10px;
-        padding-left: 0 !important;
-        padding: 10px 0px;
-       
-        img{
-            width: 100px;
-            height: 80px;
-        }
-    }
-}
-.psxdetail_skills{
-    padding: 76px 60px 76px 80px;
-    .psxdetail_skills_divs{
-        display: flex;
-        flex-wrap: wrap;
-        // padding: 15px 0px;
-        gap: 15px;
-        div{
-            width: 24%;
-        display: flex;
-        align-items: center;
-        padding: 10px 0px;
-        span{
-            font-size: 20px;
-            font-weight: 600;
-            padding-left: 10px;
-        }
-    
-        }
-    }
-  
-}
-.pscology_text1{
-    width: 100%;
-    height: 120px;
-
-    text-align: center;
+.psxdetail_infodiv_certificate {
+  ul {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    h1{
-        font-size: 52px;
-      font-family: $elavefont ;
-        padding: 10px 0px;
-        color: #2B2A2A;
-      
+    align-items: flex-start;
+    position: relative;
 
+    &::after {
+      content: "";
+      position: absolute;
+      left: 47px;
+      top: 30px;
+      width: 2px;
+      height: 100%;
+      background-color: #dceff3;
+      z-index: -1;
     }
 
+    li {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      h4 {
+        padding-left: 15px;
+      }
+    }
+    .psxdetail_infodiv_education_li {
+      padding: 30px 8px 15px 8px;
+      div:nth-of-type(1) {
+        padding-left: 25px;
+        span {
+          color: #757575;
+        }
+      }
+    }
+  }
+}
+.psxdetail_infodiv_education_li_img {
+  div {
+    display: flex;
+    gap: 20px;
+    // justify-content: space-between;
+    margin-right: 10px;
+    padding-left: 0 !important;
+    padding: 10px 0px;
+
+    img {
+      width: 100px;
+      height: 80px;
+    }
+  }
+}
+.psxdetail_skills {
+  padding: 76px 60px 76px 80px;
+  .psxdetail_skills_divs {
+    display: flex;
+    flex-wrap: wrap;
+    // padding: 15px 0px;
+    gap: 15px;
+    div {
+      width: 24%;
+      display: flex;
+      align-items: center;
+      padding: 10px 0px;
+      span {
+        font-size: 20px;
+        font-weight: 600;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+.pscology_text1 {
+  width: 100%;
+  height: 120px;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  h1 {
+    font-size: 52px;
+    font-family: $elavefont;
+    padding: 10px 0px;
+    color: #2b2a2a;
+  }
 }

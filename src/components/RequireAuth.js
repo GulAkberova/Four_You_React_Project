@@ -1,17 +1,20 @@
-import { Navigate, useLocation } from "react-router-dom"
-import useAuth from "../hooks/useAuth"
-import About from "./aboutpage/About"
+import { useContext } from "react";
+import { Navigate, useLocation } from "react-router-dom";
+import AuthContext from "../context/AuthProvider";
+import useAuth from "../hooks/useAuth";
+import About from "./aboutpage/About";
 
-const RequireAuth=()=>{
-    const {auth}=useAuth()
-    const location=useLocation()
+const RequireAuth = () => {
+  const { auth } = useContext(AuthContext);
 
-    // return(
-    //     auth?.index?.email
-    //     ?<About/>
-    //     :<Navigate to='/logreg' state={{form: location}} replace/>
-        
-    // )
-}
+  const location = useLocation();
 
-export default RequireAuth
+  // return(
+  //     auth?.index?.email
+  //     ?<About/>
+  //     :<Navigate to='/logreg' state={{form: location}} replace/>
+
+  // )
+};
+
+export default RequireAuth;

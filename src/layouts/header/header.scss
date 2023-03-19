@@ -1,44 +1,44 @@
-@import '../../umumi.scss';
+@import "../../umumi.scss";
 // .text_decoration{
 //     color:$btn1;
 //     // text-decoration:none;
 // }
-.logo{
-    width:80px;
-    height: 40px;
+.logo {
+  width: 80px;
+  height: 40px;
 }
-.app{
-    // position: sticky;
-    // top: 0;
-    z-index: 99;
+.app {
+  // position: sticky;
+  // top: 0;
+  z-index: 99;
 }
-.header_navbar{
+.header_navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 0px 30px;
+  margin: 0 auto;
+
+  .header_navbar_ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px 0px 30px;
-    margin: 0 auto;
-
-    .header_navbar_ul{
-        display: flex;
-        li{
-            margin-right:70px;
-            a{
-                color: black;
-                text-decoration: none;
-                font-size: 16px;
-                font-weight: 500;
-                font-family: $anafont;
-            }
-        }
-    }
-    .header_navbar_ul_user{
-        display: flex;
+    li {
+      margin-right: 70px;
+      a {
         color: black;
-        li{
-            margin: 0px 5px;
-        }
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $anafont;
+      }
     }
+  }
+  .header_navbar_ul_user {
+    display: flex;
+    align-items: center;
+    color: black;
+    li {
+      margin: 0px 5px;
+    }
+  }
 }
-
