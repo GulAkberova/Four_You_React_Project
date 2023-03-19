@@ -31,7 +31,19 @@ function PsxDetail() {
       setLoading(false);
     });
   }, []);
-  console.log(psxData, "psx");
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    // Set the selected image to the URL of the first image in the array
+    if (psxData?.certificate && psxData?.certificate.length > 0) {
+      setSelectedImage(psxData.certificate[0].image);
+    }
+  }, [psxData.certificate]);
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+  console.log(psxData, "psxxxxxxxxxxxxxxxx");
 
   return (
     <>
@@ -80,7 +92,7 @@ function PsxDetail() {
             </li>
             {psxData.education &&
               psxData.education.map((i, key) => (
-                <li className="psxdetail_infodiv_education_li">
+                <li className="psxdetail_infodiv_education_li" key={key}>
                   <img src={ellipse} />
                   <div>
                     <h5>{i.university}</h5>
@@ -100,7 +112,7 @@ function PsxDetail() {
             </li>
             {psxData.experience &&
               psxData.experience.map((i, key) => (
-                <li className="psxdetail_infodiv_education_li">
+                <li className="psxdetail_infodiv_education_li" key={key}>
                   <img src={ellipse} />
                   <div>
                     <h5>{i.company}</h5>
@@ -120,10 +132,19 @@ function PsxDetail() {
               <img src={ellipse} />
 
               <div className="psxdetail_infodiv_education_li_img">
-                <img src={certificate} />
+                <div className="psxdetail_infodiv_education_li_bigimg">
+                  <img src={selectedImage} />
+                </div>
                 <div>
                   {psxData.certificate &&
-                    psxData.certificate.map((i, key) => <img src={i.image} />)}
+                    psxData.certificate.map((i, key) => (
+                      <div key={key}>
+                        <img
+                          src={i.image}
+                          onClick={() => handleImageClick(i.image)}
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
             </li>

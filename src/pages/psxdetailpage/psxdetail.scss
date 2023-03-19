@@ -128,6 +128,16 @@
   }
 }
 .psxdetail_infodiv_education_li_img {
+  .psxdetail_infodiv_education_li_bigimg {
+    padding: 0px 20px;
+    width: 100%;
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   div {
     display: flex;
     gap: 20px;
