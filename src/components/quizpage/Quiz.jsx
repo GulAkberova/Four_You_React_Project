@@ -2,6 +2,7 @@ import React from "react";
 // import { Nav } from 'react-bootstrap'
 import { NavLink } from "react-router-dom";
 import "./quiz.scss";
+import bg from "../../img/dashed-line-characters2 (1) 1.png";
 
 function Quiz() {
   return (
@@ -31,6 +32,7 @@ function Quiz() {
             inceptos himenaeos.{" "}
           </p>
         </div>
+
         <div className="purpose_bigdiv">
           <h1>Məqsədimiz</h1>
           <p>
