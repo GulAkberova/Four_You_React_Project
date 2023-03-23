@@ -12,7 +12,21 @@ import { NavLink, useParams } from "react-router-dom";
 import SwiperPsx from "../../components/corousel/SwiperPsx";
 import PsxModal from "../../components/psxmodal/PsxModal";
 import { data } from "../../api/data";
-
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 function PsxDetail() {
   const param = useParams();
 
@@ -43,7 +57,12 @@ function PsxDetail() {
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };
-  console.log(psxData, "psxxxxxxxxxxxxxxxx");
+  // console.log(psxData, "psxxxxxxxxxxxxxxxx");
+
+  // _____________________________Modal Image_________________
+  const [open1, setOpen1] = React.useState(false);
+  const handleOpen1 = () => setOpen1(true);
+  const handleClose1 = () => setOpen1(false);
 
   return (
     <>
@@ -133,7 +152,7 @@ function PsxDetail() {
 
               <div className="psxdetail_infodiv_education_li_img">
                 <div className="psxdetail_infodiv_education_li_bigimg">
-                  <img src={selectedImage} />
+                  <img src={selectedImage} onClick={handleOpen1} />
                 </div>
                 <div>
                   {psxData.certificate &&
@@ -175,6 +194,32 @@ function PsxDetail() {
         </div>
       </section>
       <PsxModal open={open} setOpen={setOpen} index={psxData} />
+      <Modal
+        open={open1}
+        onClose={handleClose1}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <h5 onClick={handleClose1}>X</h5>
+          <div className="psxdetail_infodiv_education_li_img_modal">
+            <div className="psxdetail_infodiv_education_li_bigimg_modal">
+              <img src={selectedImage} onClick={handleOpen1} />
+            </div>
+            <div>
+              {psxData.certificate &&
+                psxData.certificate.map((i, key) => (
+                  <div key={key}>
+                    <img
+                      src={i.image}
+                      onClick={() => handleImageClick(i.image)}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
+        </Box>
+      </Modal>
     </>
   );
 }

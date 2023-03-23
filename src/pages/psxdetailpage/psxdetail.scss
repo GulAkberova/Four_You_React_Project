@@ -132,9 +132,11 @@
     padding: 0px 20px;
     width: 100%;
     height: 200px;
+    // border: 1px solid black;
     img {
       width: 100%;
       height: 100%;
+      cursor: pointer;
     }
   }
 
@@ -149,6 +151,7 @@
     img {
       width: 100px;
       height: 80px;
+      cursor: pointer;
     }
   }
 }
@@ -186,5 +189,55 @@
     font-family: $elavefont;
     padding: 10px 0px;
     color: #2b2a2a;
+  }
+}
+
+// ____________________Image MOdal_____________________
+.css-1wnsr1i {
+  width: 50%;
+  background-color: transparent;
+  box-shadow: none;
+  position: relative;
+  padding: 5px 0px;
+  // border: 2px solid red;
+  h5 {
+    position: absolute;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.psxdetail_infodiv_education_li_img_modal {
+  // border: 1px solid black;
+  padding: 20px 0px;
+
+  .psxdetail_infodiv_education_li_bigimg_modal {
+    width: 100%;
+    height: 400px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      cursor: pointer;
+    }
+  }
+
+  div {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-right: 10px;
+    padding-left: 0 !important;
+    padding: 10px 0px;
+
+    img {
+      width: 100px;
+      height: 80px;
+      object-fit: contain;
+      cursor: pointer;
+    }
   }
 }
