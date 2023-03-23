@@ -252,7 +252,7 @@ function PsxModal(props) {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                   <TableHead>
                     <TableRow>
-                      {/* {props.index.free_dates &&
+                      {props.index.free_dates &&
                         props.index.free_dates
                           .map((i) => new Date(i.date)) // tarihleri Date nesnesine dönüştür
                           .sort((a, b) => a - b) // tarihleri doğru şekilde sırala
@@ -260,44 +260,56 @@ function PsxModal(props) {
                             <TableCell key={index}>
                               {date.toLocaleDateString()}
                             </TableCell>
-                          ))} */}
-                      {props.index.free_dates &&
-                        props.index.free_dates
-                          // .map((i) => new Date(i.date)) // tarihleri Date nesnesine dönüştür
-                          // .sort((a, b) => a - b) // tarihleri doğru şekilde sırala
-                          .map((i, index) => (
-                            <TableCell key={index}>{i.date}</TableCell>
                           ))}
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {props.index.free_dates &&
-                      props.index.free_dates.map((row) => (
-                        <TableCell key={row.date}>
-                          {row.free_hours &&
-                            row.free_hours
-                              .map((i) => i.start_time) // saatleri ayır ve düzenlemek için kullan
-                              .sort((a, b) => a.localeCompare(b)) // saatleri doğru şekilde sırala
-                              .map((time, index) => (
-                                <TableRow key={index} align="right">
-                                  <Button
-                                    className="table_time_button"
-                                    value={time}
-                                    onClick={(time) =>
-                                      setTimeValue({
-                                        time: time.target.value,
-                                        date: row.date,
-                                        doctor: props.index.id,
-                                        patient: auth?.user_id,
-                                      })
-                                    }
-                                  >
-                                    {time}
-                                  </Button>
-                                </TableRow>
+                      props.index.free_dates
+                        .map((row) => new Date(row.date)) // Convert dates to Date objects
+                        .sort((a, b) => a - b) // Sort dates in ascending order
+                        .map((date) => {
+                          // For each date, filter and sort rows by time
+                          const rows = props.index.free_dates.filter(
+                            (row) =>
+                              new Date(row.date).getTime() === date.getTime()
+                          );
+                          rows.sort((a, b) =>
+                            a.free_hours[0].start_time.localeCompare(
+                              b.free_hours[0].start_time
+                            )
+                          );
+
+                          return (
+                            <TableCell key={date}>
+                              {rows.map((row) => (
+                                <TableCell key={row.date}>
+                                  {row.free_hours.map((hour) => (
+                                    <TableRow
+                                      key={hour.start_time}
+                                      align="right"
+                                    >
+                                      <Button
+                                        className="table_time_button"
+                                        value={hour.start_time}
+                                        onClick={() =>
+                                          setTimeValue({
+                                            time: hour.start_time,
+                                            date: row.date,
+                                            doctor: props.index.id,
+                                            patient: auth?.user_id,
+                                          })
+                                        }
+                                      >
+                                        {hour.start_time}
+                                      </Button>
+                                    </TableRow>
+                                  ))}
+                                </TableCell>
                               ))}
-                        </TableCell>
-                      ))}
+                            </TableCell>
+                          );
+                        })}
                   </TableBody>
                 </Table>
               </TableContainer>

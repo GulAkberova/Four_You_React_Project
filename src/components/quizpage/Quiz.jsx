@@ -1,24 +1,49 @@
-import React from 'react'
+import React from "react";
 // import { Nav } from 'react-bootstrap'
-import {NavLink } from 'react-router-dom'
-import './quiz.scss'
+import { NavLink } from "react-router-dom";
+import "./quiz.scss";
 
 function Quiz() {
   return (
     <>
-    <section className='quiz_bigdiv'>
-      <div className='quiz_minidiv'>
-        <h1>Birinci görüş</h1>
-        <p>Buradan birinci görüşə daxil olaraq siz ödənişsiz şəkildə övladlarınızı real psixoloqlarla rahat şəkildə danışmasına və beləliklə övladlarınızda olan mənfi halları aşkar edə bilərsiniz.. </p>
-        <div className='quiz_btn'>
-          <NavLink to='/seans'> <button className='btn1'>Seans</button></NavLink>
-          <button className='btn2'><a href="https://meet.google.com/egi-oqfs-enw?pli=1&authuser=0">1 ci görüş</a></button>
-        </div>
-      </div>
+      <section className="quiz_bigdiv">
+        <div className="quiz_minidiv">
+          <h1>Gəl Danışaq</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.{" "}
+          </p>
 
-    </section>
+          <button>
+            <NavLink to={"/psx"}>Psixoloqlarımız</NavLink>
+          </button>
+        </div>
+      </section>
+      <section className="activite_purpose_bigdiv">
+        <div className="activite_bigdiv">
+          <h1>Fəaliyyətimiz</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.{" "}
+          </p>
+        </div>
+        <div className="purpose_bigdiv">
+          <h1>Məqsədimiz</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.aliquet odio mattis. Class aptent taciti sociosqu
+            ad litora torquent per conubia nostra, per inceptos himenaeos{" "}
+          </p>
+        </div>
+      </section>
     </>
-  )
+  );
 }
 
-export default Quiz
+export default Quiz;
