@@ -1,30 +1,37 @@
 @import "../../umumi.scss";
 .logreg_bigdiv {
   width: 100%;
-  background-color: #DCEFF3;
+  background-color: #dceff3;
   padding: 50px 70px;
-  height: 600px;
+  // height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: $anafont;
 
   .logreg_minidiv {
-    width: 70%;
-    height: 570px;
+    width: 75%;
+    height: 100% !important;
+    // height: 570px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     justify-content: space-between;
     background-color: white;
-    padding:0px 5px;
+    padding: 0px 5px;
+    // border: 1px solid black;
+
     .logreg_img {
-      width:550px;
+      width: 550px;
       max-width: 100%;
-      height: 550px;
-      max-height: 100%;
+      // height: 550px;
+      // height: 100% !important;
       display: flex;
       justify-content: center;
       align-items: center;
+      // border: 4px solid black;
+      // padding: 0 !important;
+      padding: 10px 0px;
       img {
         width: 100%;
         height: 100%;
@@ -32,18 +39,20 @@
         border-radius: 5px;
       }
     }
-    .logreg_text{
-        width: 600px;
-        max-width: 100%;
-        padding: 0px 0px 0px 40px;
-        .logreg_text_div{
-            h1{
-                padding-bottom: 10px;
-                text-align: center;
-            }
-            form{
-                
-          input{
+    .logreg_text {
+      width: 600px;
+      max-width: 100%;
+      padding: 30px 0px 30px 40px;
+      // border: 2px solid green;
+      .logreg_text_div {
+        h1 {
+          padding-bottom: 10px;
+          text-align: center;
+          font-weight: 700;
+          font-size: 33;
+        }
+        form {
+          input {
             width: 90%;
             padding: 10px 10px;
             outline: none;
@@ -52,134 +61,142 @@
             border-radius: 9px;
             margin: 5px 0px;
           }
-          span{
+          input.is-invalid {
+            border-color: red;
+          }
+
+          .invalid-feedback {
+            color: red;
+            font-size: 0.8em;
+          }
+          span {
             color: red;
             text-decoration: none;
           }
-          p{
+          p {
             font-size: 13px;
-            text-decoration: underline;
+            margin: 0 !important;
+            // text-decoration: underline;
           }
-          .add{
+          .add {
             width: 90%;
             display: flex;
             justify-content: space-between;
-           padding-top: 20px;
-            button{
-                width: 47%;
-                padding: 10px 0px;
-                border: 1px solid $btn2;
+            padding-top: 20px;
+            button {
+              width: 47%;
+              padding: 10px 0px;
+              border: 1px solid $btn2;
+              background-color: $btn2;
+              color: white;
+              border-radius: 4px;
+              transition: 0.6s;
+            }
+            .btn2 {
+              background-color: white;
+              color: $btn2;
+              &:hover {
                 background-color: $btn2;
                 color: white;
-                border-radius: 4px;
-                transition: 0.6s;
-               
+              }
             }
-            .btn2{
-                background-color: white;
-                color: $btn2;
-                &:hover{
-                    background-color: $btn2;
-                    color: white;
-                }
-
-            }
-            .btn1:hover{
-                color: $btn2;
-                background-color: white;
+            .btn1:hover {
+              color: $btn2;
+              background-color: white;
             }
           }
-          .or{
+          .or {
             width: 90%;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            // padding: 20px 0px;
-            p{
-                
-                text-decoration: none;
-                padding-top: 13px;
-               
+            // border: 1px solid black;
+            padding: 20px 0px;
+            p {
+              font-size: 14px;
+              font-weight: 400;
+              text-decoration: none;
+              // padding-top: 13px;
             }
-            &::after{
-                content: "";
-                width: 45%;
-                height: 1px;
-                border: 1px solid rgb(235, 230, 230);
-                position: absolute;
-                left: 0px;
-                top: 50%;
-            }
-            &::before{
-                content: "";
-                width: 45%;
-                height: 2px;
-                border: 1px solid rgb(235, 230, 230);
-                position: absolute;
-                right: 0px;
-                top: 50%;
-            }
+            // &::after {
+            //   content: "";
+            //   width: 45%;
+            //   height: 1px;
+            //   border: 1px solid rgb(235, 230, 230);
+            //   position: absolute;
+            //   left: 0px;
+            //   top: 50%;
+            // }
+            // &::before {
+            //   content: "";
+            //   width: 45%;
+            //   height: 2px;
+            //   border: 1px solid rgb(235, 230, 230);
+            //   position: absolute;
+            //   right: 0px;
+            //   top: 50%;
+            // }
           }
-          .icon{
+          .icon {
             width: 90%;
             display: flex;
             justify-content: center;
-            a{
+            a {
               padding: 5px 24px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid rgba(212, 207, 207, 0.363);
-                margin-right: 10px;
-                border-radius: 4px;
-                color: white;
-                cursor: pointer;
-                text-decoration: none;
-                transition: 0.6s;
-                &:hover{
-                    background-color: white;
-                }
-                &:hover i{
-                    color: $btn2;
-                }
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid rgba(212, 207, 207, 0.363);
+              margin-right: 10px;
+              border-radius: 4px;
+              color: white;
+              cursor: pointer;
+              text-decoration: none;
+              transition: 0.6s;
+              &:hover {
+                background-color: white;
+              }
+              &:hover i {
+                color: $btn2;
+              }
             }
           }
-        
-
-            }
         }
-        
+      }
     }
-   
   }
 }
- 
+
 @media only screen and (max-width: 600px) {
- 
   .logreg_img {
     display: none !important;
-    
   }
-
 }
 @media only screen and (min-width: 600px) {
-
 }
 @media only screen and (max-width: 768px) {
-  
-
 }
 @media only screen and (max-width: 992px) {
-  .logreg_bigdiv{
+  .logreg_bigdiv {
     padding: 30px 10px;
   }
-  .logreg_minidiv{
+  .logreg_minidiv {
     width: 600px !important;
     max-width: 100%;
   }
-
 }
 @media only screen and (min-width: 1200px) {
+}
 
+input.is-invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.8em;
+}
+p {
+  text-decoration: none;
 }

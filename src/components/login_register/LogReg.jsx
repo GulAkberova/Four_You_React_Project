@@ -17,6 +17,7 @@ function LogReg() {
   const {
     register,
     handleSubmit,
+    formState,
     formState: { errors },
   } = useForm();
 
@@ -27,7 +28,8 @@ function LogReg() {
         alert("Qeydiyyat olundu");
         const access = res?.tokens?.access;
         const refresh = res?.tokens?.refresh;
-        setAuth({ index, access, refresh });
+        const user_id = res?.id;
+        setAuth({ index, access, refresh, user_id });
 
         navigate("/psx");
       })
@@ -47,7 +49,7 @@ function LogReg() {
       })
       .catch((err) => {
         console.log("err", err);
-        alert("Email or password invalid");
+        alert("Nömrə və ya şifrə yanlışdır");
       });
   };
 
@@ -67,18 +69,24 @@ function LogReg() {
                   <label>Əlaqə nömrəsi</label>
                   <br />
                   <input
-                    type="phone"
-                    placeholder="+994(xx)-xxx-xx-xx"
+                    type="tel"
+                    placeholder="+994503421558"
                     {...register("phone_number", {
                       required: "*Zəhmət olmasa xananı doldurun.",
+                      pattern: {
+                        value: /^\+994(50|51|55|70|77)\d{7}$/,
+                        message:
+                          "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
+                      },
                     })}
+                    className={formState.errors.phone_number ? "error" : ""}
                   />
-                  <p>
-                    {" "}
-                    {errors.phone_number && (
-                      <span>{errors.phone_number.message}</span>
-                    )}
-                  </p>
+                  {formState.errors.phone_number && (
+                    <p className="error-message">
+                      <span> {formState.errors.phone_number.message}</span>
+                    </p>
+                  )}
+                  <br />
 
                   <label>Şifrə</label>
                   <br />
@@ -152,7 +160,7 @@ function LogReg() {
                     {/* ___________________Phone___________________ */}
                     <label>Əlaqə nömrəsi</label>
                     <br />
-                    <input
+                    {/* <input
                       type="phone"
                       placeholder="+994(xx)xxx-xx-xx"
                       {...register("phone_number", {
@@ -163,7 +171,29 @@ function LogReg() {
                       {errors.phone_number && (
                         <span>{errors.phone_number.message}</span>
                       )}
-                    </p>
+                      
+                    </p> */}
+                    {/* <div> */}
+                    <input
+                      type="tel"
+                      placeholder="+994503421558"
+                      {...register("phone_number", {
+                        required: "*Zəhmət olmasa xananı doldurun.",
+                        pattern: {
+                          value: /^\+994(50|51|55|70|77)\d{7}$/,
+                          message:
+                            "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
+                        },
+                      })}
+                      className={formState.errors.phone_number ? "error" : ""}
+                    />
+                    {formState.errors.phone_number && (
+                      <p className="error-message">
+                        <span> {formState.errors.phone_number.message}</span>
+                      </p>
+                    )}
+                    {/* </div> */}
+                    <br />
 
                     <label>Şifrə</label>
                     <br />

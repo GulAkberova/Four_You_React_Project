@@ -174,6 +174,7 @@ function PsxDetail() {
           </div>
         </div>
       </section>
+      <PsxModal open={open} setOpen={setOpen} index={psxData} />
     </>
   );
 }
