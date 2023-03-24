@@ -1,53 +1,12 @@
 @import "../../umumi.scss";
-// .carousel{
-//     width: 100%;
-//     height: 600px;
-//     background-image: url('../../img/child.jpg');
-//     background-position: center;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-color: aquamarine;
-//     background-attachment: fixed;
-// }
+
 .big_pscology {
   width: 100%;
-  // background-image: url('../../img/dashed-line-characters2\ \(1\)\ 1.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
-  // .mini_pscology{
-  //       width: 80%;
-  //       margin: 0px auto;
-  // border: 2px solid black;
 
-  .pscology_text {
-    width: 100%;
-    height: 250px;
-    // background-image: url('../../img/dashed-line-characters2\ \(1\)\ 1.png');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: center;
-
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    h1 {
-      font-size: 52px;
-      font-family: $elavefont;
-      padding: 10px 0px;
-      color: #2b2a2a;
-    }
-    p {
-      font-size: 22px;
-      font-family: $anafont;
-    }
-  }
   .pscology_cards {
     .pscology_cards_mini {
       width: 90%;
-      margin: 40px auto;
+      margin: 0px auto;
       display: flex;
       justify-content: space-around;
       .pscology_card_div {
@@ -62,6 +21,7 @@
 
   // }
 }
+
 .pscology_card_div_img {
   height: 270px;
   border-bottom: 9px solid #40a6c06e;
@@ -121,120 +81,35 @@
 }
 .pscology_cards_mini_bottom {
   width: 100%;
-  margin: 40px auto;
+  margin: 10px auto;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 90px;
+  padding-bottom: 10px;
   gap: 30px;
 }
-// .big_pscology1{
-//     width: 100%;
-//     background-image: url('../../img/dashed-line-characters 3.png');
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: center;
-//     .mini_pscology{
-//           width: 80%;
-//           margin: 0px auto;
+.pscology_product_home_btn {
+  display: flex;
+  justify-content: center;
+  button {
+    padding: 8px 50px;
+    background-color: $btn2;
+    border: 1px solid $btn2;
+    border-radius: 3px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
 
-//           .pscology_text{
-//             width: 100%;
-//             height: 300px;
-//             text-align: center;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             align-items: center;
-//             background-color: white;
-
-//             h1{
-//                 font-size: 52px;
-//               font-family: $elavefont ;
-//                 padding: 20px 0px;
-//                 font-weight: 400;
-//                 color: #2B2A2A;
-
-//             }
-//             p{
-//                 font-size: 22px;
-//                 font-weight: 400;
-//                 font-family: $anafont;
-//             }
-//           }
-
-//           .pscology_btn{
-//             width: 100%;
-//             display: flex;
-//             justify-content: center;
-//             padding: 60px 0px;
-//             a{
-//             button{
-//                 padding: 15px 40px;
-//                 border-radius: 3px;
-//                 background-color: $btn1;
-//                 border:none;
-//                 font-size: 16px;
-//                 cursor: pointer;
-//                 transition: 0.5s;
-
-//                     color: white;
-//                     text-decoration: none;
-
-//                 &:hover{
-//                     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
-//                 }
-
-//             }
-//         }
-
-//         }
-//     }
-// }
-// .video_bigdiv{
-//     width: 100%;
-//     // border: 1px solid red;
-//     display: flex;
-//     justify-content: space-between;
-
-//        .video_div{
-//         width: 55%;
-//         img{
-//             width: 100%;
-//         }
-//        }
-//        .video_text{
-//         width: 45%;
-//         background-image: url('../../img/image\ 1.png');
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         background-size: cover;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         padding: 0px 90px;
-//         h1{
-//             font-family: $elavefont;
-//             padding: 20px 0px;
-//             font-size: 50px;
-//         }
-//         p{
-//             font-family: $anafont;
-//             font-size: 20px;
-//         }
-
-//        }
-
-// }
 .catdirilma_bigdiv {
   width: 100%;
-  border-top: 1px solid gray;
+  border-top: 3px solid rgba(207, 204, 204, 0.461);
   font-family: $anafont;
   .catdirilma_minidiv {
     width: 80%;
     margin: 40px auto;
-    padding: 60px 0px;
+    padding: 30px 0px;
     display: flex;
     justify-content: space-between;
     .catdirilma_div {
@@ -261,45 +136,11 @@
 }
 .mehsul_bigdiv {
   width: 100%;
-  // padding: 40px 0px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  // justify-content: space-between;
 }
-// .mehsul_div{
-//     width: 27%;
-//     max-width: 100%;
-//     .mehsul_img{
-//         width: 100%;
-//         height: 300px;
-//         border-bottom: none;
-//         display: flex;
-//         justify-content: center;
-//         padding: 20px;
-//         img{
-//             width: 100%;
-//             height: 100%;
-//             object-fit:cover;
-//         }
-//     }
-//     .mehsul_text{
-//         width: 100%;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         // padding: 10px 5px;
-//         font-family: $anafont;
-//         // border: 2px solid red;
-//         h3{
-//             font-size: 20px;
-//         }
-//         p{
-//             color: $btn1;
-//             font-weight: 700;
-//         }
-//     }
-// }
+
 @media only screen and (max-width: 600px) {
   .video_text {
     padding: 10px 5px !important;
@@ -350,4 +191,43 @@
 }
 .myswiper {
   border: 2px solid green !important;
+}
+
+// ____________________Text_____________________________
+.pscology_text {
+  width: 100%;
+  height: 310px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1 {
+    font-size: 52px;
+    font-family: $elavefont;
+    padding: 10px 0px;
+    color: #2b2a2a;
+  }
+  p {
+    font-size: 22px;
+    padding-bottom: 30px;
+    font-family: $anafont;
+  }
+}
+.psx_bg {
+  background-image: url("../../../src/assets/image/bg2.svg");
+  background-position: 50% 36%;
+}
+.product_bg {
+  background-position: 50% 16%;
+  background-image: url("../../../src/assets/image/bg1.svg");
+}
+.blog_pad {
+  padding: 0px 60px;
+}
+.blog_pad_bot {
+  padding-bottom: 100px;
 }

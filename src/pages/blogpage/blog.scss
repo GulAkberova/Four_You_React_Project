@@ -100,7 +100,7 @@
 }
 .blog_card_div,
 .blog_card_div_blog {
-  height: 570px;
+  height: 530px;
   font-family: $anafont;
 
   border-radius: 10px;
@@ -119,17 +119,21 @@
     }
   }
   .blog_card_div_text {
+    h5 {
+      font-weight: 600;
+    }
     padding: 20px;
     span {
       color: gray;
     }
     p {
-      font-size: 15;
+      font-size: 15px;
       font-weight: 500;
     }
     a {
       color: $btn1;
       text-decoration: none;
+      font-weight: 700;
     }
   }
 }

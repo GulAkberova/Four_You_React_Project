@@ -1,11 +1,11 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 import aboutimg1 from "../../img/Rectangle 57.png";
 
 function OurPsx() {
   return (
-   <>
-    <section className="about_bigdiv1">
+    <>
+      <section className="about_bigdiv1 about_bg">
         <div className="about_img">
           <img src={aboutimg1} />
         </div>
@@ -18,13 +18,13 @@ function OurPsx() {
               beləliklə övladlarınızda olan mənfi halları aşkar edə bilərsiniz..
             </p>
             <NavLink to="/quiz">
-              <button>Gəl  Danışaq</button>
+              <button>Gəl Danışaq</button>
             </NavLink>
           </div>
         </div>
       </section>
-      </>
-  )
+    </>
+  );
 }
 
-export default OurPsx
+export default OurPsx;

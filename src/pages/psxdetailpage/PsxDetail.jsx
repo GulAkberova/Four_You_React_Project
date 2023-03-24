@@ -66,6 +66,9 @@ function PsxDetail() {
 
   return (
     <>
+      <section className="carusel">
+        <h1>Psixoloqlarımız</h1>
+      </section>
       <section className="psxdetail_bigdiv">
         <div className="psxdetail_bigdiv_img">
           <img src={psxData?.profil_image} />

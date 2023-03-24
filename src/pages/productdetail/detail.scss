@@ -13,9 +13,9 @@
 }
 .detail_bigdiv {
   width: 100%;
-  background-image: url("../../img/dashed-line-characters2\ \(1\)\ 1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-image: url("../../img/dashed-line-characters2\ \(1\)\ 1.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
   .detail_minidiv {
     width: 90%;
     margin: 20px auto;
@@ -102,21 +102,21 @@
           cursor: pointer;
           transition: 0.5s;
           background-color: $btn2;
-          &:hover {
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-              rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-          }
+          // &:hover {
+          //   background-color: $btn1;
+          //   border: 1px solid $btn1;
+          // }
         }
       }
     }
   }
 }
 .detail_btn_success {
-  background-color: white;
-  color: $btn1;
+  background-color: $btn1;
+  border: 1px solid $btn1;
+  color: white;
 }
 .detail_btn_error {
-  background-color: $btn1;
   color: white;
 }
 .blog_detail_div {

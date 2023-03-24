@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { add } from "../../store/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Gift from "../../components/gift/Gift";
 
 function Detail() {
   const param = useParams();
@@ -103,23 +104,25 @@ function Detail() {
                 >
                   {check ? <>Səbətə əlavə olundu</> : <>Səbətə əlavə et</>}
                 </button>
-                <ToastContainer
-                  position="top-center"
-                  autoClose={1000}
-                  hideProgressBar={false}
-                  newestOnTop={false}
-                  closeOnClick={false}
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  theme="light"
-                />
               </div>
             </div>
           </section>
         )}
       </section>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
+      <Gift />
     </>
   );
 }
