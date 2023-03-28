@@ -88,7 +88,7 @@ function PsxDetail() {
         </div>
         <div className="psxdetail_bigdiv_text">
           <h4>
-            {psxData?.name}
+            {psxData?.name}&nbsp;
             {psxData?.surname}
           </h4>
           <div className="psxdetail_bigdiv_text_path">
