@@ -3,7 +3,7 @@
   width: 70%;
   // height: 600px;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid white;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
@@ -92,4 +92,28 @@
 .table_time_button:focus {
   background-color: $btn1;
   color: white;
+}
+.psx_close_btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  button {
+    color: $btn1 !important;
+    &:hover {
+      color: white !important;
+    }
+  }
+}
+.psx_close_btn1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    color: $btn1 !important;
+    &:hover {
+      color: white !important;
+    }
+  }
 }

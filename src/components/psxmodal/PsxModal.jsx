@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./psxmodal.scss";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+// import InputLabel from "@mui/material/InputLabel";
+// import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
 // import { StyledEngineProvider } from '@mui/material/styles';
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { TextField } from "@mui/material";
-import dayjs from "dayjs";
-import { AddAPhotoOutlined } from "@mui/icons-material";
-import { StaticTimePicker } from "@mui/x-date-pickers/StaticTimePicker";
+// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { TextField } from "@mui/material";
+// import dayjs from "dayjs";
+// import { AddAPhotoOutlined } from "@mui/icons-material";
+// import { StaticTimePicker } from "@mui/x-date-pickers/StaticTimePicker";
 // _________________________________________________
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -175,9 +175,11 @@ function PsxModal(props) {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-          <Button onClick={handleClose}>Bağla</Button>
+          <Box className="psx_close_btn">
+            <Button onClick={handleClose}>X</Button>
+          </Box>
           <div className="psx_modal_select1">
-            <p>Psixoloq ad,Soyadı</p>
+            <p>Psixoloq ad,soyadı</p>
 
             <div className="psx_modal_select_name">
               {props.index?.name} {props.index?.surname}
@@ -318,7 +320,9 @@ function PsxModal(props) {
           {/* _____________________________________________________________________________________ */}
           <React.Fragment>
             <Box className="psx_date_ok_btn">
-              <Button onClick={handleOpen1}>Ok</Button>
+              <Box className="psx_close_btn1">
+                <Button onClick={handleOpen1}>Təsdiqlə</Button>
+              </Box>
             </Box>
             <Modal
               open={open1}

@@ -7,6 +7,7 @@ import Vuqar from "../../assets/image/members/Vuqar.jpg";
 import Gul from "../../assets/image/members/Gul.jpg";
 import Arzu from "../../assets/image/members/Arzu.jpg";
 import Idris from "../../assets/image/members/Idris.jpeg";
+import Nadir from "../../assets/image/members/Nadir.jpeg";
 import Fidan from "../../assets/image/members/Fidan.jpg";
 
 function About() {
@@ -41,7 +42,7 @@ function About() {
         </div>
         <div className="about_group_member">
           <div className="about_group_member_img">
-            <img src={""} />
+            <img src={Nadir} />
           </div>
           <h5>Nadir Hüseynov</h5>
           <span>İcma mütəxəssisi</span>
