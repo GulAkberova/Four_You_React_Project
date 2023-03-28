@@ -31,6 +31,9 @@
         font-weight: 500;
         font-family: $anafont;
       }
+      .active {
+        color: $btn2;
+      }
     }
   }
   .header_navbar_ul_user {

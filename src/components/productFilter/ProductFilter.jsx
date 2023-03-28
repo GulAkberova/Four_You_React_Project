@@ -9,6 +9,14 @@ function ProductFilter() {
   const handleFilter = (e) => {
     setProductFilter(e.target.value);
   };
+
+  const getCategoryStyle = (category) => {
+    if (category === productFilter) {
+      return { color: "#FF8087" }; // apply red background and white text to selected button
+    } else {
+      return {}; // no style changes for unselected buttons
+    }
+  };
   return (
     <>
       <div className="product_filterdiv">
@@ -25,17 +33,29 @@ function ProductFilter() {
           <h4>Kateqoriya</h4>
           <ul>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="">
-                Butun
+              <button
+                onClick={(e) => handleFilter(e)}
+                value=""
+                style={getCategoryStyle("")}
+              >
+                Bütün oyuncaqlar
               </button>
             </li>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Taxta">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Taxta"
+                style={getCategoryStyle("Taxta")}
+              >
                 Taxta
               </button>
             </li>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Toxunma">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Toxunma"
+                style={getCategoryStyle("Toxunma")}
+              >
                 Toxunma
               </button>
             </li>
@@ -45,12 +65,20 @@ function ProductFilter() {
           <h4>Təsir istiqaməti</h4>
           <ul>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Zehni inkişaf">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Zehni inkişaf"
+                style={getCategoryStyle("Zehni inkişaf")}
+              >
                 Zehni inkişaf
               </button>
             </li>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Hiss Qavrayış">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Hiss Qavrayış"
+                style={getCategoryStyle("Hiss Qavrayış")}
+              >
                 Hiss Qavrayış
               </button>
             </li>

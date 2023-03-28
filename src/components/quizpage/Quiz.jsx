@@ -11,10 +11,10 @@ function Quiz() {
         <div className="quiz_minidiv">
           <h1>Gəl Danışaq</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.{" "}
+            Əziz Dostum, “Psixoloqlarımız” bölməsinə klikləyərək istədiyin
+            psixoloqu seçə və görüş üçün vaxt təyin edə bilərsən. Xatırlatma
+            edək ki bu görüş tamamilə ödənişsizdir və edəcəyimiz söhbət aramızda
+            sirr olaraq qalacaq.
           </p>
 
           <button>
@@ -24,23 +24,25 @@ function Quiz() {
       </section>
       <section className="activite_purpose_bigdiv">
         <div className="activite_bigdiv">
-          <h1>Fəaliyyətimiz</h1>
+          <h1>Bu görüş nə üçündür?</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.{" "}
+            <br />
+            Bu görüşlər vasitəsiylə psixoloq səni daha yaxındantanıya biləcək və
+            növbəti seansları koordinasiya edərkən bu tanışlıq mühüm rol
+            oynayacaq. Birinci görüş vasitəsiylə həm də sən bizi qiymətləndirə,
+            həm də seanslar haqqında ilkin təəssürat yarada bilərsən.
           </p>
         </div>
 
         <div className="purpose_bigdiv">
-          <h1>Məqsədimiz</h1>
+          <h1>Bizim kiçik qaydalarımız:</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.aliquet odio mattis. Class aptent taciti sociosqu
-            ad litora torquent per conubia nostra, per inceptos himenaeos{" "}
+            • Görüş zamanı rahat hiss et və danışmaq istədiyin hər şeyi tam
+            rahatlıqla bölüş
+            <br />
+            • Görüş zamanı ətrafında başqa insanlar olmasın və görüşə qoşulduğun
+            otaqda səssizlik olsun
+            <br /> • Unutma! Biz sənə kömək etmək üçün burdayıq
           </p>
         </div>
       </section>

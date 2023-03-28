@@ -41,7 +41,10 @@ function Home() {
         <div className="pscology_text psx_bg">
           <h1>Psixoloqlar</h1>
           <p>
-            Buradan bizim psixoloqlarımızla daha yaxından tanış ola bilərsiz..
+            Psixoloqlarımız “4YouKid” komandasına xüsusi özənlə seçilir və hər
+            <br />
+            birinin öz ixtisası üzrə yüksək təhsil dərəcəsi və geniş iş
+            təcrübəsi var.
           </p>
         </div>
         <div className="pscology_cards">
@@ -52,9 +55,10 @@ function Home() {
       </section>
       <section className="big_pscology">
         <div className="pscology_text product_bg">
-          <h1>Mehsullar</h1>
+          <h1>Məhsullar</h1>
           <p>
-            Buradan bizim məhsullarımızla daha yaxından tanış ola bilersiz..
+            Oyuncaqlarımız sənə özəl dizayn edilə bilər və hamısı əl ilə
+            toxunaraq hazırlanır.
           </p>
         </div>
         <div className="pscology_cards">
@@ -71,11 +75,7 @@ function Home() {
       <section className="big_pscology">
         <div className="pscology_text psx_bg">
           <h1>Bloglar</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit <br />
-            interdum, ac aliquet odio mattis.
-          </p>
+          <p>Gəl görək psixologiya nədir, nə qədər önəmlidir</p>
         </div>
         <div className="pscology_cards blog_pad">
           <div className=" pscology_cards_mini_bottom blog_pad_bot">

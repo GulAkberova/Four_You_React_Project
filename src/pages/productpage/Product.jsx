@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./mehsul.scss";
 // import oyuncaq1 from "../../img/Rectangle 6.png";
 // import oyuncaq2 from "../../img/Rectangle 6 (1).png";
@@ -29,7 +29,11 @@ function Product() {
   return (
     <>
       <section className="carusel">
-        <h1>Məhsullar</h1>
+        <h2>Məhsullar</h2>
+        <p>
+          <NavLink to={"/"}>Ana Səhifə</NavLink>/
+          <NavLink to={"/product"}>Məhsullar</NavLink>
+        </p>
       </section>
       <section className="mehsul_alldiv">
         <ProductFilter />

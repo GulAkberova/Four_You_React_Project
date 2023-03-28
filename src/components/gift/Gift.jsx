@@ -11,29 +11,28 @@ function Gift() {
           <div className="catdirilma_div">
             <img src={catdirilma1} />
             <p>
-              Lorem ipsum dolor sit amet,
-              <br /> consectetur adipiscing elit
+              Bizimlə bölüşdüyün mövzu sən və <br />
+              psixoloq arasında sirr olaraq qalır
             </p>
           </div>
           <div className="catdirilma_div">
             <img src={catdirilma4} />
             <p>
-              Lorem ipsum dolor sit amet,
-              <br /> consectetur adipiscing elit
+              Ən qısa zamanda təhlükəsiz <br />
+              çatdırılma edirik
             </p>
           </div>
           <div className="catdirilma_div">
             <img src={catdirilma3} />
             <p>
-              Lorem ipsum dolor sit amet,
-              <br /> consectetur adipiscing elit
+              Keyfiyyətli iş və ən sərfəli <br /> xidmətlər təklif edirik
             </p>
           </div>
           <div className="catdirilma_div">
             <img src={catdirilma2} />
             <p>
-              Lorem ipsum dolor sit amet,
-              <br /> consectetur adipiscing elit
+              Sonda əldə edəcəyiniz nəticə bizdən <br />
+              sizə ömürlülük hədiyyə olacaq
             </p>
           </div>
         </div>

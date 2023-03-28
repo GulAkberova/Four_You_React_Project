@@ -1,85 +1,71 @@
-@import '../../umumi.scss';
-.carusel{
-    width: 100%;
-    height: 160px;
-    background-image:url('../../img/Rectangle\ 56.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: $anafont;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-}
-.pscology_bigdiv{
-    width: 100%;
-    padding: 40px 70px;
-    .pscology_minidiv{
-        width:90%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-     
+@import "../../umumi.scss";
+.carusel {
+  width: 100%;
+  height: 160px;
+  background-image: url("../../img/Rectangle\ 56.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: $anafont;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-weight: 600;
+  }
+  p {
+    color: gray;
+
+    a {
+      font-size: 17px;
+      font-weight: 600;
+      color: gray;
+      text-decoration: none;
     }
+  }
 }
-.pscology_card_div_psx{
-    width: 30%;
-                    box-shadow: 0px 4px 5px 3px rgba(47,157,184,0.17);
-                    -webkit-box-shadow: 0px 4px 5px 3px rgba(47,157,184,0.17);
-                    -moz-box-shadow: 0px 4px 5px 3px rgba(47,157,184,0.17);
-                    border-radius: 15px;
+.pscology_bigdiv {
+  width: 100%;
+  padding: 40px 70px;
+  .pscology_minidiv {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
-
-
-
-
-
+.pscology_card_div_psx {
+  width: 30%;
+  box-shadow: 0px 4px 5px 3px rgba(47, 157, 184, 0.17);
+  -webkit-box-shadow: 0px 4px 5px 3px rgba(47, 157, 184, 0.17);
+  -moz-box-shadow: 0px 4px 5px 3px rgba(47, 157, 184, 0.17);
+  border-radius: 15px;
+}
 
 // _________________________________________________
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 600px) {
-    .pscology_bigdiv{
-        padding: 20px 0px;
-    }
-    .pscology_text h1{
-        font-size: 20px !important;
-    }
-    .pscology_text ul li{
-        font-size: 12px !important;
-    }
- 
-
+  .pscology_bigdiv {
+    padding: 20px 0px;
+  }
+  .pscology_text h1 {
+    font-size: 20px !important;
+  }
+  .pscology_text ul li {
+    font-size: 12px !important;
+  }
 }
 @media only screen and (min-width: 600px) {
-
 }
 @media only screen and (max-width: 768px) {
-  
 }
 @media only screen and (max-width: 992px) {
-    .pscology_div{
-        width: 100% !important;
-    }
-
-
-
+  .pscology_div {
+    width: 100% !important;
+  }
 }
 @media only screen and (min-width: 1200px) {
-
 }

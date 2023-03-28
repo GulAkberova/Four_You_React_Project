@@ -7,7 +7,7 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 
 function BlogFilter() {
-  let { setFilter, setSearch, search } = useContext(AuthContext);
+  let { filter, setFilter, setSearch, search } = useContext(AuthContext);
 
   const [blog, setBlog] = useState([]);
 
@@ -19,6 +19,13 @@ function BlogFilter() {
   }, []);
   const handleFilter = (e) => {
     setFilter(e.target.value);
+  };
+  const getCategoryStyle = (category) => {
+    if (category === filter) {
+      return { color: "#FF8087" }; // apply red background and white text to selected button
+    } else {
+      return {}; // no style changes for unselected buttons
+    }
   };
   return (
     <>
@@ -36,22 +43,38 @@ function BlogFilter() {
           <h4>Kateqoriya</h4>
           <ul>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="">
-                Butun
+              <button
+                onClick={(e) => handleFilter(e)}
+                value=""
+                style={getCategoryStyle("")}
+              >
+                Bütün bloqlar
               </button>
             </li>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Psixologiya">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Psixologiya"
+                style={getCategoryStyle("Psixologiya")}
+              >
                 Psixologiya
               </button>
             </li>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Oyuncaq">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Oyuncaq"
+                style={getCategoryStyle("Oyuncaq")}
+              >
                 Oyuncaq
               </button>
             </li>
             <li>
-              <button onClick={(e) => handleFilter(e)} value="Sağlamlıq">
+              <button
+                onClick={(e) => handleFilter(e)}
+                value="Sağlamlıq"
+                style={getCategoryStyle("Sağlamlıq")}
+              >
                 Sağlamlıq
               </button>
             </li>
@@ -62,10 +85,16 @@ function BlogFilter() {
           {blog &&
             blog.map((index, key) => (
               <div className="blog_filterdiv_top" key={key}>
-                <img src={index.image} />
-                <div>
+                <div className="blog_filterdiv_top_img">
+                  <img src={index.image} />
+                </div>
+
+                <div className="blog_filterdiv_top_text">
                   <Link to={`/blog/${index.id}`}>
-                    <b>{index.title.slice(0, 36)}...</b>
+                    <b>
+                      {index.title.slice(0, 36)}{" "}
+                      {index.title.length > 36 ? "..." : ""}
+                    </b>
                   </Link>
                   <br />
                   <span>

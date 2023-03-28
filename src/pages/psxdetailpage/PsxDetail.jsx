@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./psxdetail.scss";
 import hekim1 from "../../assets/image/Rectangle 55.jpg";
 import path from "../../assets/icons/Path.png";
@@ -8,7 +8,7 @@ import ellipseedu from "../../assets/icons/ellipseedu.png";
 import ellipseexp from "../../assets/icons/ellipseexp.png";
 import ellipsecert from "../../assets/icons/ellipsecert.png";
 import certificate from "../../assets/image/certificate.png";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import SwiperPsx from "../../components/corousel/SwiperPsx";
 import PsxModal from "../../components/psxmodal/PsxModal";
 import { data } from "../../api/data";
@@ -16,6 +16,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import AuthContext from "../../context/AuthProvider";
 const style = {
   position: "absolute",
   top: "50%",
@@ -29,10 +30,16 @@ const style = {
 };
 function PsxDetail() {
   const param = useParams();
+  const { auth } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    setOpen(true);
+    if (auth?.access) {
+      setOpen(true);
+    } else {
+      navigate("/logreg");
+    }
   };
 
   const [psxData, setPsxData] = useState([]);
@@ -67,7 +74,11 @@ function PsxDetail() {
   return (
     <>
       <section className="carusel">
-        <h1>Psixoloqlarımız</h1>
+        <h2>Psixoloqlar</h2>
+        <p>
+          <NavLink to={"/"}>Ana Səhifə</NavLink>/
+          <NavLink to={"/psx"}>Psixoloqlar</NavLink>/<NavLink>Ətraflı</NavLink>
+        </p>
       </section>
       <section className="psxdetail_bigdiv">
         <div className="psxdetail_bigdiv_img">
@@ -164,6 +175,12 @@ function PsxDetail() {
                         <img
                           src={i.image}
                           onClick={() => handleImageClick(i.image)}
+                          style={{
+                            border:
+                              i.image === selectedImage
+                                ? "2px solid #2F9DB8"
+                                : "none",
+                          }}
                         />
                       </div>
                     ))}
@@ -216,6 +233,12 @@ function PsxDetail() {
                     <img
                       src={i.image}
                       onClick={() => handleImageClick(i.image)}
+                      style={{
+                        border:
+                          i.image === selectedImage
+                            ? "2px solid #2F9DB8"
+                            : "none",
+                      }}
                     />
                   </div>
                 ))}

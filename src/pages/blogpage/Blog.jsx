@@ -4,6 +4,7 @@ import { data } from "../../api/data";
 import BlogCard from "../../components/card/BlogCard";
 import BlogFilter from "../../components/blogFilter/BlogFilter";
 import AuthContext from "../../context/AuthProvider";
+import { NavLink } from "react-router-dom";
 
 function Blog() {
   let { filter, search } = useContext(AuthContext);
@@ -22,7 +23,11 @@ function Blog() {
   return (
     <>
       <section className="carusel">
-        <h1>Blog</h1>
+        <h2>Bloq</h2>
+        <p>
+          <NavLink to={"/"}>Ana Səhifə</NavLink>/
+          <NavLink to={"/blog"}>Bloq</NavLink>
+        </p>
       </section>
       <section className="blog_alldiv">
         <BlogFilter />

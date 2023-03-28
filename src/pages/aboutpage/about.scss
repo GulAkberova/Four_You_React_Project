@@ -8,8 +8,22 @@
   font-family: $anafont;
   font-size: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  h2 {
+    font-weight: 600;
+  }
+  p {
+    color: gray;
+
+    a {
+      font-size: 17px;
+      font-weight: 600;
+      color: gray;
+      text-decoration: none;
+    }
+  }
 }
 .about_bigdiv1 {
   width: 100%;
@@ -45,8 +59,8 @@
       }
       p {
         font-weight: 400;
-        font-size: 24px;
-        padding: 20px 0px;
+        font-size: 22px;
+        padding: 20px 0px 10px 0px;
       }
       a {
         button {

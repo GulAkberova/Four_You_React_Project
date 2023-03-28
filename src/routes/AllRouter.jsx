@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Notfound from "../pages/notfoundpage/Notfound";
 import BlogDetail from "../pages/blogdetailpage/BlogDetail";
 import PsxDetail from "../pages/psxdetailpage/PsxDetail";
@@ -18,6 +18,10 @@ const Email = lazy(() => import("../pages/emailpage/Email"));
 const Home = lazy(() => import("../pages/homepage/Home"));
 const About = lazy(() => import("../pages/aboutpage/About"));
 function AllRouter() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Routes>

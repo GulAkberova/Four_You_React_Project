@@ -2,23 +2,35 @@ import React, { useContext } from "react";
 import "../../pages/homepage/home.scss";
 import hekim1 from "../../assets/image/Rectangle 55.jpg";
 import path from "../../assets/icons/Path.png";
-import { Link, Navigate, NavLink, useLocation } from "react-router-dom";
+import {
+  Link,
+  Navigate,
+  NavLink,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import PsxModal from "../psxmodal/PsxModal";
 import AuthContext from "../../context/AuthProvider";
 function PsxCard({ index }) {
   const { auth } = useContext(AuthContext);
+  console.log(auth);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    setOpen(true);
+    if (auth?.access) {
+      setOpen(true);
+    } else {
+      navigate("/logreg");
+    }
   };
   // console.log(index.name,'index')
   return (
     <>
       <>
         <div className="pscology_card_div_img">
-          <img src={hekim1} />
+          <img src={index?.profil_image} />
         </div>
         <div className="pscology_card_div_text">
           <div className="pscology_card_div_text_name">
@@ -26,7 +38,10 @@ function PsxCard({ index }) {
               <b>4.95</b> <img src={path} />
             </span>
 
-            <h5>{index?.name}</h5>
+            <h5>
+              {index?.name}&nbsp;
+              {index?.surname}
+            </h5>
             <p>{index?.present_work_space}</p>
           </div>
 

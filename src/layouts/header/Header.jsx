@@ -26,11 +26,24 @@ import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import AuthContext from "../../context/AuthProvider";
+
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 3,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
+
 const Head = () => {
   const { auth, setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   console.log("auth", auth, auth.index);
   let { cart } = useSelector((state) => state.CartReducer);
+  // console.log(cart.length, "carttttttttttt");
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -136,7 +149,7 @@ const Head = () => {
                             aria-haspopup="true"
                             aria-expanded={open ? "true" : undefined}
                           >
-                            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                            <Avatar sx={{ width: 32, height: 32 }}> G</Avatar>
                           </IconButton>
                         </Tooltip>
                       </Box>
@@ -184,7 +197,7 @@ const Head = () => {
                         <MenuItem onClick={handleClose}>
                           <Avatar /> Profile
                         </MenuItem>
-                        <MenuItem onClick={handleClose}>
+                        {/* <MenuItem onClick={handleClose}>
                           <Avatar /> My account
                         </MenuItem>
                         <Divider />
@@ -199,7 +212,7 @@ const Head = () => {
                             <Settings fontSize="small" />
                           </ListItemIcon>
                           Settings
-                        </MenuItem>
+                        </MenuItem> */}
                         <MenuItem onClick={handleCloseLogout}>
                           <ListItemIcon>
                             <Logout fontSize="small" />
@@ -220,7 +233,9 @@ const Head = () => {
                 <li>|</li>
                 <li>
                   <NavLink to="/basket">
-                    <img src={basket} />
+                    <StyledBadge badgeContent={cart.length} color="secondary">
+                      <img src={basket} />
+                    </StyledBadge>
                   </NavLink>
                 </li>
               </ul>

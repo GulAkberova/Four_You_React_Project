@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "./detail.scss";
+import "../../pages/productpage/mehsul.scss";
 import oyuncaq1 from "../../img/Rectangle 6.png";
 import { useEffect } from "react";
 // import { useSelector,useDispatch } from 'react-redux'
@@ -10,6 +11,7 @@ import { add } from "../../store/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Gift from "../../components/gift/Gift";
+import SwiperProduct from "../../components/corousel/SwiperProduct";
 
 function Detail() {
   const param = useParams();
@@ -62,7 +64,12 @@ function Detail() {
   return (
     <>
       <section className="carusel">
-        <h1>Məhsul</h1>
+        <h2>Məhsullar</h2>
+        <p>
+          <NavLink to={"/"}>Ana Səhifə</NavLink>/
+          <NavLink to={"/product"}>Məhsullar</NavLink>/
+          <NavLink>Ətraflı</NavLink>
+        </p>
       </section>
       <section className="detail_bigdiv">
         {loading ? (
@@ -93,11 +100,7 @@ function Detail() {
                 <h1>{productData?.title}</h1>
                 <h3>{productData?.price}m</h3>
                 {/* <p>{productData?.content}  </p> */}
-                <p>
-                  .Rem ipsum dolor sit amet, consectetur adipiscing elit. .Rem
-                  ipsum dolor sit amet .Rem ipsum dolor sit amet, consectetur
-                  adipiscing elit. .Rem ipsum dolor sit amet. 100% coton{" "}
-                </p>
+                <p>{productData?.content}</p>
                 <button
                   className={check ? "detail_btn_success" : "detail_btn_error"}
                   onClick={() => addToCart(productData)}
@@ -123,6 +126,14 @@ function Detail() {
       />
 
       <Gift />
+      <section className="teklif">
+        <h1>Təkliflər</h1>
+        <div className="pscology_cards">
+          <div className="pscology_cards_mini_bottom">
+            <SwiperProduct />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

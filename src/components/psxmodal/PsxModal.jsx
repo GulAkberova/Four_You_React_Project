@@ -186,7 +186,7 @@ function PsxModal(props) {
           <div className="psx_modal_select1">
             <p className="psx_modal_select_p">Vaxt Təyin edin</p>
 
-            <FormControl className="psx_modal_select_form">
+            {/* <FormControl className="psx_modal_select_form">
               <InputLabel id="demo-simple-select-label">Tarix</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
@@ -208,7 +208,7 @@ function PsxModal(props) {
                     </MenuItem>
                   ))}
               </Select>
-            </FormControl>
+            </FormControl> */}
 
             <div className="psx_modal_calendar">
               {/* <div className="psx_modal_calendar_date">
@@ -328,6 +328,7 @@ function PsxModal(props) {
             >
               <Box sx={{ ...style, width: 500 }} className="psxmodal_bigdiv">
                 <h3 id="child-modal-title">Melumat qeyde alindi</h3>
+                <h4>Tezliklə sizinlə əlaqə saxlanılacaq.</h4>
                 <div
                   className="psx_modal_select_name"
                   style={{ textAlign: "center" }}

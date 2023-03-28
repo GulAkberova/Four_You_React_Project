@@ -13,9 +13,13 @@ function OurPsx() {
           <div className="about_mini_txt">
             <h1>Birinci görüş və seanslarımız</h1>
             <p>
-              Buradan birinci görüşə daxil olaraq siz ödənişsiz şəkildə
-              övladlarınızı real psixoloqlarla rahat şəkildə danışmasına və
-              beləliklə övladlarınızda olan mənfi halları aşkar edə bilərsiniz..
+              Birinci görüşlər bütün uşaqlar üçün tamamilə ödənişsizdir. Bu
+              görüşlər vasitəsiylə psixoloq uşaq haqqındakı ilkin
+              təəssüratlarını yarada bilir və növbəti seansları koordinasiya
+              edərkən məhz bu görüşdən olan təəssüratlardan istifadə edir.
+              Birinci görüş vasitəsiylə həm də siz növbəti seansların necə
+              keçəcəyini, sizin üçün hansı üstünlükləri ola biləcəyini təxmin
+              edə bilirsiniz.
             </p>
             <NavLink to="/quiz">
               <button>Gəl Danışaq</button>

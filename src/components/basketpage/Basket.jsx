@@ -17,7 +17,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
+import { NavLink } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -31,18 +31,17 @@ const style = {
   p: 4,
 };
 function Basket() {
-  let {cart}=useSelector(state=>state.CartReducer)
+  let { cart } = useSelector((state) => state.CartReducer);
+  console.log(cart, "caart");
+  let dispatch = useDispatch();
 
-  let dispatch =useDispatch()
+  let totalPrice = 0;
 
-   let totalPrice=0
+  cart.forEach((element) => {
+    totalPrice = totalPrice + element.quantity * element.price;
+  });
 
-   cart.forEach(element => {
-    totalPrice=totalPrice +(element.quantity * element.price)
-    
-   });
-
-   const handleRemove=(item)=>{
+  const handleRemove = (item) => {
     Swal.fire({
       title: "Silmək istədiyinizdən əminsinizmi ?",
       text: "Bu əməliyyat geri alına bilməz.",
@@ -54,21 +53,25 @@ function Basket() {
       cancelButtonText: "Xeyr",
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch(remove(item))
+        dispatch(remove(item));
         Swal.fire("Silindi!", "Məhsul silindi.", "success");
       }
     });
-   }
+  };
 
   return (
     <>
       <section className="carusel">
-        <h1>Səbətim</h1>
+        <h2>Səbətim</h2>
+        <p>
+          <NavLink to={"/"}>Ana Səhifə</NavLink>/
+          <NavLink to={"/product"}>Məhsullar</NavLink>
+        </p>
       </section>
       <div className="mehsul_div">
         <h2>Məhsul</h2>
       </div>
-      <section className="mehsul_bigdiv">
+      <section className="mehsul_card_bigdiv">
         {/* <table >
          <thead>
          <tr>
@@ -101,51 +104,54 @@ function Basket() {
           }
         </tbody>
         </table> */}
-     
 
-
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell align="center">Məhsul</TableCell>
-              <TableCell align="center">Məhsulun adı</TableCell>
-              <TableCell align="center">Qiymət</TableCell>
-              <TableCell align="center">Say</TableCell>
-              <TableCell align="center">Ümumi</TableCell>
-              <TableCell align="center">Sil</TableCell>
-              
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            { cart && cart.map((item,key)=>(
-              <TableRow
-              key={key}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell align="center" component="th" scope="row">
-                {item.title}
-                </TableCell>
-                <TableCell align="center">{item.title}</TableCell>
-                <TableCell align="center">{item.price}m</TableCell>
-              
-                <TableCell align="center">
-                <button onClick={()=>dispatch(decrease(item.id))}>-</button>
-             <span> {item.quantity}</span>
-             <button onClick={()=>dispatch(increase(item.id))}>+</button>
-                </TableCell>
-                <TableCell align="center">
-                {(item.price * item.quantity).toFixed(2)}m
-                </TableCell>
-                <TableCell align="center">
-                <button onClick={()=>handleRemove(item)}><i className="fa-solid fa-x"></i></button>
-                </TableCell>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">Məhsul</TableCell>
+                <TableCell align="center">Məhsulun adı</TableCell>
+                <TableCell align="center">Qiymət</TableCell>
+                <TableCell align="center">Say</TableCell>
+                <TableCell align="center">Ümumi</TableCell>
+                <TableCell align="center">Sil</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {cart &&
+                cart.map((item, key) => (
+                  <TableRow
+                    key={key}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell align="center" component="th" scope="row">
+                      <img src={item.image.image} />
+                    </TableCell>
+                    <TableCell align="center">{item.title}</TableCell>
+                    <TableCell align="center">{item.price}m</TableCell>
 
+                    <TableCell align="center">
+                      <button onClick={() => dispatch(decrease(item.id))}>
+                        -
+                      </button>
+                      <span> {item.quantity}</span>
+                      <button onClick={() => dispatch(increase(item.id))}>
+                        +
+                      </button>
+                    </TableCell>
+                    <TableCell align="center">
+                      {(item.price * item.quantity).toFixed(2)}m
+                    </TableCell>
+                    <TableCell align="center">
+                      <button onClick={() => handleRemove(item)}>
+                        <i className="fa-solid fa-x"></i>
+                      </button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </section>
       {/* <div className="mehsul_div">
         <h2>Seans</h2>
@@ -181,11 +187,9 @@ function Basket() {
         </table>
       </section> */}
 
-
       <section className="all_sum">
         <h1>Cəm:{totalPrice.toFixed(2)}</h1>
         <button>Təsdiqlə</button>
-
       </section>
     </>
   );

@@ -8,8 +8,22 @@
   font-family: $anafont;
   font-size: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  h2 {
+    font-weight: 600;
+  }
+  p {
+    color: gray;
+
+    a {
+      font-size: 17px;
+      font-weight: 600;
+      color: gray;
+      text-decoration: none;
+    }
+  }
 }
 .blog_alldiv {
   display: flex;
@@ -65,19 +79,29 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    img {
+
+    .blog_filterdiv_top_img {
       width: 170px;
       height: 116px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
     a {
       text-decoration: none;
       color: black;
     }
-    div {
+    .blog_filterdiv_top_text {
+      width: 60%;
       padding: 0px 10px;
+
       span {
         color: gray;
         font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

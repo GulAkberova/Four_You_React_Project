@@ -89,3 +89,7 @@
   vertical-align: text-top !important;
   padding: 10px 5px !important;
 }
+.table_time_button:focus {
+  background-color: $btn1;
+  color: white;
+}
