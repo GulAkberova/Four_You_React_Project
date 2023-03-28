@@ -39,9 +39,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const Head = () => {
-  const { auth, setAuth } = useContext(AuthContext);
+  // const { auth, setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log("auth", auth, auth.index);
+  // console.log("auth", auth, auth.index);
   let { cart } = useSelector((state) => state.CartReducer);
   // console.log(cart.length, "carttttttttttt");
 
@@ -64,6 +64,9 @@ const Head = () => {
   };
 
   // __________________________After_Login_____________________
+  // const access = localStorage.getItem("access");
+  // const user_id = localStorage.getItem("user_id");
+  const auth = JSON.parse(localStorage.getItem("auth"));
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -75,9 +78,18 @@ const Head = () => {
   };
   const handleCloseLogout = () => {
     setAnchorEl(null);
-    setAuth({});
+    localStorage.removeItem("auth");
+    // localStorage.removeItem("refresh");
+    // localStorage.removeItem("user_id");
+    // localStorage.removeItem("index");
+    // auth.access = "";
+    // auth.refresh = "";
+    // auth.user_id = "";
+    // auth.index = {};
     navigate("/logreg");
   };
+
+  // ___________________________Token______________________________
 
   return (
     <>
@@ -128,7 +140,7 @@ const Head = () => {
                 </li>
               </ul>
               <ul className="header_navbar_ul_user">
-                {auth.index ? (
+                {auth?.access ? (
                   <>
                     <li>
                       <Box

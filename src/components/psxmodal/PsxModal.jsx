@@ -79,7 +79,9 @@ const rows = [
 // }
 
 function PsxModal(props) {
-  const { auth, setAuth } = useContext(AuthContext);
+  // const { auth, setAuth } = useContext(AuthContext);
+  const auth = JSON.parse(localStorage.getItem("auth"));
+
   const [timeValue, setTimeValue] = useState({});
   const handleClose = () => {
     setTimeValue({
@@ -162,7 +164,7 @@ function PsxModal(props) {
         setOpen1(true);
       })
       .catch((err) => {
-        alert("Melumatlar secilmiyib");
+        alert("Məlumatlar seçilmiyib");
       });
   };
 

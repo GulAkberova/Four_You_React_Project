@@ -30,8 +30,10 @@ const style = {
 };
 function PsxDetail() {
   const param = useParams();
-  const { auth } = useContext(AuthContext);
+  // const { auth } = useContext(AuthContext);
   const navigate = useNavigate();
+  // const access = localStorage.getItem("access");
+  const auth = JSON.parse(localStorage.getItem("auth"));
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {

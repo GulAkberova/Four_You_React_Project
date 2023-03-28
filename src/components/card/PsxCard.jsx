@@ -12,12 +12,17 @@ import {
 import PsxModal from "../psxmodal/PsxModal";
 import AuthContext from "../../context/AuthProvider";
 function PsxCard({ index }) {
-  const { auth } = useContext(AuthContext);
-  console.log(auth);
+  // const { auth } = useContext(AuthContext);
+  // console.log(auth);
   const location = useLocation();
   const navigate = useNavigate();
-
   const [open, setOpen] = React.useState(false);
+
+  // const access = localStorage.getItem("access");
+  const auth = JSON.parse(localStorage.getItem("auth"));
+
+  // console.log(authl.index, "autttttttttttttttt");
+
   const handleOpen = () => {
     if (auth?.access) {
       setOpen(true);

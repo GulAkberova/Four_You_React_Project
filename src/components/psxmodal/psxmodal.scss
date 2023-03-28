@@ -84,7 +84,7 @@
 .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
   color: $btn1 !important;
 }
-.css-q34dxg {
+.css-1ex1afd-MuiTableCell-root {
   border: none !important;
   vertical-align: text-top !important;
   padding: 10px 5px !important;
@@ -100,6 +100,7 @@
   align-items: center;
   button {
     color: $btn1 !important;
+    border: 1px solid $btn1;
     &:hover {
       color: white !important;
     }
@@ -110,9 +111,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   button {
     color: $btn1 !important;
+    background-color: white;
+    border: 1px solid $btn1;
+
+    font-family: $anafont !important;
+    text-transform: none;
     &:hover {
+      background-color: $btn1;
       color: white !important;
     }
   }

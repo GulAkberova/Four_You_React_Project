@@ -25,16 +25,19 @@ function LogReg() {
     data
       .getByPost("user_login", index)
       .then((res) => {
-        alert("Qeydiyyat olundu");
         const access = res?.tokens?.access;
         const refresh = res?.tokens?.refresh;
         const user_id = res?.id;
+        localStorage.setItem(
+          "auth",
+          JSON.stringify({ index, access, refresh, user_id })
+        );
         setAuth({ index, access, refresh, user_id });
-
+        alert("Qeydiyyat olundu");
         navigate("/psx");
       })
       .catch((err) => {
-        alert("Email ya password yanlisdi");
+        alert("Email ya password yanlışdı");
       });
   };
 
