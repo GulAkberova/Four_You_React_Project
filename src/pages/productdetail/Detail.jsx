@@ -30,23 +30,36 @@ function Detail() {
   }, []);
 
   const addToCart = (item) => {
-    setCheck(true);
+    setCheck(!check);
 
     dispatch(add(item));
 
-    setTimeout(() => {
-      setCheck(false);
-    }, 2000);
-    toast.success("Sebete elave olundu", {
-      position: "top-center",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+    // setTimeout(() => {
+    //   setCheck(false);
+    // }, 2000);
+    if (!check) {
+      toast.success("Səbətə əlavə olundu", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.error("Səbətdən çıxarıldı", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   const [selectedImage, setSelectedImage] = useState(null);

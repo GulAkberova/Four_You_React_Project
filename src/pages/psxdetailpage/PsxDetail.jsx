@@ -87,7 +87,10 @@ function PsxDetail() {
           <img src={psxData?.profil_image} />
         </div>
         <div className="psxdetail_bigdiv_text">
-          <h4>{psxData?.name}</h4>
+          <h4>
+            {psxData?.name}
+            {psxData?.surname}
+          </h4>
           <div className="psxdetail_bigdiv_text_path">
             <img src={path} />
             <img src={path} />

@@ -21,8 +21,8 @@ const cartSlice = createSlice({
         };
         state.cart.push(newCartItem);
       } else {
-        cartItem.quantity = cartItem.quantity + 1;
-        // state.cart=state.cart.filter(q=>q.id !==action.payload.id)
+        // cartItem.quantity = cartItem.quantity + 1;
+        state.cart = state.cart.filter((q) => q.id !== action.payload.id);
       }
     },
     remove: (state, action) => {
