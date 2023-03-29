@@ -333,7 +333,7 @@ function PsxModal(props) {
               aria-describedby="child-modal-description"
             >
               <Box sx={{ ...style, width: 500 }} className="psxmodal_bigdiv">
-                <h3 id="child-modal-title">Melumat qeyde alindi</h3>
+                <h3 id="child-modal-title">Məlumat qeydə alındı.</h3>
                 <h4>Tezliklə sizinlə əlaqə saxlanılacaq.</h4>
                 <div
                   className="psx_modal_select_name"
