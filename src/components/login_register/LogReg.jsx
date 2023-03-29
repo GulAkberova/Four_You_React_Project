@@ -115,15 +115,15 @@ function LogReg() {
                     <p>və ya</p>
                   </div>
                   <div className="icon">
-                    <NavLink>
+                    <a href="https://4youkid.com/">
                       <img src={google} />
-                    </NavLink>
-                    <NavLink>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100090458100624&mibextid=ZbWKwL">
                       <img src={facebook} />
-                    </NavLink>
-                    <NavLink>
+                    </a>
+                    <a href="https://www.instagram.com/4you_az/">
                       <img src={instagram} />
-                    </NavLink>
+                    </a>
                   </div>
                 </form>
               </div>
