@@ -12,7 +12,7 @@
   padding-right: 90px;
   font-family: $anafont;
   .quiz_minidiv {
-    width: 500px;
+    width: 450px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,8 @@
       font-weight: 600;
     }
     p {
-      font-size: 16px;
+      font-size: 19px;
+      font-weight: 500;
       padding: 10px 0px;
     }
     button {
@@ -63,5 +64,11 @@
     margin: 0 auto;
     text-align: center;
     padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .activite_purpose_bigdiv p {
+    font-size: 17px;
+    padding: 10px !important;
   }
 }

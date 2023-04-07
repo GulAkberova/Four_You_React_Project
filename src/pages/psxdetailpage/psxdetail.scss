@@ -245,3 +245,58 @@
     }
   }
 }
+@media only screen and (max-width: 600px) {
+  .psxdetail_bigdiv {
+    flex-direction: column;
+  }
+  .psxdetail_bigdiv_img {
+    height: 400px;
+    width: 100%;
+  }
+  .psxdetail_bigdiv_text {
+    width: 100%;
+  }
+  .psxdetail_infodiv {
+    flex-wrap: wrap;
+  }
+  .psxdetail_infodiv_education,
+  .psxdetail_infodiv_experience {
+    width: 100% !important;
+  }
+  .psxdetail_bigdiv {
+    padding: 50px 30px !important;
+  }
+  .psxdetail_infodiv {
+    padding: 50px 0px !important;
+  }
+  .psxdetail_infodiv_education ul {
+    margin-bottom: 20px;
+  }
+  .psxdetail_skills {
+    padding: 40px 30px;
+    .psxdetail_skills_divs {
+      div {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 600px) and (max-width: 968px) {
+  .psxdetail_bigdiv {
+    flex-direction: column;
+  }
+  .psxdetail_bigdiv_img {
+    height: 400px;
+    width: 100%;
+  }
+  .psxdetail_bigdiv_text {
+    width: 100%;
+  }
+  .psxdetail_infodiv {
+    flex-wrap: wrap;
+  }
+  .psxdetail_infodiv_education,
+  .psxdetail_infodiv_experience {
+    width: 50%;
+  }
+}

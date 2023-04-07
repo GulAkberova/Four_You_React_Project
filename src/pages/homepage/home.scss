@@ -141,42 +141,6 @@
   gap: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-  .video_text {
-    padding: 10px 5px !important;
-  }
-}
-@media only screen and (min-width: 600px) {
-}
-@media only screen and (max-width: 768px) {
-  .catdirilma_minidiv {
-    flex-wrap: wrap;
-  }
-  .catdirilma_div {
-    width: 45% !important;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .pscology_big_div {
-    flex-direction: column;
-  }
-  .pscology_mini_div {
-    width: 100% !important;
-    margin-bottom: 10px;
-  }
-  .video_bigdiv {
-    flex-direction: column;
-  }
-  .video_div,
-  .video_text {
-    width: 100% !important;
-  }
-  .video_text {
-    padding: 0px 10px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-}
 // _____________________________________________________________________________________________________________________
 
 .swiper-button-prev .slider-arrow {
@@ -230,4 +194,76 @@
 }
 .blog_pad_bot {
   padding-bottom: 100px;
+}
+
+// _________________________________________________
+@media only screen and (max-width: 600px) {
+  .video_text {
+    padding: 10px 5px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .pscology_card_div_text_btn button {
+    padding: 5px 20px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .pscology_text p {
+    font-size: 16px !important;
+  }
+  .pscology_text h1 {
+    font-size: 28px !important;
+  }
+  .catdirilma_minidiv {
+    flex-wrap: wrap;
+    width: 95% !important;
+  }
+  .catdirilma_div {
+    width: 48% !important;
+  }
+  .blog_pad_bot {
+    display: flex;
+    flex-direction: column;
+  }
+  .blog_card_div {
+    width: 100%;
+  }
+  .blog_pad {
+    padding: 0px 10px !important;
+  }
+  .catdirilma_div {
+    img {
+      width: 40px !important;
+      height: 40px !important;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .pscology_big_div {
+    flex-direction: column;
+  }
+  .pscology_mini_div {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .video_bigdiv {
+    flex-direction: column;
+  }
+  .video_div,
+  .video_text {
+    width: 100% !important;
+  }
+  .video_text {
+    padding: 0px 10px;
+  }
+}
+@media (min-width: 600px) and (max-width: 992px) {
+  .pscology_card_div_text_btn button {
+    padding: 7px 30px !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
 }

@@ -49,7 +49,8 @@ function Slider() {
                   <b>40%</b>{" "}
                 </span>
                 off our Products!{" "} */}
-                Əl əməyi ilə hazırlanan oyuncaqlar
+                Əl əməyi ilə hazırlanan <br />
+                oyuncaqlar
               </h3>
               <p>
                 Sən buradan onlarla oyuncaq əldə edə bilərsən. Bütün oyuncaqlar
@@ -68,11 +69,12 @@ function Slider() {
           <img className="d-block w-100" src={sliderImg3} alt="First slide" />
           <Carousel.Caption className="first_carusel_bigdiv">
             <div className="first_carusel">
-              <h2>
+              <h1>Psixoloqlarımız</h1>
+              <p>
                 Və bizim biri-birindən şən, enerjili psixoloqlarımız səni
                 gözləyir. “Psixoloqlarımız” butonuna klikləyərək onlar haqqında
                 ətraflı məlumat ala və görüş vaxtı təyin edə bilərsiniz.
-              </h2>
+              </p>
               <button>
                 <NavLink to="/psx">Psixoloqlarımız</NavLink>
               </button>

@@ -9,7 +9,9 @@ function BlogCard({ index }) {
   return (
     <>
       <div className="blog_card_div_img">
-        <img src={index.image} />
+        <Link to={`/blog/${index.id}`}>
+          <img src={index.image} />
+        </Link>
       </div>
 
       <div className="blog_card_div_text">
@@ -20,7 +22,8 @@ function BlogCard({ index }) {
 
         <p>{index.content.slice(0, 120)}...</p>
         <Link to={`/blog/${index.id}`}>
-          Read More <img src={arrow} />
+          Daha çox oxu
+          <img src={arrow} />
         </Link>
       </div>
     </>

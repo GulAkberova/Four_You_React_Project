@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import "./detail.scss";
 import "../../pages/productpage/mehsul.scss";
 import oyuncaq1 from "../../img/Rectangle 6.png";
@@ -15,11 +15,12 @@ import SwiperProduct from "../../components/corousel/SwiperProduct";
 
 function Detail() {
   const param = useParams();
+  const location = useLocation();
   const [productData, setProductData] = useState([]);
   const [check, setCheck] = useState(false);
   let dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
-
+  // console.log(location);
   useEffect(() => {
     setLoading(true);
     data.getById("product", param.id).then((res) => {
@@ -28,7 +29,14 @@ function Detail() {
       setLoading(false);
     });
   }, []);
-
+  useEffect(() => {
+    setLoading(true);
+    data.getById("product", param.id).then((res) => {
+      console.log(res);
+      setProductData(res);
+      setLoading(false);
+    });
+  }, [location.pathname]);
   const addToCart = (item) => {
     setCheck(!check);
 
@@ -37,29 +45,30 @@ function Detail() {
     // setTimeout(() => {
     //   setCheck(false);
     // }, 2000);
-    if (!check) {
-      toast.success("Səbətə əlavə olundu", {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    } else {
-      toast.error("Səbətdən çıxarıldı", {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
+
+    // if (!check) {
+    //   toast.success("Səbətə əlavə olundu", {
+    //     position: "top-center",
+    //     autoClose: 1000,
+    //     hideProgressBar: false,
+    //     closeOnClick: false,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "light",
+    //   });
+    // } else {
+    //   toast.error("Səbətdən çıxarıldı", {
+    //     position: "top-center",
+    //     autoClose: 1000,
+    //     hideProgressBar: false,
+    //     closeOnClick: false,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "light",
+    //   });
+    // }
   };
 
   const [selectedImage, setSelectedImage] = useState(null);

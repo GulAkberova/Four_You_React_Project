@@ -69,41 +69,46 @@ function LogReg() {
               <div className="logreg_text_div">
                 <h1>Giriş</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  <label>Əlaqə nömrəsi</label>
-                  <br />
-                  <input
-                    type="tel"
-                    placeholder="+994503421558"
-                    {...register("phone_number", {
-                      required: "*Zəhmət olmasa xananı doldurun.",
-                      pattern: {
-                        value: /^\+994(50|51|55|70|77)\d{7}$/,
-                        message:
-                          "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
-                      },
-                    })}
-                    className={formState.errors.phone_number ? "error" : ""}
-                  />
-                  {formState.errors.phone_number && (
-                    <p className="error-message">
-                      <span> {formState.errors.phone_number.message}</span>
-                    </p>
-                  )}
-                  <br />
+                  <div>
+                    <label>Əlaqə nömrəsi</label>
+                    <br />
+                    <input
+                      type="tel"
+                      placeholder="+994503421558"
+                      {...register("phone_number", {
+                        required: "*Zəhmət olmasa xananı doldurun.",
+                        pattern: {
+                          value: /^\+994(50|51|55|70|77)\d{7}$/,
+                          message:
+                            "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
+                        },
+                      })}
+                      className={formState.errors.phone_number ? "error" : ""}
+                    />
+                    {formState.errors.phone_number && (
+                      <p className="error-message">
+                        <span> {formState.errors.phone_number.message}</span>
+                      </p>
+                    )}
+                  </div>
 
-                  <label>Şifrə</label>
-                  <br />
-                  <input
-                    type="password"
-                    placeholder="Şifrə"
-                    {...register("password", {
-                      required: "*Zəhmət olmasa xananı doldurun.",
-                    })}
-                  />
-                  <p>
-                    {" "}
-                    {errors.password && <span>{errors.password.message}</span>}
-                  </p>
+                  <div>
+                    <label>Şifrə</label>
+                    <br />
+                    <input
+                      type="password"
+                      placeholder="Şifrə"
+                      {...register("password", {
+                        required: "*Zəhmət olmasa xananı doldurun.",
+                      })}
+                    />
+                    <p>
+                      {" "}
+                      {errors.password && (
+                        <span>{errors.password.message}</span>
+                      )}
+                    </p>
+                  </div>
 
                   <div className="add">
                     <button className="btn1">Giriş Et</button>
@@ -134,85 +139,83 @@ function LogReg() {
                   <h1>Qeydiyyatdan Keç</h1>
                   <form onSubmit={handleSubmit(onSubmitR)}>
                     {/* ___________________Name_____________________ */}
-                    <label>Ad</label>
-                    <br />
-                    <input
-                      type="text"
-                      placeholder="Ad"
-                      {...register("name", {
-                        required: "*Zəhmət olmasa xananı doldurun.",
-                      })}
-                    />
-                    <p> {errors.name && <span>{errors.name.message}</span>}</p>
-
+                    <div>
+                      <label>Ad</label>
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Ad"
+                        {...register("name", {
+                          required: "*Zəhmət olmasa xananı doldurun.",
+                        })}
+                      />
+                      <p>
+                        {" "}
+                        {errors.name && <span>{errors.name.message}</span>}
+                      </p>
+                    </div>
                     {/* __________________Surname________________________ */}
-                    <label>Soyad</label>
-                    <br />
-                    <input
-                      type="text"
-                      placeholder="Soyad"
-                      {...register("surname", {
-                        required: "*Zəhmət olmasa xananı doldurun.",
-                      })}
-                    />
-                    <p>
-                      {" "}
-                      {errors.surname && <span>{errors.surname.message}</span>}
-                    </p>
+                    <div>
+                      <label>Soyad</label>
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Soyad"
+                        {...register("surname", {
+                          required: "*Zəhmət olmasa xananı doldurun.",
+                        })}
+                      />
+                      <p>
+                        {" "}
+                        {errors.surname && (
+                          <span>{errors.surname.message}</span>
+                        )}
+                      </p>
+                    </div>
 
                     {/* ___________________Phone___________________ */}
-                    <label>Əlaqə nömrəsi</label>
-                    <br />
-                    {/* <input
-                      type="phone"
-                      placeholder="+994(xx)xxx-xx-xx"
-                      {...register("phone_number", {
-                        required: "*Zəhmət olmasa xananı doldurun.",
-                      })}
-                    />
-                    <p>
-                      {errors.phone_number && (
-                        <span>{errors.phone_number.message}</span>
-                      )}
-                      
-                    </p> */}
-                    {/* <div> */}
-                    <input
-                      type="tel"
-                      placeholder="+994503421558"
-                      {...register("phone_number", {
-                        required: "*Zəhmət olmasa xananı doldurun.",
-                        pattern: {
-                          value: /^\+994(50|51|55|70|77)\d{7}$/,
-                          message:
-                            "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
-                        },
-                      })}
-                      className={formState.errors.phone_number ? "error" : ""}
-                    />
-                    {formState.errors.phone_number && (
-                      <p className="error-message">
-                        <span> {formState.errors.phone_number.message}</span>
-                      </p>
-                    )}
-                    {/* </div> */}
-                    <br />
+                    <div>
+                      <label>Əlaqə nömrəsi</label>
+                      <br />
 
-                    <label>Şifrə</label>
-                    <br />
-                    <input
-                      type="password"
-                      placeholder="Şifrə"
-                      {...register("password", {
-                        required: "*Zəhmət olmasa xananı doldurun.",
-                      })}
-                    />
-                    <p>
-                      {" "}
-                      {errors.password && (
-                        <span>{errors.password.message}</span>
+                      <input
+                        type="tel"
+                        placeholder="+994503421558"
+                        {...register("phone_number", {
+                          required: "*Zəhmət olmasa xananı doldurun.",
+                          pattern: {
+                            value: /^\+994(50|51|55|70|77)\d{7}$/,
+                            message:
+                              "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
+                          },
+                        })}
+                        className={formState.errors.phone_number ? "error" : ""}
+                      />
+                      {formState.errors.phone_number && (
+                        <p className="error-message">
+                          <span> {formState.errors.phone_number.message}</span>
+                        </p>
                       )}
-                    </p>
+                    </div>
+                    {/* </div> */}
+
+                    <div>
+                      <label>Şifrə</label>
+                      <br />
+                      <input
+                        type="password"
+                        placeholder="Şifrə"
+                        {...register("password", {
+                          required: "*Zəhmət olmasa xananı doldurun.",
+                        })}
+                      />
+                      <p>
+                        {" "}
+                        {errors.password && (
+                          <span>{errors.password.message}</span>
+                        )}
+                      </p>
+                    </div>
 
                     {/* <label>
                       <i className="fa-solid fa-lock"></i>

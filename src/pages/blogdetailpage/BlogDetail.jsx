@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import { data } from "../../api/data";
 import BlogFilter from "../../components/blogFilter/BlogFilter";
 import "../../pages/blogpage/blog.scss";
 
 function BlogDetail() {
   const param = useParams();
+  const location = useLocation();
+
   const [blogData, setBlogData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +19,14 @@ function BlogDetail() {
       setLoading(false);
     });
   }, []);
-  console.log(blogData);
+  useEffect(() => {
+    setLoading(true);
+    data.getById("blog", param.id).then((res) => {
+      setBlogData(res);
+      setLoading(false);
+    });
+  }, [location.pathname]);
+  // console.log(blogData);
   return (
     <>
       <section className="carusel">

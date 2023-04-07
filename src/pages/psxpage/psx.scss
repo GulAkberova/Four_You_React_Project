@@ -58,14 +58,39 @@
     font-size: 12px !important;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
+  .pscology_bigdiv {
+    padding: 40px 0px !important;
+    .pscology_minidiv {
+      width: 95%;
+      flex-wrap: wrap;
+      .pscology_card_div_psx {
+        width: 100%;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 768px) {
 }
-@media only screen and (max-width: 992px) {
-  .pscology_div {
-    width: 100% !important;
+@media (min-width: 600px) and (max-width: 992px) {
+  .pscology_bigdiv {
+    padding: 40px 0px !important;
+    border: 2px solid red;
+    .pscology_minidiv {
+      width: 95%;
+      flex-wrap: wrap;
+      .pscology_card_div_psx {
+        width: 45%;
+      }
+    }
   }
 }
-@media only screen and (min-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1200px) {
+  .pscology_bigdiv {
+    padding: 40px 0px !important;
+    border: 2px solid red;
+    .pscology_minidiv {
+      width: 95%;
+    }
+  }
 }

@@ -11,6 +11,7 @@
   position: sticky;
   top: 0;
   z-index: 99;
+  // border: 2px solid red;
 }
 .header_navbar {
   display: flex;
@@ -19,6 +20,7 @@
   justify-content: space-between;
   padding: 10px 30px 0px 30px;
   margin: 0 auto;
+  // border: 2px solid red;
 
   .header_navbar_ul {
     display: flex;
@@ -40,8 +42,87 @@
     display: flex;
     align-items: center;
     color: black;
+
     li {
       margin: 0px 5px;
     }
+  }
+}
+.menu_rwd {
+  display: none;
+}
+.logo_rwd {
+  display: none;
+}
+.menu_rwd_hamburger {
+  display: none;
+}
+// .css-6hp17o-MuiList-root-MuiMenu-list {
+//   display: none;
+// }
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+@media only screen and (max-width: 1200px) {
+  .header_none {
+    // display: none;
+    // border: 3px solid green;
+  }
+  .logo {
+    display: none;
+  }
+
+  .header_navbar_ul,
+  .header_navbar_ul li {
+    display: none !important;
+  }
+  .header_navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo_rwd {
+    display: block;
+    width: 80px;
+    height: 40px;
+  }
+  .menu_rwd {
+    display: block;
+  }
+  .header_navbar_rwd {
+    display: flex;
+    // border: 1px solid orange;
+  }
+  .header_navbar_ul_user {
+    margin: 0px;
+    padding: 0px;
+  }
+  .menu_rwd_hamburger {
+    display: block;
+  }
+  .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    width: 500px !important;
+    max-width: 100% !important;
+    // border: 3px solid red;
+    top: 74px !important;
+    left: 50px !important;
+  }
+  .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .css-19r6kue-MuiContainer-root {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    width: 300px !important;
+    max-width: 100%;
+
+    left: 25px !important;
   }
 }

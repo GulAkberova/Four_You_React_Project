@@ -29,6 +29,8 @@ import AuthContext from "../../context/AuthProvider";
 
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
+
+import hamburger from "../../assets/icons/hamburger.png";
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -79,17 +81,18 @@ const Head = () => {
   const handleCloseLogout = () => {
     setAnchorEl(null);
     localStorage.removeItem("auth");
-    // localStorage.removeItem("refresh");
-    // localStorage.removeItem("user_id");
-    // localStorage.removeItem("index");
-    // auth.access = "";
-    // auth.refresh = "";
-    // auth.user_id = "";
-    // auth.index = {};
     navigate("/logreg");
   };
 
-  // ___________________________Token______________________________
+  // ___________________________Rwd_Hamburger______________________________
+  const [anchorElRwd, setAnchorElRwd] = React.useState(null);
+  const openRwd = Boolean(anchorElRwd);
+  const handleClickRwd = (event) => {
+    setAnchorElRwd(event.currentTarget);
+  };
+  const handleCloseRwd = () => {
+    setAnchorElRwd(null);
+  };
 
   return (
     <>
@@ -99,7 +102,10 @@ const Head = () => {
         style={{ backgroundColor: "white" }}
         className="app"
       >
-        <Box style={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          className="header_none"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           <Typography
             variant="h6"
             noWrap
@@ -139,77 +145,127 @@ const Head = () => {
                   <NavLink to="/contact">Əlaqə</NavLink>
                 </li>
               </ul>
-              <ul className="header_navbar_ul_user">
-                {auth?.access ? (
-                  <>
-                    <li>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          textAlign: "center",
-                        }}
-                      >
-                        {/* <Typography sx={{ minWidth: 100 }}>Contact</Typography>
+              <div className="header_navbar_rwd">
+                <div className="menu_rwd">
+                  <Box
+                    id="basic-button"
+                    aria-controls={openRwd ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openRwd ? "true" : undefined}
+                    onClick={handleClickRwd}
+                  >
+                    <img src={hamburger} />
+                  </Box>
+                  <Menu
+                    id="basic-menu"
+                    anchorElRwd={anchorElRwd}
+                    open={openRwd}
+                    onClose={handleCloseRwd}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}
+                    className="header_navbar_ul_rwd menu_rwd_hamburger"
+                  >
+                    <MenuItem onClick={handleCloseRwd}>
+                      {" "}
+                      <NavLink to="/">Ana səhifə</NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseRwd}>
+                      {" "}
+                      <NavLink to="/about">Haqqımızda</NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseRwd}>
+                      <NavLink to="/quiz">Gəl danışaq</NavLink>
+                    </MenuItem>
+
+                    <MenuItem onClick={handleCloseRwd}>
+                      {" "}
+                      <NavLink to="/psx">Psixoloqlarımız</NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseRwd}>
+                      <NavLink to="/product">Məhsullar</NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseRwd}>
+                      <NavLink to="/blog">Bloq</NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseRwd}>
+                      {" "}
+                      <NavLink to="/contact">Əlaqə</NavLink>
+                    </MenuItem>
+                  </Menu>
+                </div>
+                <ul className="header_navbar_ul_user">
+                  {auth?.access ? (
+                    <>
+                      <li>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            textAlign: "center",
+                          }}
+                        >
+                          {/* <Typography sx={{ minWidth: 100 }}>Contact</Typography>
                         <Typography sx={{ minWidth: 100 }}>Profile</Typography> */}
-                        <Tooltip title="Account settings">
-                          <IconButton
-                            onClick={handleClick}
-                            size="small"
-                            sx={{ ml: 2 }}
-                            aria-controls={open ? "account-menu" : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? "true" : undefined}
-                          >
-                            <Avatar sx={{ width: 32, height: 32 }}> G</Avatar>
-                          </IconButton>
-                        </Tooltip>
-                      </Box>
-                      <Menu
-                        anchorEl={anchorEl}
-                        id="account-menu"
-                        open={open}
-                        onClose={handleClose}
-                        onClick={handleClose}
-                        PaperProps={{
-                          elevation: 0,
-                          sx: {
-                            overflow: "visible",
-                            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                            mt: 1.5,
-                            "& .MuiAvatar-root": {
-                              width: 32,
-                              height: 32,
-                              ml: -0.5,
-                              mr: 1,
+                          <Tooltip title="Account settings">
+                            <IconButton
+                              onClick={handleClick}
+                              size="small"
+                              sx={{ ml: 2 }}
+                              aria-controls={open ? "account-menu" : undefined}
+                              aria-haspopup="true"
+                              aria-expanded={open ? "true" : undefined}
+                            >
+                              <Avatar sx={{ width: 32, height: 32 }}> G</Avatar>
+                            </IconButton>
+                          </Tooltip>
+                        </Box>
+                        <Menu
+                          anchorEl={anchorEl}
+                          id="account-menu"
+                          open={open}
+                          onClose={handleClose}
+                          onClick={handleClose}
+                          PaperProps={{
+                            elevation: 0,
+                            sx: {
+                              overflow: "visible",
+                              filter:
+                                "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                              mt: 1.5,
+                              "& .MuiAvatar-root": {
+                                width: 32,
+                                height: 32,
+                                ml: -0.5,
+                                mr: 1,
+                              },
+                              "&:before": {
+                                content: '""',
+                                display: "block",
+                                position: "absolute",
+                                top: 0,
+                                right: 14,
+                                width: 10,
+                                height: 10,
+                                bgcolor: "background.paper",
+                                transform: "translateY(-50%) rotate(45deg)",
+                                zIndex: 0,
+                              },
                             },
-                            "&:before": {
-                              content: '""',
-                              display: "block",
-                              position: "absolute",
-                              top: 0,
-                              right: 14,
-                              width: 10,
-                              height: 10,
-                              bgcolor: "background.paper",
-                              transform: "translateY(-50%) rotate(45deg)",
-                              zIndex: 0,
-                            },
-                          },
-                        }}
-                        transformOrigin={{
-                          horizontal: "right",
-                          vertical: "top",
-                        }}
-                        anchorOrigin={{
-                          horizontal: "right",
-                          vertical: "bottom",
-                        }}
-                      >
-                        <MenuItem onClick={handleClose}>
-                          <Avatar /> Profile
-                        </MenuItem>
-                        {/* <MenuItem onClick={handleClose}>
+                          }}
+                          transformOrigin={{
+                            horizontal: "right",
+                            vertical: "top",
+                          }}
+                          anchorOrigin={{
+                            horizontal: "right",
+                            vertical: "bottom",
+                          }}
+                        >
+                          <MenuItem onClick={handleClose}>
+                            <Avatar /> Profile
+                          </MenuItem>
+                          {/* <MenuItem onClick={handleClose}>
                           <Avatar /> My account
                         </MenuItem>
                         <Divider />
@@ -225,32 +281,37 @@ const Head = () => {
                           </ListItemIcon>
                           Settings
                         </MenuItem> */}
-                        <MenuItem onClick={handleCloseLogout}>
-                          <ListItemIcon>
-                            <Logout fontSize="small" />
-                          </ListItemIcon>
-                          Logout
-                        </MenuItem>
-                      </Menu>
+                          <MenuItem onClick={handleCloseLogout}>
+                            <ListItemIcon>
+                              <Logout fontSize="small" />
+                            </ListItemIcon>
+                            Logout
+                          </MenuItem>
+                        </Menu>
+                      </li>
+                    </>
+                  ) : (
+                    <li>
+                      <NavLink to="/logreg">
+                        <img src={user} />
+                      </NavLink>
                     </li>
-                  </>
-                ) : (
+                  )}
+
+                  <li>|</li>
                   <li>
-                    <NavLink to="/logreg">
-                      <img src={user} />
+                    <NavLink to="/basket">
+                      <StyledBadge badgeContent={cart.length} color="secondary">
+                        <img src={basket} />
+                      </StyledBadge>
                     </NavLink>
                   </li>
-                )}
+                </ul>
+              </div>
 
-                <li>|</li>
-                <li>
-                  <NavLink to="/basket">
-                    <StyledBadge badgeContent={cart.length} color="secondary">
-                      <img src={basket} />
-                    </StyledBadge>
-                  </NavLink>
-                </li>
-              </ul>
+              <div>
+                <img src={logo} className="logo_rwd" />
+              </div>
             </div>
 
             {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

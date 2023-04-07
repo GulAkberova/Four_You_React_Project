@@ -23,7 +23,7 @@ function About() {
       <OurPsx />
       <OurToys />
       <div className="about_group">
-        <h1>Komadamız</h1>
+        <h1>Komandamız</h1>
       </div>
       <div className="about_group_members">
         <div className="about_group_member">
@@ -66,7 +66,7 @@ function About() {
           <div className="about_group_member_img">
             <img src={Fidan} />
           </div>
-          <h5>Fidan Əliyeva</h5>
+          <h5>Fidan Muradova</h5>
           <span>UI/UX dizayner</span>
         </div>
       </div>

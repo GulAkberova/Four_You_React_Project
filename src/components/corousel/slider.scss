@@ -55,7 +55,8 @@
     padding: 0px 50px;
 
     .first_carusel1 {
-      width: 40%;
+      width: 600px;
+      max-width: 100%;
       border-radius: 32px;
       background-color: white;
       text-align: center;
@@ -141,40 +142,75 @@
   background-color: $btn1 !important;
 }
 
-@media only screen and (max-width: 650px) {
-  .first_carusel {
-    margin-top: 80px !important;
-    h1 {
-      font-size: 47px !important;
-      p {
-        font-size: 30px !important;
-      }
+// @media only screen and (max-width: 650px) {
+//   .first_carusel {
+//     margin-top: 80px !important;
+//     h1 {
+//       font-size: 47px !important;
+//       p {
+//         font-size: 30px !important;
+//       }
+//     }
+//     button {
+//       margin: 0px !important;
+//       font-size: 20px;
+//       padding: 3px 10px;
+//     }
+//   }
+// }
+
+@media only screen and (max-width: 768px) {
+  .first_carusel_bigdiv1 {
+    // border: 3px solid red;
+    height: calc(100vh - 400px);
+  }
+  .first_carusel_bigdiv {
+    flex-direction: column;
+    align-items: center;
+    height: 360px !important;
+    padding: 40px 0px !important;
+    // border: 1px solid black;
+    // height: 100%;
+    // border: 3px solid green;
+
+    .first_carusel_img {
+      // border: 3px solid blue;
+      height: 600px;
+
+      width: 100% !important;
+      display: none;
     }
-    button {
-      margin: 0px !important;
-      font-size: 20px;
-      padding: 3px 10px;
+    .first_carusel {
+      width: 100% !important;
+
+      text-align: center !important;
+      padding: 0px !important;
+    }
+  }
+  .first_carusel_bigdiv1 {
+    padding: 40px 0px !important;
+    img {
+      display: none !important;
+    }
+    p {
+      font-size: 17px !important;
     }
   }
 }
 @media only screen and (max-width: 600px) {
-  .first_carusel_bigdiv1 {
-    height: calc(100vh - 140px);
-    img {
-      width: 100% !important;
-      height: 100%;
-      object-fit: contain !important;
+  .first_carusel_bigdiv_toys {
+    padding: 30px 10px !important;
+  }
+  .first_carusel1 {
+    width: 700px;
+    padding: 20px 10px !important;
+
+    p {
+      font-size: 17px !important;
+      line-height: 24px !important;
+    }
+    h3 {
+      font-size: 19px !important;
     }
   }
-}
-@media only screen and (max-width: 768px) {
-  //    .first_carusel{
-  //      h1{
-  //             font-size: 25px !important;
-
-  //      }
-  //      button{
-  //         margin: 5px !important;
-  //      }
-  //    }
 }

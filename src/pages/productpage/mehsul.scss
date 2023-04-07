@@ -32,7 +32,7 @@
 
 .product_filterdiv {
   width: 30%;
-  padding: 40px 10px 40px 60px;
+  padding: 40px 10px 40px 50px;
 }
 .product_filterdiv_search {
   font-family: $anafont;
@@ -164,20 +164,46 @@
 
 @media only screen and (max-width: 600px) {
   .mehsul_bigdiv {
-    padding: 30px 10px;
+    width: 50%;
+    flex-wrap: wrap;
   }
-  .mehsul_div {
-    width: 100% !important;
+  .mehsul_div_product {
+    width: 90%;
+    gap: 10px;
+  }
+  .product_filterdiv {
+    width: 50%;
+    padding: 40px 10px;
+  }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  .mehsul_bigdiv {
+    flex-wrap: wrap;
+  }
+  .mehsul_div_product {
+    width: 45%;
+    gap: 10px;
+  }
+  .product_filterdiv {
+    padding: 40px 10px;
   }
 }
 
-@media (min-width: 600px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .mehsul_bigdiv {
-    padding: 30px 30px;
+    padding: 10px 0px !important;
+    flex-wrap: wrap;
   }
-  .mehsul_div {
-    width: 47% !important;
+  .mehsul_div_product {
+    width: 28%;
+    gap: 10px;
   }
+  .product_filterdiv {
+    padding: 40px 10px;
+  }
+  // .mehsul_div {
+  //   width: 47% !important;
+  // }
 }
 @media only screen and (min-width: 1200px) {
 }

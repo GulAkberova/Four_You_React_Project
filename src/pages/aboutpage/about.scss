@@ -127,8 +127,16 @@
       font-size: 13px !important;
     }
   }
+  .about_group_member {
+    width: 100% !important;
+  }
 }
-@media only screen and (max-width: 800px) {
+@media (min-width: 500px) and (max-width: 768px) {
+  .about_group_member {
+    width: 48% !important;
+  }
+}
+@media only screen and (max-width: 1100px) {
   .about_bigdiv1 {
     flex-direction: column;
     padding: 60px 5px;
@@ -143,6 +151,12 @@
       .about_mini_txt {
         width: 100%;
       }
+    }
+  }
+  .about_group_members {
+    flex-wrap: wrap;
+    .about_group_member {
+      width: 30%;
     }
   }
 }

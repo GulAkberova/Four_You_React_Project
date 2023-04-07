@@ -8,7 +8,7 @@ import ellipseedu from "../../assets/icons/ellipseedu.png";
 import ellipseexp from "../../assets/icons/ellipseexp.png";
 import ellipsecert from "../../assets/icons/ellipsecert.png";
 import certificate from "../../assets/image/certificate.png";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import SwiperPsx from "../../components/corousel/SwiperPsx";
 import PsxModal from "../../components/psxmodal/PsxModal";
 import { data } from "../../api/data";
@@ -46,6 +46,7 @@ function PsxDetail() {
 
   const [psxData, setPsxData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     setLoading(true);
@@ -54,6 +55,13 @@ function PsxDetail() {
       setLoading(false);
     });
   }, []);
+  useEffect(() => {
+    setLoading(true);
+    data.getById("doctor", param.id).then((res) => {
+      setPsxData(res);
+      setLoading(false);
+    });
+  }, [location.pathname]);
 
   const [selectedImage, setSelectedImage] = useState(null);
 
