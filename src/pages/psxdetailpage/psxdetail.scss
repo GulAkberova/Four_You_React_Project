@@ -1,6 +1,9 @@
 @import "../../umumi.scss";
 
 .psxdetail_bigdiv {
+  max-width: 1400px;
+  margin: auto;
+  // border: 1px solid red;
   padding: 76px 89px;
   display: flex;
   justify-content: space-between;
@@ -63,7 +66,7 @@
     font-weight: 600;
   }
   p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
   }
 }
@@ -78,15 +81,18 @@
   }
 }
 .psxdetail_infodiv {
+  max-width: 1400px;
+  margin: auto;
   padding: 76px 89px;
   display: flex;
   justify-content: space-between;
+  // border: 1px solid red;
 }
 .psxdetail_infodiv_education {
-  width: 35%;
+  width: 30%;
 }
 .psxdetail_infodiv_experience {
-  width: 20%;
+  width: 30%;
 }
 .psxdetail_infodiv_certificate {
   width: 37%;
@@ -116,6 +122,7 @@
       width: 100%;
       display: flex;
       align-items: flex-start;
+      font-size: 14px;
       h4 {
         padding-left: 15px;
       }
@@ -160,6 +167,8 @@
   }
 }
 .psxdetail_skills {
+  max-width: 1400px;
+  margin: auto;
   padding: 76px 60px 76px 80px;
   .psxdetail_skills_divs {
     display: flex;

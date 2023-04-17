@@ -10,7 +10,8 @@
   font-family: $anafont;
 
   .logreg_minidiv {
-    width: 75%;
+    max-width: 900px;
+    margin: auto;
     height: 100% !important;
     // height: 570px;
     display: flex;

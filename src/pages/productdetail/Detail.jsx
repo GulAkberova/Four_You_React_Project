@@ -103,7 +103,7 @@ function Detail() {
             <div className="detail_img">
               <div className="detail_imgs">
                 {productData.images &&
-                  productData.images.map((i, key) => (
+                  productData.images.slice(0, 4).map((i, key) => (
                     <div key={key} className="detail_small_img">
                       <img
                         src={i.image}

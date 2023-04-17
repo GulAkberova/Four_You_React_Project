@@ -85,7 +85,7 @@ function Home() {
               </div>
             ) : (
               blog &&
-              blog.map((index, key) => (
+              blog.slice(0, 3).map((index, key) => (
                 <div className="blog_card_div">
                   <BlogCard index={index} key={key} />
                 </div>

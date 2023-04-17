@@ -26,6 +26,8 @@
   }
 }
 .mehsul_alldiv {
+  max-width: 1400px;
+  margin: auto;
   display: flex;
 }
 // ________________________________________________
@@ -82,6 +84,7 @@
   flex-wrap: wrap;
   // justify-content: space-between;
   gap: 45px;
+  // border: 2px solid red;
 }
 .mehsul_div {
   width: 100%;
@@ -218,7 +221,8 @@
 }
 .swiper {
   padding: 40px 40px 40px 40px !important;
-  width: 90%;
+  width: 93%;
+  max-width: 1200px;
 }
 .myswiper {
   border: 2px solid green !important;

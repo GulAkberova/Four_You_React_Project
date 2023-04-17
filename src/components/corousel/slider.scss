@@ -1,7 +1,16 @@
 @import "../../umumi.scss";
+.first_carusel_bigdiv2 {
+  // border: 1px solid red;
+}
 .first_carusel_bigdiv1 {
-  height: 558px;
+  max-width: 1400px;
+  width: 100%;
+  height: 450px;
   font-family: $anafont;
+  // border: 2px solid black;
+  display: flex;
+  align-items: center;
+  margin: 0 auto !important;
   img {
     width: 100%;
     height: 100%;
@@ -9,18 +18,24 @@
   }
   .first_carusel_bigdiv {
     width: 100%;
-    height: 450px;
+    height: 100%;
+    // height: 450px;
     display: flex;
     justify-content: space-between;
+    // border: 1px solid black;
+    padding-top: 40px;
+
     .first_carusel_img {
       width: 50%;
     }
     .first_carusel {
-      width: 40%;
+      width: 45%;
       color: black;
       text-align: left;
       padding-left: 60px;
-      h2 {
+      padding-top: 30px;
+      // border: 1px solid black;
+      h1 {
         // font-size: 0px;
         font-weight: 600;
         a {
@@ -28,7 +43,7 @@
         }
       }
       p {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 500;
       }
       button {
@@ -55,14 +70,17 @@
     padding: 0px 50px;
 
     .first_carusel1 {
-      width: 600px;
-      max-width: 100%;
+      // width: 600px;
+
+      width: 50%;
+
       border-radius: 32px;
       background-color: white;
       text-align: center;
       padding: 30px 50px;
       color: black;
       position: relative;
+      border: 2px solid green;
       span {
         color: $btn1;
         font-size: 25px;
@@ -72,7 +90,7 @@
         padding: 15px 0px;
       }
       p {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 400;
         line-height: 34px;
       }
@@ -113,9 +131,14 @@
   border: 1px solid $btn1 !important;
 }
 .carousel-indicators {
+  max-width: 1000px;
+  width: 100%;
   justify-content: flex-start !important;
-  bottom: 10% !important;
-  left: -5%;
+  bottom: 2% !important;
+  // left: 0%;
+  // border: 2px solid gray;
+  margin: auto;
+  // transform: translateX(-50%);
 }
 .carousel-control-next-icon {
   display: none !important;
@@ -158,17 +181,20 @@
 //     }
 //   }
 // }
-
+.carousel-inner {
+  display: flex;
+}
 @media only screen and (max-width: 768px) {
   .first_carusel_bigdiv1 {
     // border: 3px solid red;
-    height: calc(100vh - 400px);
+    height: calc(100vh - 40px);
   }
   .first_carusel_bigdiv {
     flex-direction: column;
     align-items: center;
-    height: 360px !important;
+    height: 100%;
     padding: 40px 0px !important;
+    // border: 2px solid green;
     // border: 1px solid black;
     // height: 100%;
     // border: 3px solid green;
@@ -178,39 +204,52 @@
       height: 600px;
 
       width: 100% !important;
-      display: none;
+      // display: none;
     }
     .first_carusel {
       width: 100% !important;
 
       text-align: center !important;
       padding: 0px !important;
+      // border: 2px solid blue;
+      p {
+        font-size: 15px !important;
+      }
     }
-  }
-  .first_carusel_bigdiv1 {
-    padding: 40px 0px !important;
-    img {
-      display: none !important;
-    }
-    p {
-      font-size: 17px !important;
-    }
-  }
-}
-@media only screen and (max-width: 600px) {
-  .first_carusel_bigdiv_toys {
-    padding: 30px 10px !important;
   }
   .first_carusel1 {
-    width: 700px;
-    padding: 20px 10px !important;
-
+    width: 100% !important;
+    height: 400px;
+    padding: 10px 5px !important;
     p {
-      font-size: 17px !important;
+      font-size: 15px !important;
       line-height: 24px !important;
     }
-    h3 {
-      font-size: 19px !important;
-    }
   }
+  // .first_carusel_bigdiv1 {
+  //   padding: 40px 0px !important;
+  //   img {
+  //     display: none !important;
+  //   }
+  //   p {
+  //     font-size: 17px !important;
+  //   }
+  // }
 }
+// @media only screen and (max-width: 600px) {
+//   .first_carusel_bigdiv_toys {
+//     padding: 30px 10px !important;
+//   }
+//   .first_carusel1 {
+//     width: 700px;
+//     padding: 20px 10px !important;
+
+//     p {
+//       font-size: 17px !important;
+//       line-height: 24px !important;
+//     }
+//     h3 {
+//       font-size: 19px !important;
+//     }
+//   }
+// }

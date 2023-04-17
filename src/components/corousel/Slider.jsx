@@ -13,7 +13,7 @@ function Slider() {
   return (
     <>
       <Carousel className="first_carusel_bigdiv2">
-        <Carousel.Item className="first_carusel_bigdiv1">
+        {/* <Carousel.Item className="first_carusel_bigdiv1">
           <Carousel.Caption className="first_carusel_bigdiv">
             <div className="first_carusel">
               <h1>
@@ -35,20 +35,14 @@ function Slider() {
               alt="First slide"
             />
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
         <Carousel.Item className="first_carusel_bigdiv1">
           <img className="d-block w-100" src={sliderImg2} alt="First slide" />
           <Carousel.Caption className="first_carusel_bigdiv_toys">
             <div className="first_carusel1">
               <img src={simage1} className="first_carusel_simg1" />
 
-              {/* <span>New in February</span> */}
               <h3>
-                {/* Up to{" "}
-                <span>
-                  <b>40%</b>{" "}
-                </span>
-                off our Products!{" "} */}
                 Əl əməyi ilə hazırlanan <br />
                 oyuncaqlar
               </h3>
@@ -65,7 +59,7 @@ function Slider() {
             </div>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item className="first_carusel_bigdiv1">
+        {/* <Carousel.Item className="first_carusel_bigdiv1">
           <img className="d-block w-100" src={sliderImg3} alt="First slide" />
           <Carousel.Caption className="first_carusel_bigdiv">
             <div className="first_carusel">
@@ -80,7 +74,7 @@ function Slider() {
               </button>
             </div>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     </>
   );

@@ -141,7 +141,7 @@ function PsxDetail() {
                 <li className="psxdetail_infodiv_education_li" key={key}>
                   <img src={ellipse} />
                   <div>
-                    <h5>{i.university}</h5>
+                    <h6>{i.university}</h6>
                     <span>{i.program}</span>
                     <br />
                     <span>{i.date}</span>
@@ -161,7 +161,7 @@ function PsxDetail() {
                 <li className="psxdetail_infodiv_education_li" key={key}>
                   <img src={ellipse} />
                   <div>
-                    <h5>{i.company}</h5>
+                    <h6>{i.company}</h6>
                     <span>{i.date}</span>
                   </div>
                 </li>
@@ -183,7 +183,7 @@ function PsxDetail() {
                 </div>
                 <div>
                   {psxData.certificate &&
-                    psxData.certificate.map((i, key) => (
+                    psxData.certificate.slice(0, 4).map((i, key) => (
                       <div key={key}>
                         <img
                           src={i.image}

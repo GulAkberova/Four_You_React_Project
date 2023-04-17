@@ -1,5 +1,7 @@
 @import "../../umumi.scss";
 .quiz_bigdiv {
+  max-width: 1400px;
+  margin: auto;
   width: 100%;
   height: 450px;
   background-image: url("../../img/carusel_foryou.png");
@@ -9,7 +11,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 90px;
+  padding-right: 50px;
   font-family: $anafont;
   .quiz_minidiv {
     width: 450px;
@@ -18,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    // border: 1px solid red;
     h1 {
       font-size: 40px;
       font-weight: 600;
@@ -40,6 +43,8 @@
   }
 }
 .activite_purpose_bigdiv {
+  max-width: 1400px;
+  margin: auto;
   padding: 90px 0px;
   font-family: $anafont;
   background-image: url("../../img/dashed-line-characters2 (1) 1.png");

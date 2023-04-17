@@ -9,7 +9,9 @@
   font-family: $anafont;
   overflow: hidden;
   .footer_minidiv {
-    width: 90%;
+    max-width: 1200px;
+    width: 100%;
+
     margin: 40px auto;
     display: flex;
     justify-content: space-between;

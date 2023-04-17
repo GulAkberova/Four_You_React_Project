@@ -2,14 +2,19 @@
 
 .big_pscology {
   width: 100%;
+  // border: 2px solid green;
 
   .pscology_cards {
     .pscology_cards_mini {
-      width: 90%;
+      // border: 2px solid black;
+
+      width: 1260px !important;
+      width: 100%;
       margin: 0px auto;
       display: flex;
       justify-content: space-around;
       .pscology_card_div {
+        // border: 2px solid red;
         width: 100%;
         box-shadow: 0px 4px 5px 3px rgba(47, 157, 184, 0.17);
         -webkit-box-shadow: 0px 4px 5px 3px rgba(47, 157, 184, 0.17);
@@ -80,12 +85,13 @@
   }
 }
 .pscology_cards_mini_bottom {
-  width: 100%;
+  width: 1100px;
   margin: 10px auto;
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
   gap: 30px;
+  // border: 2px solid red;
 }
 .pscology_product_home_btn {
   display: flex;
@@ -103,7 +109,10 @@
 }
 
 .catdirilma_bigdiv {
+  max-width: 1300px;
   width: 100%;
+  margin: auto;
+  // border: 1px solid red;
   border-top: 3px solid rgba(207, 204, 204, 0.461);
   font-family: $anafont;
   .catdirilma_minidiv {
@@ -159,7 +168,10 @@
 
 // ____________________Text_____________________________
 .pscology_text {
+  max-width: 1400px;
   width: 100%;
+  margin: auto;
+  // border: 1px solid black;
   height: 310px;
   text-align: center;
   display: flex;
@@ -183,10 +195,10 @@
 }
 .psx_bg {
   background-image: url("../../../src/assets/image/bg2.svg");
-  background-position: 50% 36%;
+  background-position: 50% 30%;
 }
 .product_bg {
-  background-position: 50% 16%;
+  background-position: 50% 10%;
   background-image: url("../../../src/assets/image/bg1.svg");
 }
 .blog_pad {
