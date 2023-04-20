@@ -35,8 +35,8 @@ function Slider() {
               alt="First slide"
             />
           </Carousel.Caption>
-        </Carousel.Item> */}
-        <Carousel.Item className="first_carusel_bigdiv1">
+        </Carousel.Item>
+        <Carousel.Item className="first_carusel_bigdiv1 ">
           <img className="d-block w-100" src={sliderImg2} alt="First slide" />
           <Carousel.Caption className="first_carusel_bigdiv_toys">
             <div className="first_carusel1">
@@ -58,10 +58,10 @@ function Slider() {
               <img src={simage2} className="first_carusel_simg2" />
             </div>
           </Carousel.Caption>
-        </Carousel.Item>
-        {/* <Carousel.Item className="first_carusel_bigdiv1">
+        </Carousel.Item> */}
+        <Carousel.Item className="first_carusel_bigdiv1">
           <img className="d-block w-100" src={sliderImg3} alt="First slide" />
-          <Carousel.Caption className="first_carusel_bigdiv">
+          <Carousel.Caption className="first_carusel_bigdiv rwd_carusel">
             <div className="first_carusel">
               <h1>Psixoloqlarımız</h1>
               <p>
@@ -74,7 +74,7 @@ function Slider() {
               </button>
             </div>
           </Carousel.Caption>
-        </Carousel.Item> */}
+        </Carousel.Item>
       </Carousel>
     </>
   );

@@ -26,13 +26,13 @@ function About() {
         <h1>Komandamız</h1>
       </div>
       <div className="about_group_members">
-        <div className="about_group_member">
+        {/* <div className="about_group_member">
           <div className="about_group_member_img">
             <img src={Arzu} />
           </div>
           <h5>Arzu Qarayeva</h5>
           <span>Marketing</span>
-        </div>
+        </div> */}
         <div className="about_group_member">
           <div className="about_group_member_img">
             <img src={Vuqar} />

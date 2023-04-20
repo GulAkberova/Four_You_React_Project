@@ -64,6 +64,10 @@ function SwiperProduct() {
         //    disableOnInteraction: false,
         //  }}
         breakpoints={{
+          450: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
           640: {
             slidesPerView: 1,
             spaceBetween: 20,

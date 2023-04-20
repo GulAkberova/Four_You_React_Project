@@ -196,11 +196,12 @@
   }
 }
 
-// @media only screen and (max-width: 600px) {
-//   .blog_card_div {
-//     width: 100% !important;
-//   }
-// }
+@media only screen and (max-width: 600px) {
+  .blog_card_div,
+  .blog_card_div_blog {
+    height: max-content;
+  }
+}
 // @media only screen and (max-width: 950px) {
 //   .blog_bigdiv {
 //     padding: 30px 20px;

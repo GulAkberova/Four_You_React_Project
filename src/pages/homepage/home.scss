@@ -8,7 +8,7 @@
     .pscology_cards_mini {
       // border: 2px solid black;
 
-      width: 1260px !important;
+      // max-width: 1260px !important;
       width: 100%;
       margin: 0px auto;
       display: flex;
@@ -85,7 +85,7 @@
   }
 }
 .pscology_cards_mini_bottom {
-  width: 1100px;
+  max-width: 1400px;
   margin: 10px auto;
   display: flex;
   justify-content: space-around;
@@ -216,7 +216,7 @@
 }
 @media only screen and (max-width: 600px) {
   .pscology_card_div_text_btn button {
-    padding: 5px 20px !important;
+    // padding: 5px 20px !important;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -273,9 +273,9 @@
   }
 }
 @media (min-width: 600px) and (max-width: 992px) {
-  .pscology_card_div_text_btn button {
-    padding: 7px 30px !important;
-  }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 440px) {
+  .pscology_card_div_text_btn button {
+    padding: 7px 40px !important;
+  }
 }
