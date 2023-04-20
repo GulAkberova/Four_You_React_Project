@@ -13,7 +13,7 @@ function Slider() {
   return (
     <>
       <Carousel className="first_carusel_bigdiv2">
-        {/* <Carousel.Item className="first_carusel_bigdiv1">
+        <Carousel.Item className="first_carusel_bigdiv1">
           <Carousel.Caption className="first_carusel_bigdiv">
             <div className="first_carusel">
               <h1>
@@ -58,7 +58,7 @@ function Slider() {
               <img src={simage2} className="first_carusel_simg2" />
             </div>
           </Carousel.Caption>
-        </Carousel.Item> */}
+        </Carousel.Item>
         <Carousel.Item className="first_carusel_bigdiv1">
           <img className="d-block w-100" src={sliderImg3} alt="First slide" />
           <Carousel.Caption className="first_carusel_bigdiv rwd_carusel">
