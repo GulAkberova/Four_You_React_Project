@@ -20,7 +20,7 @@ function BlogCard({ index }) {
           <Moment format="DD.MM.YYYY">{index.update_date}</Moment>
         </span>
 
-        <p>{index.content.slice(0, 120)}...</p>
+        <p>{index.content.slice(0, 110)}...</p>
         <Link to={`/blog/${index.id}`}>
           Daha çox oxu
           <img src={arrow} />
