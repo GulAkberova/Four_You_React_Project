@@ -26,7 +26,7 @@ function Slider() {
                 Bunun üçün “Gəl danışaq” butonuna klikləmən kifayət edir..{" "}
               </p>
               <button>
-                <NavLink to="/quiz">Gəl danışaq</NavLink>
+                <NavLink to="/psx">Gəl danışaq</NavLink>
               </button>
             </div>
             <img

@@ -21,7 +21,7 @@ function OurPsx() {
               keçəcəyini, sizin üçün hansı üstünlükləri ola biləcəyini təxmin
               edə bilirsiniz.
             </p>
-            <NavLink to="/quiz">
+            <NavLink to="/psx">
               <button>Gəl Danışaq</button>
             </NavLink>
           </div>

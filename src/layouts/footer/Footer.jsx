@@ -29,9 +29,9 @@ function Footer() {
               <li>
                 <NavLink to="/about">Haqqımızda</NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/quiz">Gəl danışaq</NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/psx">Psixoloqlarımız</NavLink>
               </li>

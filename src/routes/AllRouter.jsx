@@ -107,14 +107,14 @@ function AllRouter() {
             </Suspense>
           }
         ></Route>
-        <Route
+        {/* <Route
           path="/quiz"
           element={
             <Suspense>
               <Quiz />
             </Suspense>
           }
-        ></Route>
+        ></Route> */}
         <Route
           path="/seans"
           element={
