@@ -11,7 +11,7 @@ function Email() {
     data
       .getByPost("verify", {
         activation_code: confirmCode,
-        phone_number: location.state.phone_number,
+        email: location.state.email,
       })
       .then((res) => {
         localStorage.setItem("tokens", res.tokens);

@@ -47,8 +47,8 @@ function LogReg() {
     data
       .getByPost("user_register", index)
       .then((res) => {
-        navigate("/email", { state: { phone_number: res.phone_number } });
-        console.log(res);
+        navigate("/email", { state: { email: res.email } });
+        console.log(res, "emaillll yoxlama aaaaaaaaaaaaaaaaaa");
       })
       .catch((err) => {
         console.log("err", err);
@@ -70,26 +70,36 @@ function LogReg() {
                 <h1>Giriş</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div>
-                    <label>Əlaqə nömrəsi</label>
+                    <label>Email</label>
                     <br />
                     <input
-                      type="tel"
-                      placeholder="+994503421558"
-                      {...register("phone_number", {
+                      //   type="tel"
+                      //   placeholder="+994503421558"
+                      //   {...register("phone_number", {
+                      //     required: "*Zəhmət olmasa xananı doldurun.",
+                      //     pattern: {
+                      //       value: /^\+994(50|51|55|70|77)\d{7}$/,
+                      //       message:
+                      //         "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
+                      //     },
+                      //   })}
+                      //   className={formState.errors.phone_number ? "error" : ""}
+                      // />
+                      // {formState.errors.phone_number && (
+                      //   <p className="error-message">
+                      //     <span> {formState.errors.phone_number.message}</span>
+                      //   </p>
+                      // )}
+                      type="email"
+                      placeholder="admin@gmail.com"
+                      {...register("email", {
                         required: "*Zəhmət olmasa xananı doldurun.",
-                        pattern: {
-                          value: /^\+994(50|51|55|70|77)\d{7}$/,
-                          message:
-                            "Zəhmət olmasa doğru telefon nömrəsi daxil edin. (Nümunə: +994503421558)",
-                        },
                       })}
-                      className={formState.errors.phone_number ? "error" : ""}
                     />
-                    {formState.errors.phone_number && (
-                      <p className="error-message">
-                        <span> {formState.errors.phone_number.message}</span>
-                      </p>
-                    )}
+                    <p>
+                      {" "}
+                      {errors.email && <span>{errors.email.message}</span>}
+                    </p>
                   </div>
 
                   <div>
@@ -111,7 +121,7 @@ function LogReg() {
                   </div>
 
                   <div className="add">
-                    <button className="btn1">Giriş Et</button>
+                    <button className="btn1">Daxil ol</button>
                     <button className="btn2" onClick={(e) => SetPanel(false)}>
                       Qeydiyyat
                     </button>
@@ -175,10 +185,10 @@ function LogReg() {
 
                     {/* ___________________Phone___________________ */}
                     <div>
-                      <label>Əlaqə nömrəsi</label>
+                      <label>Email</label>
                       <br />
 
-                      <input
+                      {/* <input
                         type="tel"
                         placeholder="+994503421558"
                         {...register("phone_number", {
@@ -196,8 +206,20 @@ function LogReg() {
                           <span> {formState.errors.phone_number.message}</span>
                         </p>
                       )}
+                    
+                    </div> */}
+                      <input
+                        type="email"
+                        placeholder="admin@gmail.com"
+                        {...register("email", {
+                          required: "*Zəhmət olmasa xananı doldurun.",
+                        })}
+                      />
+                      <p>
+                        {" "}
+                        {errors.email && <span>{errors.email.message}</span>}
+                      </p>
                     </div>
-                    {/* </div> */}
 
                     <div>
                       <label>Şifrə</label>
@@ -234,9 +256,9 @@ function LogReg() {
                     </p> */}
 
                     <div className="add">
-                      <button className="btn1">Giriş Et</button>
+                      <button className="btn1">Hesab yaradın</button>
                       <button className="btn2" onClick={(e) => SetPanel(true)}>
-                        Qeydiyyat
+                        Daxil ol{" "}
                       </button>
                     </div>
                   </form>
