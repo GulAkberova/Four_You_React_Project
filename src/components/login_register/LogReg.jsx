@@ -258,7 +258,7 @@ function LogReg() {
                     <div className="add">
                       <button className="btn1">Hesab yaradın</button>
                       <button className="btn2" onClick={(e) => SetPanel(true)}>
-                        Daxil ol{" "}
+                        Geri qayıt{" "}
                       </button>
                     </div>
                   </form>
